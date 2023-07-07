@@ -1,0 +1,65 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^iui-(.*)": "/packages/components/iui-$1/iui-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "组件库"
+			}
+		},
+		{
+			"path": "pages/components/button",
+			"style": {
+				"navigationBarTitleText": "按钮"
+			}
+		},
+		{
+			"path": "pages/components/space",
+			"style": {
+				"navigationBarTitleText": "间距"
+			}
+		},
+		{
+			"path": "pages/components/grid",
+			"style": {
+				"navigationBarTitleText": "宫格"
+			}
+		},
+		{
+			"path": "pages/components/divider",
+			"style": {
+				"navigationBarTitleText": "分割线"
+			}
+		},
+		{
+			"path": "pages/components/avatar",
+			"style": {
+				"navigationBarTitleText": "头像"
+			}
+		},
+		{
+			"path": "pages/components/icon",
+			"style": {
+				"navigationBarTitleText": "图标"
+			}
+		},
+		{
+			"path": "pages/components/spin",
+			"style": {
+				"navigationBarTitleText": "加载中"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "组件库",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

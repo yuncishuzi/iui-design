@@ -1,0 +1,176 @@
+page {
+    #{$prefix}-blue-1: #{$blue-1};
+    #{$prefix}-blue-2: #{$blue-2};
+    #{$prefix}-blue-3: #{$blue-3};
+    #{$prefix}-blue-4: #{$blue-4};
+    #{$prefix}-blue-5: #{$blue-5};
+    #{$prefix}-blue-6: #{$blue-6};
+    #{$prefix}-blue-7: #{$blue-7};
+    #{$prefix}-blue-8: #{$blue-8};
+    #{$prefix}-blue-9: #{$blue-9};
+
+    #{$prefix}-green-1: #{$green-1};
+    #{$prefix}-green-2: #{$green-2};
+    #{$prefix}-green-3: #{$green-3};
+    #{$prefix}-green-4: #{$green-4};
+    #{$prefix}-green-5: #{$green-5};
+    #{$prefix}-green-6: #{$green-6};
+    #{$prefix}-green-7: #{$green-7};
+    #{$prefix}-green-8: #{$green-8};
+    #{$prefix}-green-9: #{$green-9};
+
+    #{$prefix}-red-1: #{$red-1};
+    #{$prefix}-red-2: #{$red-2};
+    #{$prefix}-red-3: #{$red-3};
+    #{$prefix}-red-4: #{$red-4};
+    #{$prefix}-red-5: #{$red-5};
+    #{$prefix}-red-6: #{$red-6};
+    #{$prefix}-red-7: #{$red-7};
+    #{$prefix}-red-8: #{$red-8};
+    #{$prefix}-red-9: #{$red-9};
+
+    #{$prefix}-yellow-1: #{$yellow-1};
+    #{$prefix}-yellow-2: #{$yellow-2};
+    #{$prefix}-yellow-3: #{$yellow-3};
+    #{$prefix}-yellow-4: #{$yellow-4};
+    #{$prefix}-yellow-5: #{$yellow-5};
+    #{$prefix}-yellow-6: #{$yellow-6};
+    #{$prefix}-yellow-7: #{$yellow-7};
+    #{$prefix}-yellow-8: #{$yellow-8};
+    #{$prefix}-yellow-9: #{$yellow-9};
+
+    #{$prefix}-gray-1: #{$gray-1};
+    #{$prefix}-gray-2: #{$gray-2};
+    #{$prefix}-gray-3: #{$gray-3};
+    #{$prefix}-gray-4: #{$gray-4};
+    #{$prefix}-gray-5: #{$gray-5};
+    #{$prefix}-gray-6: #{$gray-6};
+    #{$prefix}-gray-7: #{$gray-7};
+    #{$prefix}-gray-8: #{$gray-8};
+    #{$prefix}-gray-9: #{$gray-9};
+
+    #{$prefix}-orange-1: #{$orange-1};
+    #{$prefix}-orange-2: #{$orange-2};
+    #{$prefix}-orange-3: #{$orange-3};
+    #{$prefix}-orange-4: #{$orange-4};
+    #{$prefix}-orange-5: #{$orange-5};
+    #{$prefix}-orange-6: #{$orange-6};
+    #{$prefix}-orange-7: #{$orange-7};
+    #{$prefix}-orange-8: #{$orange-8};
+    #{$prefix}-orange-9: #{$orange-9};
+
+    #{$prefix}-purple-1: #{$purple-1};
+    #{$prefix}-purple-2: #{$purple-2};
+    #{$prefix}-purple-3: #{$purple-3};
+    #{$prefix}-purple-4: #{$purple-4};
+    #{$prefix}-purple-5: #{$purple-5};
+    #{$prefix}-purple-6: #{$purple-6};
+    #{$prefix}-purple-7: #{$purple-7};
+    #{$prefix}-purple-8: #{$purple-8};
+    #{$prefix}-purple-9: #{$purple-9};
+
+    #{$prefix}-gold-1: #{$gold-1};
+    #{$prefix}-gold-2: #{$gold-2};
+    #{$prefix}-gold-3: #{$gold-3};
+    #{$prefix}-gold-4: #{$gold-4};
+    #{$prefix}-gold-5: #{$gold-5};
+    #{$prefix}-gold-6: #{$gold-6};
+    #{$prefix}-gold-7: #{$gold-7};
+    #{$prefix}-gold-8: #{$gold-8};
+    #{$prefix}-gold-9: #{$gold-9};
+
+    #{$prefix}-bg: #{$bg};
+    #{$prefix}-white: #{$white};
+    #{$prefix}-black: #{$black};
+
+}
+
+// 暗色模式 class="dark"
+page.dark {
+    #{$prefix}-blue-1: #{$dark-blue-1};
+    #{$prefix}-blue-2: #{$dark-blue-2};
+    #{$prefix}-blue-3: #{$dark-blue-3};
+    #{$prefix}-blue-4: #{$dark-blue-4};
+    #{$prefix}-blue-5: #{$dark-blue-5};
+    #{$prefix}-blue-6: #{$dark-blue-6};
+    #{$prefix}-blue-7: #{$dark-blue-7};
+    #{$prefix}-blue-8: #{$dark-blue-8};
+    #{$prefix}-blue-9: #{$dark-blue-9};
+
+
+    #{$prefix}-green-1: #{$dark-green-1};
+    #{$prefix}-green-2: #{$dark-green-2};
+    #{$prefix}-green-3: #{$dark-green-3};
+    #{$prefix}-green-4: #{$dark-green-4};
+    #{$prefix}-green-5: #{$dark-green-5};
+    #{$prefix}-green-6: #{$dark-green-6};
+    #{$prefix}-green-7: #{$dark-green-7};
+    #{$prefix}-green-8: #{$dark-green-8};
+    #{$prefix}-green-9: #{$dark-green-9};
+
+    #{$prefix}-red-1: #{$dark-red-1};
+    #{$prefix}-red-2: #{$dark-red-2};
+    #{$prefix}-red-3: #{$dark-red-3};
+    #{$prefix}-red-4: #{$dark-red-4};
+    #{$prefix}-red-5: #{$dark-red-5};
+    #{$prefix}-red-6: #{$dark-red-6};
+    #{$prefix}-red-7: #{$dark-red-7};
+    #{$prefix}-red-8: #{$dark-red-8};
+    #{$prefix}-red-9: #{$dark-red-9};
+
+    #{$prefix}-yellow-1: #{$dark-yellow-1};
+    #{$prefix}-yellow-2: #{$dark-yellow-2};
+    #{$prefix}-yellow-3: #{$dark-yellow-3};
+    #{$prefix}-yellow-4: #{$dark-yellow-4};
+    #{$prefix}-yellow-5: #{$dark-yellow-5};
+    #{$prefix}-yellow-6: #{$dark-yellow-6};
+    #{$prefix}-yellow-7: #{$dark-yellow-7};
+    #{$prefix}-yellow-8: #{$dark-yellow-8};
+    #{$prefix}-yellow-9: #{$dark-yellow-9};
+
+    #{$prefix}-gray-1: #{$dark-gray-1};
+    #{$prefix}-gray-2: #{$dark-gray-2};
+    #{$prefix}-gray-3: #{$dark-gray-3};
+    #{$prefix}-gray-4: #{$dark-gray-4};
+    #{$prefix}-gray-5: #{$dark-gray-5};
+    #{$prefix}-gray-6: #{$dark-gray-6};
+    #{$prefix}-gray-7: #{$dark-gray-7};
+    #{$prefix}-gray-8: #{$dark-gray-8};
+    #{$prefix}-gray-9: #{$dark-gray-9};
+
+    #{$prefix}-orange-1: #{$dark-orange-1};
+    #{$prefix}-orange-2: #{$dark-orange-2};
+    #{$prefix}-orange-3: #{$dark-orange-3};
+    #{$prefix}-orange-4: #{$dark-orange-4};
+    #{$prefix}-orange-5: #{$dark-orange-5};
+    #{$prefix}-orange-6: #{$dark-orange-6};
+    #{$prefix}-orange-7: #{$dark-orange-7};
+    #{$prefix}-orange-8: #{$dark-orange-8};
+    #{$prefix}-orange-9: #{$dark-orange-9};
+
+    #{$prefix}-purple-1: #{$dark-purple-1};
+    #{$prefix}-purple-2: #{$dark-purple-2};
+    #{$prefix}-purple-3: #{$dark-purple-3};
+    #{$prefix}-purple-4: #{$dark-purple-4};
+    #{$prefix}-purple-5: #{$dark-purple-5};
+    #{$prefix}-purple-6: #{$dark-purple-6};
+    #{$prefix}-purple-7: #{$dark-purple-7};
+    #{$prefix}-purple-8: #{$dark-purple-8};
+    #{$prefix}-purple-9: #{$dark-purple-9};
+
+    #{$prefix}-gold-1: #{$dark-gold-1};
+    #{$prefix}-gold-2: #{$dark-gold-2};
+    #{$prefix}-gold-3: #{$dark-gold-3};
+    #{$prefix}-gold-4: #{$dark-gold-4};
+    #{$prefix}-gold-5: #{$dark-gold-5};
+    #{$prefix}-gold-6: #{$dark-gold-6};
+    #{$prefix}-gold-7: #{$dark-gold-7};
+    #{$prefix}-gold-8: #{$dark-gold-8};
+    #{$prefix}-gold-9: #{$dark-gold-9};
+
+
+    #{$prefix}-bg: #{$dark-bg};
+    #{$prefix}-white: #{$dark-white};
+    #{$prefix}-black: #{$dark-black};
+
+}

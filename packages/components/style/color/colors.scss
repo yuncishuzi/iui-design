@@ -1,0 +1,293 @@
+// 颜色
+
+$blue: #165DFF;
+$blue-1: mix(white, $blue, 90%);
+$blue-2: mix(white, $blue, 70%);
+$blue-3: mix(white, $blue, 50%);
+$blue-4: mix(white, $blue, 30%);
+$blue-5: mix(white, $blue, 10%);
+$blue-6: $blue;
+$blue-7: mix(black, $blue, 10%);
+$blue-8: mix(black, $blue, 30%);
+$blue-9: mix(black, $blue, 50%);
+
+$red: #F53F3F;
+$red-1: mix(white, $red, 90%);
+$red-2: mix(white, $red, 70%);
+$red-3: mix(white, $red, 50%);
+$red-4: mix(white, $red, 30%);
+$red-5: mix(white, $red, 10%);
+$red-6: $red;
+$red-7: mix(black, $red, 10%);
+$red-8: mix(black, $red, 30%);
+$red-9: mix(black, $red, 50%);
+
+$green: #00B42A;
+$green-1: mix(white, $green, 90%);
+$green-2: mix(white, $green, 70%);
+$green-3: mix(white, $green, 50%);
+$green-4: mix(white, $green, 30%);
+$green-5: mix(white, $green, 10%);
+$green-6: $green;
+$green-7: mix(black, $green, 10%);
+$green-8: mix(black, $green, 30%);
+$green-9: mix(black, $green, 50%);
+
+$yellow: #FADC19;
+$yellow-1: mix(white, $yellow, 90%);
+$yellow-2: mix(white, $yellow, 70%);
+$yellow-3: mix(white, $yellow, 50%);
+$yellow-4: mix(white, $yellow, 30%);
+$yellow-5: mix(white, $yellow, 10%);
+$yellow-6: $yellow;
+$yellow-7: mix(black, $yellow, 10%);
+$yellow-8: mix(black, $yellow, 30%);
+$yellow-9: mix(black, $yellow, 50%);
+
+$purple: #722ED1;
+$purple-1: mix(white, $purple, 90%);
+$purple-2: mix(white, $purple, 70%);
+$purple-3: mix(white, $purple, 50%);
+$purple-4: mix(white, $purple, 30%);
+$purple-5: mix(white, $purple, 10%);
+$purple-6: $purple;
+$purple-7: mix(black, $purple, 10%);
+$purple-8: mix(black, $purple, 30%);
+$purple-9: mix(black, $purple, 50%);
+
+$gold: #F7BA1E;
+$gold-1: mix(white, $gold, 90%);
+$gold-2: mix(white, $gold, 70%);
+$gold-3: mix(white, $gold, 50%);
+$gold-4: mix(white, $gold, 30%);
+$gold-5: mix(white, $gold, 10%);
+$gold-6: $gold;
+$gold-7: mix(black, $gold, 10%);
+$gold-8: mix(black, $gold, 30%);
+$gold-9: mix(black, $gold, 50%);
+
+$orange: #FF7D00;
+$orange-1: mix(white, $orange, 90%);
+$orange-2: mix(white, $orange, 70%);
+$orange-3: mix(white, $orange, 50%);
+$orange-4: mix(white, $orange, 30%);
+$orange-5: mix(white, $orange, 10%);
+$orange-6: $orange;
+$orange-7: mix(black, $orange, 10%);
+$orange-8: mix(black, $orange, 30%);
+$orange-9: mix(black, $orange, 50%);
+
+$bg: #ffffff;
+$white : #ffffff;
+$gray-1: #f2f3f5;
+$gray-2: #dfdfdf;
+$gray-3: #e5e6eb;
+$gray-4: #c9cdd4;
+$gray-5: #a9aeb8;
+$gray-6: #86909c;
+$gray-7: #4e5969;
+$gray-8: #272e3b;
+$gray-9: #1d2129;
+$black: #000000;
+
+
+$dark-blue: #3C7EFF;
+$dark-blue-1: mix(black, $dark-blue, 75%);
+$dark-blue-2: mix(black, $dark-blue, 60%);
+$dark-blue-3: mix(black, $dark-blue, 45%);
+$dark-blue-4: mix(black, $dark-blue, 30%);
+$dark-blue-5: mix(black, $dark-blue, 10%);
+$dark-blue-6: $dark-blue;
+$dark-blue-7: mix(white, $dark-blue, 20%);
+$dark-blue-8: mix(white, $dark-blue, 50%);
+$dark-blue-9: mix(white, $dark-blue, 70%);
+
+$dark-red: #F76965;
+$dark-red-1: mix(black, $dark-red, 75%);
+$dark-red-2: mix(black, $dark-red, 60%);
+$dark-red-3: mix(black, $dark-red, 45%);
+$dark-red-4: mix(black, $dark-red, 30%);
+$dark-red-5: mix(black, $dark-red, 10%);
+$dark-red-6: $dark-red;
+$dark-red-7: mix(white, $dark-red, 20%);
+$dark-red-8: mix(white, $dark-red, 50%);
+$dark-red-9: mix(white, $dark-red, 70%);
+
+
+$dark-green: #27C346;
+$dark-green-1: mix(black, $dark-green, 75%);
+$dark-green-2: mix(black, $dark-green, 60%);
+$dark-green-3: mix(black, $dark-green, 45%);
+$dark-green-4: mix(black, $dark-green, 30%);
+$dark-green-5: mix(black, $dark-green, 10%);
+$dark-green-6: $dark-green;
+$dark-green-7: mix(white, $dark-green, 20%);
+$dark-green-8: mix(white, $dark-green, 50%);
+$dark-green-9: mix(white, $dark-green, 70%);
+
+
+$dark-yellow: #FBE94B;
+$dark-yellow-1: mix(black, $dark-yellow, 75%);
+$dark-yellow-2: mix(black, $dark-yellow, 60%);
+$dark-yellow-3: mix(black, $dark-yellow, 45%);
+$dark-yellow-4: mix(black, $dark-yellow, 30%);
+$dark-yellow-5: mix(black, $dark-yellow, 10%);
+$dark-yellow-6: $dark-yellow;
+$dark-yellow-7: mix(white, $dark-yellow, 20%);
+$dark-yellow-8: mix(white, $dark-yellow, 50%);
+$dark-yellow-9: mix(white, $dark-yellow, 70%);
+
+
+$dark-purple: #E13DDB;
+$dark-purple-1: mix(black, $dark-purple, 75%);
+$dark-purple-2: mix(black, $dark-purple, 60%);
+$dark-purple-3: mix(black, $dark-purple, 45%);
+$dark-purple-4: mix(black, $dark-purple, 30%);
+$dark-purple-5: mix(black, $dark-purple, 10%);
+$dark-purple-6: $dark-purple;
+$dark-purple-7: mix(white, $dark-purple, 20%);
+$dark-purple-8: mix(white, $dark-purple, 50%);
+$dark-purple-9: mix(white, $dark-purple, 70%);
+
+$dark-gold: #F9CC44;
+$dark-gold-1: mix(black, $dark-gold, 75%);
+$dark-gold-2: mix(black, $dark-gold, 60%);
+$dark-gold-3: mix(black, $dark-gold, 45%);
+$dark-gold-4: mix(black, $dark-gold, 30%);
+$dark-gold-5: mix(black, $dark-gold, 10%);
+$dark-gold-6: $dark-gold;
+$dark-gold-7: mix(white, $dark-gold, 20%);
+$dark-gold-8: mix(white, $dark-gold, 50%);
+$dark-gold-9: mix(white, $dark-gold, 70%);
+
+
+$dark-orange: #FF9626;
+$dark-orange-1: mix(black, $dark-orange, 75%);
+$dark-orange-2: mix(black, $dark-orange, 60%);
+$dark-orange-3: mix(black, $dark-orange, 45%);
+$dark-orange-4: mix(black, $dark-orange, 30%);
+$dark-orange-5: mix(black, $dark-orange, 10%);
+$dark-orange-6: $dark-orange;
+$dark-orange-7: mix(white, $dark-orange, 20%);
+$dark-orange-8: mix(white, $dark-orange, 50%);
+$dark-orange-9: mix(white, $dark-orange, 70%);
+
+
+$dark-bg: #17171a;
+$dark-white: #f6f6f6;
+$dark-gray-1: #1b1b1b;
+$dark-gray-2: #232324;
+$dark-gray-3: #2e2e30;
+$dark-gray-4: #484849;
+$dark-gray-5: #5f5f60;
+$dark-gray-6: #929293;
+$dark-gray-7: #ababac;
+$dark-gray-8: #c5c5c5;
+$dark-gray-9: #dfdfdf;
+$dark-black : #232324;
+
+
+// 命名
+$primary-1: var(#{$prefix}-blue-1);
+$primary-2: var(#{$prefix}-blue-2);
+$primary-3: var(#{$prefix}-blue-3);
+$primary-4: var(#{$prefix}-blue-4);
+$primary-5: var(#{$prefix}-blue-5);
+$primary-6: var(#{$prefix}-blue-6);
+$primary-7: var(#{$prefix}-blue-7);
+$primary-8: var(#{$prefix}-blue-8);
+$primary-9: var(#{$prefix}-blue-9);
+
+$dark-primary-1: var(#{$prefix}-blue-1);
+$dark-primary-2: var(#{$prefix}-blue-2);
+$dark-primary-3: var(#{$prefix}-blue-3);
+$dark-primary-4: var(#{$prefix}-blue-4);
+$dark-primary-5: var(#{$prefix}-blue-5);
+$dark-primary-6: var(#{$prefix}-blue-6);
+$dark-primary-7: var(#{$prefix}-blue-7);
+$dark-primary-8: var(#{$prefix}-blue-8);
+$dark-primary-9: var(#{$prefix}-blue-9);
+
+// 成功
+$success-1: var(#{$prefix}-green-1);
+$success-2: var(#{$prefix}-green-2);
+$success-3: var(#{$prefix}-green-3);
+$success-4: var(#{$prefix}-green-4);
+$success-5: var(#{$prefix}-green-5);
+$success-6: var(#{$prefix}-green-6);
+$success-7: var(#{$prefix}-green-7);
+$success-8: var(#{$prefix}-green-8);
+$success-9: var(#{$prefix}-green-9);
+
+$dark-success-1: var(#{$prefix}-green-1);
+$dark-success-2: var(#{$prefix}-green-2);
+$dark-success-3: var(#{$prefix}-green-3);
+$dark-success-4: var(#{$prefix}-green-4);
+$dark-success-5: var(#{$prefix}-green-5);
+$dark-success-6: var(#{$prefix}-green-6);
+$dark-success-7: var(#{$prefix}-green-7);
+$dark-success-8: var(#{$prefix}-green-8);
+$dark-success-9: var(#{$prefix}-green-9);
+
+// 错误
+$danger-1: var(#{$prefix}-red-1);
+$danger-2: var(#{$prefix}-red-2);
+$danger-3: var(#{$prefix}-red-3);
+$danger-4: var(#{$prefix}-red-4);
+$danger-5: var(#{$prefix}-red-5);
+$danger-6: var(#{$prefix}-red-6);
+$danger-7: var(#{$prefix}-red-7);
+$danger-8: var(#{$prefix}-red-8);
+$danger-9: var(#{$prefix}-red-9);
+
+$dark-danger-1: var(#{$prefix}-red-1);
+$dark-danger-2: var(#{$prefix}-red-2);
+$dark-danger-3: var(#{$prefix}-red-3);
+$dark-danger-4: var(#{$prefix}-red-4);
+$dark-danger-5: var(#{$prefix}-red-5);
+$dark-danger-6: var(#{$prefix}-red-6);
+$dark-danger-7: var(#{$prefix}-red-7);
+$dark-danger-8: var(#{$prefix}-red-8);
+$dark-danger-9: var(#{$prefix}-red-9);
+
+// 警示
+$warning-1: var(#{$prefix}-orange-1);
+$warning-2: var(#{$prefix}-orange-2);
+$warning-3: var(#{$prefix}-orange-3);
+$warning-4: var(#{$prefix}-orange-4);
+$warning-5: var(#{$prefix}-orange-5);
+$warning-6: var(#{$prefix}-orange-6);
+$warning-7: var(#{$prefix}-orange-7);
+$warning-8: var(#{$prefix}-orange-8);
+$warning-9: var(#{$prefix}-orange-9);
+
+$dark-warning-1: var(#{$prefix}-orange-1);
+$dark-warning-2: var(#{$prefix}-orange-2);
+$dark-warning-3: var(#{$prefix}-orange-3);
+$dark-warning-4: var(#{$prefix}-orange-4);
+$dark-warning-5: var(#{$prefix}-orange-5);
+$dark-warning-6: var(#{$prefix}-orange-6);
+$dark-warning-7: var(#{$prefix}-orange-7);
+$dark-warning-8: var(#{$prefix}-orange-8);
+$dark-warning-9: var(#{$prefix}-orange-9);
+
+// 信息
+$info-1: var(#{$prefix}-gray-1);
+$info-2: var(#{$prefix}-gray-2);
+$info-3: var(#{$prefix}-gray-3);
+$info-4: var(#{$prefix}-gray-4);
+$info-5: var(#{$prefix}-gray-5);
+$info-6: var(#{$prefix}-gray-6);
+$info-7: var(#{$prefix}-gray-7);
+$info-8: var(#{$prefix}-gray-8);
+$info-9: var(#{$prefix}-gray-9);
+
+$dark-info-1: var(#{$prefix}-gray-1);
+$dark-info-2: var(#{$prefix}-gray-2);
+$dark-info-3: var(#{$prefix}-gray-3);
+$dark-info-4: var(#{$prefix}-gray-4);
+$dark-info-5: var(#{$prefix}-gray-5);
+$dark-info-6: var(#{$prefix}-gray-6);
+$dark-info-7: var(#{$prefix}-gray-7);
+$dark-info-8: var(#{$prefix}-gray-8);
+$dark-info-9: var(#{$prefix}-gray-9);
