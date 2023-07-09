@@ -15,10 +15,10 @@
         >
           <slot v-if="$slots.icon" name="icon" />
           <iui-icon v-else-if="props.icon" :name="props.icon" :size="18" />
-          <iui-spin v-else :size="10" class="spin"></iui-spin>
+          <view v-else class="loading"></view>
         </view>
       </template>
-      <text><slot /> </text>
+      <text class="text"><slot /> </text>
     </view>
   </button>
 </template>
@@ -211,18 +211,15 @@ export default {
       );
 
       .loading {
+        width: 10px;
+        height: 10px;
         border: 1px solid
           map-get($tokens, btn-#{$type}-#{$status}-disabled-text-color);
-        border-right-color: transparent;
-      }
+        border-top-color: transparent;
+        border-radius: 100%;
 
-      /* #ifdef MP */
-      :deep(iui-spin view) {
-        border: 1px solid
-          map-get($tokens, btn-#{$type}-#{$status}-disabled-text-color);
-        border-right-color: transparent;
+        animation: spin infinite 0.75s linear;
       }
-      /* #endif */
     }
   }
 }
@@ -231,7 +228,6 @@ export default {
   margin: 0;
   padding: 0 $size-2;
   width: 100%;
-  white-space: nowrap;
 
   &-inline {
     display: inline-block;
@@ -255,6 +251,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .text {
+      white-space: nowrap;
+    }
   }
 
   @include btn-style("primary", "normal");

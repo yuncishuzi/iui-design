@@ -1,10 +1,15 @@
 <template>
   <view class="menu">
     <view class="menu-title" @click="change">通用</view>
-    <view v-for="(item, index) in pages" :key="index">
-      <button @click="go(item)">{{ item.style.navigationBarTitleText }}</button>
+    <view
+      v-for="(item, index) in pages"
+      :key="index"
+      style="margin-bottom: 10px"
+    >
+      <iui-button @click="go(item)" type="outline">{{
+        item.style.navigationBarTitleText
+      }}</iui-button>
     </view>
-    <iui-button>button</iui-button>
   </view>
 </template>
 

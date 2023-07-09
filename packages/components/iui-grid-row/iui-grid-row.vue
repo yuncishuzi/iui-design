@@ -41,6 +41,7 @@ const prefixCls = "iui-grid-row";
   display: flex;
   width: inherit;
 
+  scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
