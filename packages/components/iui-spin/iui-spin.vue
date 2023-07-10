@@ -1,6 +1,13 @@
 <template>
   <view :class="cls">
-    <view class="container">
+    <view
+      v-if="!$slots.default || loading"
+      class="container"
+      :style="{
+        height: fullScreen ? '100vh' : '100%',
+      }"
+      @touchmove.prevent
+    >
       <view class="cricle"></view>
       <text v-if="tip" class="text">{{ tip }}</text>
     </view>
@@ -50,6 +57,14 @@ const props = defineProps({
     type: String,
     default: "rgba(255, 255, 255, 0.8)",
   },
+  /**
+   * 全屏
+   * 解决在容器中使用时，loading 时，容器滚动问题
+   */
+  fullScreen: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const prefixCls = "iui-spin";
@@ -79,7 +94,6 @@ const showLoading = computed(() => {
   &-tip {
     .container {
       display: inline-flex;
-
       justify-content: center;
       flex-direction: column;
       align-items: center;
@@ -94,10 +108,12 @@ const showLoading = computed(() => {
   &-loading {
     position: relative;
     display: v-bind(showLoading);
+    animation: fadeIn 200ms ease;
 
     .container {
       width: 100%;
       height: 100%;
+      z-index: 1300;
       position: absolute;
       display: flex;
       justify-content: center;

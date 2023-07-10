@@ -77,6 +77,19 @@
       "style": {
         "navigationBarTitleText": "选择卡"
       }
+    },
+    {
+      "path": "pages/components/tag",
+      "style": {
+        "navigationBarTitleText": "标签"
+      }
+    },
+    {
+      "path": "pages/components/navbar",
+      "style": {
+        "navigationBarTitleText": "导航栏",
+        "navigationStyle": "custom"
+      }
     }
   ],
   "globalStyle": {
