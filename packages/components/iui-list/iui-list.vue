@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { computed, provide } from "vue";
+import { computed, provide, ref } from "vue";
 import { isEmpty } from "../helper/is";
 /**
  * 列表 需要配合 cell组件 使用
@@ -58,22 +58,5 @@ const cls = computed(() => [
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
-.iui-list {
-  width: 100%;
-
-  &-split {
-    /* #ifndef MP */
-    :deep(:not(:last-child) .iui-cell) {
-      border-bottom: 1rpx solid $color-border-dark;
-    }
-    /* #endif */
-
-    /* #ifdef MP */
-    &:deep(:not(:last-child)) cell {
-      border-bottom: 1rpx solid $color-border-dark;
-    }
-    /* #endif */
-  }
-}
+@import "./style.scss";
 </style>

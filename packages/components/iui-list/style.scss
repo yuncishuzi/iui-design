@@ -1,0 +1,24 @@
+@import "../style/index.scss";
+
+.iui-list {
+    width: 100%;
+
+    &-split {
+
+        /* #ifndef MP */
+        :deep(:not(:last-child)) .iui-cell {
+            border-bottom: 1rpx solid $color-border-dark;
+        }
+
+
+        /* #endif */
+
+        /* #ifdef MP */
+        :deep(:not(:last-child)) cell {
+            border-bottom: 1rpx solid $color-border-dark;
+        }
+
+
+        /* #endif */
+    }
+}

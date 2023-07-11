@@ -35,7 +35,7 @@
 
 <script setup>
 import { computed, getCurrentInstance } from "vue";
-import { isBoolean, isNumber, isUndefined } from "../helper/is";
+import { isUndefined } from "../helper/is";
 
 /**
  * 单元格
