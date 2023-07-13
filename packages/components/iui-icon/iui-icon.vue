@@ -77,6 +77,7 @@ const cls = computed(() => [
 
 .iui-icon-wrapper {
   display: inline-flex;
+  width: auto;
 }
 
 // 自动旋转

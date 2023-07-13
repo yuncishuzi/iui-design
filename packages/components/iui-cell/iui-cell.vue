@@ -17,6 +17,8 @@
         </view>
       </view>
 
+      <slot />
+
       <view
         :class="`${prefixCls}-extra`"
         v-if="extra || $slots.extra || showArrow"
@@ -94,7 +96,7 @@ const cls = computed(() => [prefixCls]);
 const getCellHeight = () => {
   let height = props.height;
 
-  if (props.desc) {
+  if (props.title && props.desc) {
     height += 20;
   }
 

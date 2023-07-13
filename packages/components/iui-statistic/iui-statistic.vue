@@ -5,8 +5,8 @@
     <view
       :class="`${prefixCls}-value`"
       :style="{
-        paddingTop: title ? '8px' : 0,
-        paddingBottom: extra ? '8px' : 0,
+        paddingTop: title ? '6px' : 0,
+        paddingBottom: extra ? '6px' : 0,
         ...valueStyle,
       }"
     >

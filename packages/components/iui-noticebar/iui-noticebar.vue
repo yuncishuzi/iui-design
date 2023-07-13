@@ -1,26 +1,28 @@
 <template>
   <view :class="cls" v-if="visible">
+    <view :class="`${prefixCls}-prefix`" v-if="$slots.prefix || icon">
+      <slot name="prefix" />
+      <iui-icon :name="icon" size="18" v-if="icon" />
+    </view>
     <view :class="`${prefixCls}-content`">
-      <view :class="`${prefixCls}-left`" v-if="$slots.left || icon">
-        <slot name="left" />
-        <iui-icon :name="icon" size="18" v-if="icon" />
-      </view>
+      <view
+        :class="`${prefixCls}-content-gradient left`"
+        v-if="animation"
+      ></view>
       <view :class="`${prefixCls}-content-inner`">
         <view :class="`${prefixCls}-content-text`" :style="animationStyle">
           <slot />
         </view>
       </view>
+      <view
+        :class="`${prefixCls}-content-gradient right`"
+        v-if="animation"
+      ></view>
+    </view>
+    <view :class="`${prefixCls}-suffix`" v-if="$slots.suffix || closeable">
+      <slot name="suffix" />
 
-      <view :class="`${prefixCls}-right`" v-if="$slots.right || closeable">
-        <slot name="right" />
-
-        <iui-icon
-          name="close"
-          size="18"
-          v-if="closeable"
-          @click="handleClose"
-        />
-      </view>
+      <iui-icon name="close" size="18" v-if="closeable" @click="handleClose" />
     </view>
   </view>
 </template>
@@ -28,6 +30,8 @@
 <script setup>
 import { computed, getCurrentInstance, onMounted, ref } from "vue";
 import { getRect } from "../helper/rect";
+import { isObject } from "../helper/is";
+
 const props = defineProps({
   /**
    * 可见
@@ -60,10 +64,11 @@ const props = defineProps({
   /**
    * 颜色
    * 预设 success primary warning danger
-   * 或者自定义颜色值
+   * 或者自定义颜色 包括背景色和字体色
+   * Object: { background: '#f60', color: '#fff' }
    */
   color: {
-    type: String,
+    type: [String, Object],
     default: "warning",
   },
   /**
@@ -78,16 +83,24 @@ const props = defineProps({
    */
   speed: {
     type: Number,
-    default: 50,
+    default: 40,
   },
 });
 
 const prefixCls = "iui-noticebar";
 
+const colorIsPreset = computed(() => {
+  if (isObject(props.color)) {
+    return false;
+  }
+
+  return ["primary", "success", "warning", "danger"].includes(props.color);
+});
+
 const cls = computed(() => [
   prefixCls,
+  `${prefixCls}-${colorIsPreset.value ? props.color : "custom"}`,
   {
-    [`${prefixCls}-${props.color}`]: props.color,
     [`${prefixCls}-wrapable`]: props.wrapable,
     [`${prefixCls}-animation`]: props.animation,
   },
@@ -111,10 +124,11 @@ const getAnimationStyle = () => {
   return new Promise((resolve) => {
     getRect(instance, `.${prefixCls}-content-text`).then((res) => {
       const { width } = res;
-      const duration = width / props.speed;
+      const duration = parseInt(width / props.speed);
 
       resolve({
         animationDuration: `${duration}s`,
+        paddingLeft: `${windowWidth}px`,
       });
     });
   });
@@ -125,41 +139,83 @@ const animationStyle = ref({});
 onMounted(async () => {
   if (props.animation) {
     animationStyle.value = await getAnimationStyle();
-    console.log(await getAnimationStyle());
   }
 });
 </script>
 
 <style lang="scss" scoped>
 @import "../style/index.scss";
+
+@mixin gradientColor($color) {
+  .iui-noticebar-content-gradient {
+    &.left {
+      background: linear-gradient(to right, $color, rgba(255, 236, 232, 0));
+    }
+
+    &.right {
+      background: linear-gradient(to left, $color, rgba(255, 236, 232, 0));
+    }
+  }
+}
+
 .iui-noticebar {
   font-size: $font-size-medium;
   padding: 0 $size-4;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: inherit;
 
-  &-left {
+  &.iui-noticebar-wrapable {
+    align-items: flex-start;
+  }
+
+  &-prefix {
     padding: $size-2;
     padding-left: 0;
   }
 
-  &-right {
+  &-suffix {
     padding: $size-2;
     padding-right: 0;
   }
 
   &-content {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
     width: 100%;
     position: relative;
+    display: flex;
+    overflow: hidden;
 
-    .iui-noticebar-wrapable & {
-      align-items: flex-start;
+    &-gradient {
+      position: absolute;
+      width: $size-2;
+      height: 100%;
+      z-index: 99;
+      &.left {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          v-bind(color),
+          rgba(255, 236, 232, 0)
+        );
+      }
+
+      &.right {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          v-bind(color),
+          rgb(255, 236, 232, 0)
+        );
+      }
     }
 
     &-text {
-      display: inline-block;
+      display: block;
       .iui-noticebar-animation & {
+        display: inline-block;
         animation: marquee linear infinite;
       }
     }
@@ -167,34 +223,62 @@ onMounted(async () => {
     &-inner {
       flex: 1;
       line-height: 36px;
-      white-space: nowrap;
+      flex-shrink: 0;
+
+      // 未滚动 单行溢出
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
       overflow: hidden;
+      -webkit-box-orient: vertical;
+      position: relative;
+      word-break: break-all;
+
+      .iui-noticebar-animation & {
+        white-space: nowrap;
+      }
 
       .iui-noticebar-wrapable & {
+        display: block;
         line-height: 20px;
         padding: $size-2 0;
+        white-space: normal;
+        word-break: break-word;
       }
     }
   }
 
+  &-custom {
+    background-color: v-bind("color.background");
+    color: v-bind("color.color");
+  }
+
   &-primary {
-    background-color: $primary-3;
-    color: $color-white;
+    background-color: $primary-1;
+    color: $primary-6;
+
+    @include gradientColor($primary-1);
   }
 
   &-success {
-    background-color: $success-6;
-    color: $color-white;
+    background-color: $success-1;
+    color: $success-6;
+
+    @include gradientColor($success-1);
   }
 
   &-warning {
     background-color: $warning-1;
     color: $warning-6;
+
+    @include gradientColor($warning-1);
   }
 
   &-danger {
-    background-color: $danger-6;
-    color: $color-white;
+    background-color: $danger-1;
+    color: $danger-6;
+
+    @include gradientColor($danger-1);
   }
 }
 

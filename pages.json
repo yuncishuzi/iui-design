@@ -120,6 +120,24 @@
 			"style": {
 				"navigationBarTitleText": "通知栏"
 			}
+		},
+		{
+			"path": "pages/components/input",
+			"style": {
+				"navigationBarTitleText": "输入框"
+			}
+		},
+		{
+			"path": "pages/components/checkbox",
+			"style": {
+				"navigationBarTitleText": "复选框"
+			}
+		},
+		{
+			"path": "pages/components/notify",
+			"style": {
+				"navigationBarTitleText": "消息通知"
+			}
 		}
 	],
 	"globalStyle": {
