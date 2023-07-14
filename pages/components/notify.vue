@@ -3,11 +3,12 @@
 
   <Demo title="基本用法" bgColor="transparent">
     <iui-list style="border-radius: 6px">
-      <iui-cell
-        label="Basic useage"
-        arrow
-        @click="notify?.show({ content: 'Basic useage' })"
-      ></iui-cell>
+      <view @click="notify?.show({ content: 'Basic useage' })">
+        <iui-cell label="Basic useage" arrow></iui-cell>
+      </view>
+      <view @click="notify?.show({ content: 'Next notify' })">
+        <iui-cell label="Basic useage" arrow></iui-cell>
+      </view>
     </iui-list>
   </Demo>
 </template>
