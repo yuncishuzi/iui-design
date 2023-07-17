@@ -138,6 +138,30 @@
 			"style": {
 				"navigationBarTitleText": "消息通知"
 			}
+		},
+		{
+			"path": "pages/components/radio",
+			"style": {
+				"navigationBarTitleText": "单选框"
+			}
+		},
+		{
+			"path": "pages/components/swiper",
+			"style": {
+				"navigationBarTitleText": "轮播图"
+			}
+		},
+		{
+			"path": "pages/components/image",
+			"style": {
+				"navigationBarTitleText": "图片"
+			}
+		},
+		{
+			"path": "pages/components/switch",
+			"style": {
+				"navigationBarTitleText": "开关"
+			}
 		}
 	],
 	"globalStyle": {

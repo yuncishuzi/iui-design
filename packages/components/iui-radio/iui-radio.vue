@@ -26,23 +26,11 @@ const props = defineProps({
     default: false,
   },
   /**
-   * 颜色
-   */
-  color: {
-    type: String,
-    default: "#165DFF",
-  },
-  /**
    * 标签
    */
   label: {
     type: String,
-  },
-  /**
-   * 值
-   */
-  value: {
-    type: [String, Number, Boolean],
+    default: "",
   },
   /**
    * 禁用
@@ -51,6 +39,21 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * 颜色
+   */
+  color: {
+    type: String,
+    default: "#165DFF",
+  },
+
+  /**
+   * 值
+   */
+  value: {
+    type: [String, Number, Boolean],
+  },
+
   /**
    * 是否选中
    */
@@ -76,9 +79,9 @@ const icon = computed(() => {
 });
 
 // 父级组件
-const group = inject("checkbox-group");
+const group = inject("radio-group");
 
-const prefixCls = "iui-checkbox";
+const prefixCls = "iui-radio";
 
 const cls = computed(() => [
   prefixCls,
@@ -100,34 +103,16 @@ const handleClick = () => {
   emit("update:modelValue", checked.value);
   emit("change", checked.value);
   if (group) {
-    group.handleCheckboxChange(value);
+    group.handleRadioChange(value);
   }
 };
 
 if (group) {
-  const { checkedValues, isCheckedAll, isReverseChecked } = group;
+  const { checkedValue } = group;
   watch(
-    () => checkedValues.value.length,
+    () => checkedValue.value,
     () => {
-      checked.value = checkedValues.value.includes(value);
-    }
-  );
-
-  // 监听全选
-  watch(
-    () => isCheckedAll.value,
-    (val) => {
-      console.log("全选", val);
-      if ((val && !checked.value) || (!val && checked.value))
-        group.handleCheckboxChange(value);
-    }
-  );
-
-  // 监听反选
-  watch(
-    () => isReverseChecked.value,
-    () => {
-      group.handleCheckboxChange(value);
+      checked.value = checkedValue.value[0] === value;
     }
   );
 }
@@ -135,14 +120,13 @@ if (group) {
 
 <style lang="scss" scoped>
 @import "../style/index.scss";
-.iui-checkbox {
+.iui-radio {
   display: flex;
   align-items: center;
   white-space: nowrap;
 
   &-icon {
     display: inline-block;
-
     border-radius: 50%;
     width: $size-5;
     height: $size-5;
@@ -153,7 +137,6 @@ if (group) {
       width: $size-5 + 2;
       height: $size-5 + 2;
       background-size: cover;
-      //   border-color: $primary-6;
       background-image: v-bind(icon);
     }
   }
@@ -166,7 +149,7 @@ if (group) {
     cursor: not-allowed;
     color: $color-text-ligthen;
 
-    .iui-checkbox-icon {
+    .iui-radio-icon {
       border-color: $dark-color-bg-2;
       background-color: $color-bg-secondary;
     }
@@ -181,7 +164,7 @@ if (group) {
     width: 100%;
     justify-content: space-between;
 
-    .iui-checkbox-label {
+    .iui-radio-label {
       margin-left: 0;
       margin-right: $size-2;
     }
