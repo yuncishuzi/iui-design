@@ -145,6 +145,7 @@ const showArrow = computed(() => {
 
     &-label {
       font-size: $font-size-huge;
+      white-space: nowrap;
     }
 
     &-desc {
@@ -170,7 +171,7 @@ const showArrow = computed(() => {
 
       &-arrow {
         margin-left: $size-1;
-        color: $color-text-ligthen;
+        color: $color-text-lighten;
       }
     }
   }

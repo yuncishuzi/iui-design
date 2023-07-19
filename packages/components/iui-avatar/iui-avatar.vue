@@ -241,7 +241,7 @@ const avatarSize = computed(() => {
 
       &-desc {
         font-size: $font-size-mini;
-        color: $color-text-ligthen;
+        color: $color-text-lighten;
       }
     }
 

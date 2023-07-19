@@ -27,9 +27,9 @@ $border-dotted: dotted;
 
 // 边框颜色
 $color-border: var(#{$prefix}-gray-3);
-$color-border-dark: var(#{$prefix}-gray-2);
-$color-border-light: var(#{$prefix}-gray-4);
-$color-border-lighten: var(#{$prefix}-gray-5);
+$color-border-dark: var(#{$prefix}-gray-4);
+$color-border-light: var(#{$prefix}-gray-2);
+$color-border-lighten: var(#{$prefix}-gray-1);
 
 // 背景颜色
 $color-bg: var(#{$prefix}-bg); // 整体背景色
@@ -49,7 +49,7 @@ $dark-color-bg-white: $color-bg-white;
 $color-text-dark: var(#{$prefix}-gray-10); // 强调/正文标题
 $color-text: var(#{$prefix}-gray-8); // 次强调/正文标题
 $color-text-light: var(#{$prefix}-gray-7); // 次要信息
-$color-text-ligthen: var(#{$prefix}-gray-5); // 置灰信息
+$color-text-lighten: var(#{$prefix}-gray-5); // 置灰信息
 $color-text-input: var(#{$prefix}-gray-9); // 输入框文字
 $color-text-input-placeholder: var(#{$prefix}-gray-4); // 输入框文字
 

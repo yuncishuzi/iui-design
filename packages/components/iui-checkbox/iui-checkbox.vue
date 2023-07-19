@@ -146,7 +146,7 @@ if (group) {
     border-radius: 50%;
     width: $size-5;
     height: $size-5;
-    border: 1px solid $color-text-ligthen;
+    border: 1px solid $color-text-lighten;
 
     &.checked {
       border: none;
@@ -164,7 +164,7 @@ if (group) {
 
   &-disabled {
     cursor: not-allowed;
-    color: $color-text-ligthen;
+    color: $color-text-lighten;
 
     .iui-checkbox-icon {
       border-color: $dark-color-bg-2;

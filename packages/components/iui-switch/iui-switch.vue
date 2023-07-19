@@ -42,6 +42,13 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * 颜色
+   */
+  color: {
+    type: String,
+    default: "#165DFF",
+  },
 
   /**
    * 尺寸
@@ -63,11 +70,26 @@ const props = defineProps({
   uncheckedText: {
     type: String,
   },
+  /**
+   * 形状
+   * shape: round | square
+   */
+  shape: {
+    type: String,
+    default: "round",
+  },
+  /**
+   * 切换前
+   */
+  beforeChange: {
+    type: Function,
+  },
 });
 
 const prefixCls = "iui-switch";
 const cls = computed(() => [
   prefixCls,
+  `${prefixCls}-${props.shape}`,
   {
     [`${prefixCls}-disabled`]: props.disabled,
   },
@@ -77,13 +99,22 @@ const checked = ref(props.modelValue);
 
 const emit = defineEmits(["update:modelValue", "change"]);
 
-const handleChange = () => {
+const handleChange = async () => {
   if (props.disabled) {
     return;
   }
-  checked.value = !checked.value;
-  emit("update:modelValue", checked.value);
-  emit("change", checked.value);
+
+  const done = () => {
+    checked.value = !checked.value;
+    emit("update:modelValue", checked.value);
+    emit("change", checked.value);
+  };
+
+  if (props.beforeChange) {
+    await props.beforeChange(!checked.value, done);
+  } else {
+    done();
+  }
 };
 </script>
 
@@ -93,6 +124,24 @@ const handleChange = () => {
   display: inline-block;
   transition: all 200ms ease-in-out;
 
+  &-square {
+    .iui-switch-container {
+      border-radius: $border-radius-small;
+      height: $size-7;
+
+      &.checked {
+        .iui-switch-trigger {
+          left: calc(100% - 2px - #{$size-6});
+        }
+      }
+    }
+    .iui-switch-trigger {
+      border-radius: $border-radius-small;
+      height: $size-6;
+      width: $size-6;
+    }
+  }
+
   &-container {
     min-width: $size-14;
     height: $size-8;
@@ -101,11 +150,11 @@ const handleChange = () => {
     position: relative;
     transition: inherit;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     &.checked {
-      background: $primary-6;
+      background: v-bind(color);
 
       .iui-switch-trigger {
         left: calc(100% - 2px - #{$size-7});
@@ -124,18 +173,28 @@ const handleChange = () => {
   }
 
   &-text-checked {
-    color: $color-white;
     font-size: $font-size-small;
-    margin: 0 8px;
+    margin-right: 4px;
+    padding-left: 8px;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+    color: $color-white;
+
+    .checked & {
+      opacity: 1;
+    }
   }
 
   &-text-unchecked {
     font-size: $font-size-small;
     color: $gray-6;
-    margin: 0 8px;
+    margin-left: 4px;
+    padding-right: 8px;
+    opacity: 1;
+    transition: all 200ms ease-in-out;
 
     .checked & {
-      color: $primary-6;
+      opacity: 0;
     }
   }
 

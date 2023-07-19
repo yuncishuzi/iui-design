@@ -355,7 +355,7 @@ const handleBlur = (e) => {
     }
 
     &-disabled {
-      color: $color-text-ligthen;
+      color: $color-text-lighten;
       cursor: not-allowed;
     }
 

@@ -126,7 +126,7 @@ defineExpose({
     width: 100%;
     height: 100%;
     background-color: $color-bg-secondary;
-    color: $color-text-ligthen;
+    color: $color-text-lighten;
     position: absolute;
     z-index: 10;
     display: flex;

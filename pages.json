@@ -162,6 +162,36 @@
 			"style": {
 				"navigationBarTitleText": "开关"
 			}
+		},
+		{
+			"path": "pages/components/textarea",
+			"style": {
+				"navigationBarTitleText": "多行文本框"
+			}
+		},
+		{
+			"path": "pages/components/popup",
+			"style": {
+				"navigationBarTitleText": "弹出层"
+			}
+		},
+		{
+			"path": "pages/components/actionsheet",
+			"style": {
+				"navigationBarTitleText": "动作面板"
+			}
+		},
+		{
+			"path": "pages/components/dialog",
+			"style": {
+				"navigationBarTitleText": "对话框"
+			}
+		},
+		{
+			"path": "pages/components/toast",
+			"style": {
+				"navigationBarTitleText": "轻提示"
+			}
 		}
 	],
 	"globalStyle": {

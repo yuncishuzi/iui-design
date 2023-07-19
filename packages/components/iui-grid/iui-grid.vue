@@ -235,7 +235,7 @@ const borderWidth = props.colGap ? "1px" : 0;
 
   .desc {
     font-size: $font-size-mini;
-    color: $color-text-ligthen;
+    color: $color-text-lighten;
   }
 }
 </style>

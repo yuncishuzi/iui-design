@@ -152,7 +152,7 @@ onMounted(() => {
 
 .iui-collapse {
   &-action-icon {
-    color: $color-text-ligthen;
+    color: $color-text-lighten;
     transition: all 150ms linear;
     margin-left: $size-2;
   }

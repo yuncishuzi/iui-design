@@ -17,3 +17,13 @@ $prefix: '--iui';
 $font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $font-size-body: 14px;
+
+
+
+@mixin safe-area {
+    padding-top: env(safe-area-inset-top);
+    // 底部安全区域
+    padding-bottom: 0;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
