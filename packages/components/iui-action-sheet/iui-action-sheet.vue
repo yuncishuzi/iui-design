@@ -3,8 +3,8 @@
     <iui-popup
       v-model="innerVisible"
       :containerStyle="{
-        borderTopLeftRadius: `${config.radius}px`,
-        borderTopRightRadius: `${config.radius}px`,
+        borderTopLeftRadius: `${sheet.radius}px`,
+        borderTopRightRadius: `${sheet.radius}px`,
         height: 'auto',
       }"
       :contentStyle="{
@@ -13,7 +13,7 @@
       @close="close"
     >
       <view :class="`${prefixCls}-list`">
-        <block v-for="(action, idx) in config.actions" :key="idx">
+        <block v-for="(action, idx) in sheet.actions" :key="idx">
           <view
             :class="`${prefixCls}-list-item`"
             @click="handleActionClick(action, idx)"
@@ -40,7 +40,7 @@
       <!-- cancel -->
       <view :class="`${prefixCls}-cancel`" @click="close">
         <view :class="`${prefixCls}-list-item`">
-          {{ config.cancelText }}
+          {{ sheet.cancelText }}
         </view>
       </view>
     </iui-popup>
@@ -70,7 +70,7 @@ const props = defineProps({
    */
   radius: {
     type: Number,
-    default: 10,
+    default: 6,
   },
   /**
    * 动作列表
@@ -104,7 +104,7 @@ const emit = defineEmits(["update:modelValue", "close", "click"]);
 
 const innerVisible = ref(props.modelValue);
 
-const config = ref({
+const sheet = ref({
   title: props.title,
   radius: props.radius,
   actions: props.actions,
@@ -113,7 +113,7 @@ const config = ref({
 });
 
 const open = (params) => {
-  config.value = Object.assign(config.value, params);
+  sheet.value = Object.assign(sheet.value, params);
 
   innerVisible.value = true;
   emit("update:modelValue", true);

@@ -53,8 +53,8 @@
           <view :class="`${prefixCls}-title`">
             <view class="text" v-if="popupConfig.title && !$slots.title">
               <text>{{ popupConfig.title }}</text>
-              <slot name="title" />
             </view>
+            <slot name="title" v-else />
 
             <slot name="extra" />
           </view>

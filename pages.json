@@ -192,6 +192,18 @@
 			"style": {
 				"navigationBarTitleText": "轻提示"
 			}
+		},
+		{
+			"path": "pages/components/picker",
+			"style": {
+				"navigationBarTitleText": "选择器"
+			}
+		},
+		{
+			"path": "pages/components/search",
+			"style": {
+				"navigationBarTitleText": "搜索栏"
+			}
 		}
 	],
 	"globalStyle": {
