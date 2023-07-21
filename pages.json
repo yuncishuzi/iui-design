@@ -204,6 +204,24 @@
 			"style": {
 				"navigationBarTitleText": "搜索栏"
 			}
+		},
+		{
+			"path": "pages/components/popover",
+			"style": {
+				"navigationBarTitleText": "气泡卡片"
+			}
+		},
+		{
+			"path": "pages/components/slider",
+			"style": {
+				"navigationBarTitleText": "滑动输入条"
+			}
+		},
+		{
+			"path": "pages/components/rate",
+			"style": {
+				"navigationBarTitleText": "评分"
+			}
 		}
 	],
 	"globalStyle": {
