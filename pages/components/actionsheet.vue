@@ -59,7 +59,7 @@ const open = () => {
 
 const useSlot = () => {
   slotSheet.value.open({
-    actions: [{ slot: "tip" }, { name: "Confirm", color: "#165DFF" }],
+    actions: [{ slotName: "tip" }, { name: "Confirm", color: "#165DFF" }],
     cancelText: "Cancel",
   });
 };

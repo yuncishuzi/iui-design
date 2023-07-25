@@ -1,6 +1,12 @@
 <template>
   <view :class="`${prefixCls}-wrapper`">
-    <view :class="cls">
+    <view
+      :class="cls"
+      :style="{
+        padding: inForm ? '0' : '0 16px',
+        height: inForm ? 'auto' : '52px',
+      }"
+    >
       <template v-if="label || $slots.prefix">
         <view :class="`${prefixCls}-prefix`">
           <slot name="prefix"></slot>
@@ -30,6 +36,9 @@
           :placeholder-class="`${prefixCls}-placeholder`"
           :focus="focus"
           :maxlength="maxlength"
+          :style="{
+            padding: inForm ? '0' : '12px 0',
+          }"
           @input="handleInput"
           @focus="$emit('focus', $evnet)"
           @confirm="$emit('confirm', $evnet)"
@@ -65,7 +74,14 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref, getCurrentInstance, nextTick } from "vue";
+import {
+  computed,
+  onMounted,
+  ref,
+  getCurrentInstance,
+  nextTick,
+  inject,
+} from "vue";
 import { getRect } from "../helper/rect";
 import Schema from "../helper/validator";
 import { isEmpty, isNull, isArray, isString, isObject } from "../helper/is";
@@ -184,6 +200,10 @@ const props = defineProps({
 
 const inputValue = ref(props.modelValue);
 
+const formatValue = computed(() =>
+  props.type == "number" ? Number(inputValue.value) : inputValue.value
+);
+
 const prefixCls = "iui-input";
 
 const cls = computed(() => [
@@ -225,10 +245,11 @@ const initValidator = () => {
 // 校验
 const errorHint = ref();
 const validate = () => {
+  // 如果校验器存在
   if (!isNull(validator)) {
     validator.validate(
       {
-        inputValue: inputValue.value,
+        inputValue: formatValue.value,
       },
       (errors) => {
         if (errors) {
@@ -239,20 +260,29 @@ const validate = () => {
       }
     );
   }
+  // 如果formItem存在
+  else if (formItem.value) {
+    // 通知formItem校验
+    formItem.value.validate(formatValue.value);
+  }
 };
 
 // 校验触发规则
+const formItem = ref(null); // 表单中的校验规则
+
 const trigger = computed(() => {
   let temp = [];
-  if (props.rules) {
-    if (isArray(props.rules)) {
-      props.rules.forEach((rule) => {
+  const rules = props.rules || formItem.value.rules;
+
+  if (rules) {
+    if (isArray(rules)) {
+      rules.forEach((rule) => {
         if (isArray(rule.trigger)) temp = temp.concat(rule.trigger);
         if (isString(rule.trigger)) temp = temp.concat([rule.trigger]);
       });
     }
-    if (isObject(props.rules)) {
-      return props.rules.trigger;
+    if (isObject(rules)) {
+      return rules.trigger;
     }
   }
   return Array.from(new Set(temp));
@@ -278,7 +308,7 @@ const handleClearInput = () => {
 
 const handleInput = async (e) => {
   inputValue.value = e.detail.value;
-  emit("update:modelValue", e.detail.value);
+  emit("update:modelValue", formatValue.value);
   await nextTick();
   if (trigger.value.includes("change")) validate();
 };
@@ -287,6 +317,14 @@ const handleBlur = (e) => {
   emit("blur", e);
   if (trigger.value.includes("blur")) validate();
 };
+
+// 表单中使用
+const inForm = inject("inForm");
+
+if (inForm) {
+  // 表单中的校验规则
+  formItem.value = inject("formItem");
+}
 </script>
 
 <style lang="scss" scoped>

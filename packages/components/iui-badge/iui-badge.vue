@@ -121,6 +121,7 @@ const getPadding = computed(() => {
 .iui-badge-wrapper {
   position: relative;
   display: inline-flex;
+  height: 100%;
 }
 .iui-badge {
   display: inline-block;

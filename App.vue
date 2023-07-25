@@ -41,6 +41,7 @@ demo {
     color: rgb(147, 154, 163);
     line-height: 20px;
     margin-bottom: 12px;
+    margin-top: 24px;
     padding-left: 16px;
     position: relative;
 

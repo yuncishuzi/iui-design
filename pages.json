@@ -1,234 +1,279 @@
 {
-	"easycom": {
-		"autoscan": true,
-		"custom": {
-			"^iui-(.*)": "/packages/components/iui-$1/iui-$1.vue"
-		}
-	},
-	"pages": [
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "组件库"
-			}
-		},
-		{
-			"path": "pages/components/button",
-			"style": {
-				"navigationBarTitleText": "按钮"
-			}
-		},
-		{
-			"path": "pages/components/space",
-			"style": {
-				"navigationBarTitleText": "间距"
-			}
-		},
-		{
-			"path": "pages/components/grid",
-			"style": {
-				"navigationBarTitleText": "宫格"
-			}
-		},
-		{
-			"path": "pages/components/divider",
-			"style": {
-				"navigationBarTitleText": "分割线"
-			}
-		},
-		{
-			"path": "pages/components/avatar",
-			"style": {
-				"navigationBarTitleText": "头像"
-			}
-		},
-		{
-			"path": "pages/components/icon",
-			"style": {
-				"navigationBarTitleText": "图标"
-			}
-		},
-		{
-			"path": "pages/components/spin",
-			"style": {
-				"navigationBarTitleText": "加载中"
-			}
-		},
-		{
-			"path": "pages/components/card",
-			"style": {
-				"navigationBarTitleText": "卡片"
-			}
-		},
-		{
-			"path": "pages/components/cell",
-			"style": {
-				"navigationBarTitleText": "单元格"
-			}
-		},
-		{
-			"path": "pages/components/badge",
-			"style": {
-				"navigationBarTitleText": "徽标"
-			}
-		},
-		{
-			"path": "pages/components/tabs",
-			"style": {
-				"navigationBarTitleText": "选择卡"
-			}
-		},
-		{
-			"path": "pages/components/tag",
-			"style": {
-				"navigationBarTitleText": "标签"
-			}
-		},
-		{
-			"path": "pages/components/navbar",
-			"style": {
-				"navigationBarTitleText": "导航栏",
-				"navigationStyle": "custom"
-			}
-		},
-		{
-			"path": "pages/components/ellipsis",
-			"style": {
-				"navigationBarTitleText": "文本缩略"
-			}
-		},
-		{
-			"path": "pages/components/collapse",
-			"style": {
-				"navigationBarTitleText": "折叠面板"
-			}
-		},
-		{
-			"path": "pages/components/statistic",
-			"style": {
-				"navigationBarTitleText": "数值显示"
-			}
-		},
-		{
-			"path": "pages/components/sticky",
-			"style": {
-				"navigationBarTitleText": "粘性布局"
-			}
-		},
-		{
-			"path": "pages/components/noticebar",
-			"style": {
-				"navigationBarTitleText": "通知栏"
-			}
-		},
-		{
-			"path": "pages/components/input",
-			"style": {
-				"navigationBarTitleText": "输入框"
-			}
-		},
-		{
-			"path": "pages/components/checkbox",
-			"style": {
-				"navigationBarTitleText": "复选框"
-			}
-		},
-		{
-			"path": "pages/components/notify",
-			"style": {
-				"navigationBarTitleText": "消息通知"
-			}
-		},
-		{
-			"path": "pages/components/radio",
-			"style": {
-				"navigationBarTitleText": "单选框"
-			}
-		},
-		{
-			"path": "pages/components/swiper",
-			"style": {
-				"navigationBarTitleText": "轮播图"
-			}
-		},
-		{
-			"path": "pages/components/image",
-			"style": {
-				"navigationBarTitleText": "图片"
-			}
-		},
-		{
-			"path": "pages/components/switch",
-			"style": {
-				"navigationBarTitleText": "开关"
-			}
-		},
-		{
-			"path": "pages/components/textarea",
-			"style": {
-				"navigationBarTitleText": "多行文本框"
-			}
-		},
-		{
-			"path": "pages/components/popup",
-			"style": {
-				"navigationBarTitleText": "弹出层"
-			}
-		},
-		{
-			"path": "pages/components/actionsheet",
-			"style": {
-				"navigationBarTitleText": "动作面板"
-			}
-		},
-		{
-			"path": "pages/components/dialog",
-			"style": {
-				"navigationBarTitleText": "对话框"
-			}
-		},
-		{
-			"path": "pages/components/toast",
-			"style": {
-				"navigationBarTitleText": "轻提示"
-			}
-		},
-		{
-			"path": "pages/components/picker",
-			"style": {
-				"navigationBarTitleText": "选择器"
-			}
-		},
-		{
-			"path": "pages/components/search",
-			"style": {
-				"navigationBarTitleText": "搜索栏"
-			}
-		},
-		{
-			"path": "pages/components/popover",
-			"style": {
-				"navigationBarTitleText": "气泡卡片"
-			}
-		},
-		{
-			"path": "pages/components/slider",
-			"style": {
-				"navigationBarTitleText": "滑动输入条"
-			}
-		},
-		{
-			"path": "pages/components/rate",
-			"style": {
-				"navigationBarTitleText": "评分"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "组件库",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"uniIdRouter": {}
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^iui-(.*)": "/packages/components/iui-$1/iui-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "组件库",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/components/button",
+      "style": {
+        "navigationBarTitleText": "通用-按钮 Button"
+      }
+    },
+    {
+      "path": "pages/components/space",
+      "style": {
+        "navigationBarTitleText": "通用-间距 Space"
+      }
+    },
+    {
+      "path": "pages/components/grid",
+      "style": {
+        "navigationBarTitleText": "布局-宫格 Grid"
+      }
+    },
+    {
+      "path": "pages/components/divider",
+      "style": {
+        "navigationBarTitleText": "布局-分割线 Divider"
+      }
+    },
+    {
+      "path": "pages/components/avatar",
+      "style": {
+        "navigationBarTitleText": "信息展示-头像 Avatar"
+      }
+    },
+    {
+      "path": "pages/components/icon",
+      "style": {
+        "navigationBarTitleText": "通用-图标 Icon"
+      }
+    },
+    {
+      "path": "pages/components/spin",
+      "style": {
+        "navigationBarTitleText": "反馈-加载中 Spin"
+      }
+    },
+    {
+      "path": "pages/components/card",
+      "style": {
+        "navigationBarTitleText": "信息展示-卡片 Card"
+      }
+    },
+    {
+      "path": "pages/components/cell",
+      "style": {
+        "navigationBarTitleText": "信息展示-单元格 Cell"
+      }
+    },
+    {
+      "path": "pages/components/badge",
+      "style": {
+        "navigationBarTitleText": "信息展示-徽标 Badge"
+      }
+    },
+    {
+      "path": "pages/components/tabs",
+      "style": {
+        "navigationBarTitleText": "导航-选择卡 Tabs"
+      }
+    },
+    {
+      "path": "pages/components/tag",
+      "style": {
+        "navigationBarTitleText": "信息展示-标签 Tag"
+      }
+    },
+    {
+      "path": "pages/components/navbar",
+      "style": {
+        "navigationBarTitleText": "导航-导航栏 Navbar",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/components/ellipsis",
+      "style": {
+        "navigationBarTitleText": "信息展示-文本缩略 Ellipsis"
+      }
+    },
+    {
+      "path": "pages/components/collapse",
+      "style": {
+        "navigationBarTitleText": "信息展示-折叠面板 Collapse"
+      }
+    },
+    {
+      "path": "pages/components/statistic",
+      "style": {
+        "navigationBarTitleText": "信息展示-数值显示 Statistic"
+      }
+    },
+    {
+      "path": "pages/components/sticky",
+      "style": {
+        "navigationBarTitleText": "布局-粘性布局 Sticky"
+      }
+    },
+    {
+      "path": "pages/components/noticebar",
+      "style": {
+        "navigationBarTitleText": "信息展示-通知栏 Noticebar"
+      }
+    },
+    {
+      "path": "pages/components/input",
+      "style": {
+        "navigationBarTitleText": "数据录入-输入框 Input"
+      }
+    },
+    {
+      "path": "pages/components/checkbox",
+      "style": {
+        "navigationBarTitleText": "数据录入-复选框 Checkbox"
+      }
+    },
+    {
+      "path": "pages/components/notify",
+      "style": {
+        "navigationBarTitleText": "反馈-消息通知 Notify"
+      }
+    },
+    {
+      "path": "pages/components/radio",
+      "style": {
+        "navigationBarTitleText": "数据录入-单选框 Radio"
+      }
+    },
+    {
+      "path": "pages/components/swiper",
+      "style": {
+        "navigationBarTitleText": "信息展示-轮播图 Swiper"
+      }
+    },
+    {
+      "path": "pages/components/image",
+      "style": {
+        "navigationBarTitleText": "信息展示-图片 Image"
+      }
+    },
+    {
+      "path": "pages/components/switch",
+      "style": {
+        "navigationBarTitleText": "数据录入-开关 Switch"
+      }
+    },
+    {
+      "path": "pages/components/textarea",
+      "style": {
+        "navigationBarTitleText": "数据录入-多行文本框 Textarea"
+      }
+    },
+    {
+      "path": "pages/components/popup",
+      "style": {
+        "navigationBarTitleText": "反馈-弹出层 Popup"
+      }
+    },
+    {
+      "path": "pages/components/actionsheet",
+      "style": {
+        "navigationBarTitleText": "反馈-动作面板 Actionsheet"
+      }
+    },
+    {
+      "path": "pages/components/dialog",
+      "style": {
+        "navigationBarTitleText": "反馈-对话框 Dialog"
+      }
+    },
+    {
+      "path": "pages/components/toast",
+      "style": {
+        "navigationBarTitleText": "反馈-轻提示 Toast"
+      }
+    },
+    {
+      "path": "pages/components/picker",
+      "style": {
+        "navigationBarTitleText": "数据录入-选择器 Picker"
+      }
+    },
+    {
+      "path": "pages/components/search",
+      "style": {
+        "navigationBarTitleText": "数据录入-搜索栏 Search"
+      }
+    },
+    {
+      "path": "pages/components/popover",
+      "style": {
+        "navigationBarTitleText": "信息展示-气泡卡片 Popover"
+      }
+    },
+    {
+      "path": "pages/components/slider",
+      "style": {
+        "navigationBarTitleText": "数据录入-滑动输入条 Slider"
+      }
+    },
+    {
+      "path": "pages/components/rate",
+      "style": {
+        "navigationBarTitleText": "数据录入-评分 Rate"
+      }
+    },
+    {
+      "path": "pages/components/stepper",
+      "style": {
+        "navigationBarTitleText": "数据录入-步进器 Stepper"
+      }
+    },
+    {
+      "path": "pages/components/mask",
+      "style": {
+        "navigationBarTitleText": "反馈-遮罩层 Mask"
+      }
+    },
+    {
+      "path": "pages/components/swipeaction",
+      "style": {
+        "navigationBarTitleText": "反馈-滑动操作 SwipeAction"
+      }
+    },
+    {
+      "path": "pages/components/pagination",
+      "style": {
+        "navigationBarTitleText": "导航-分页器 Pagination"
+      }
+    },
+    {
+      "path": "pages/components/progress",
+      "style": {
+        "navigationBarTitleText": "反馈-进度条 Progress"
+      }
+    },
+    {
+      "path": "pages/components/tabbar",
+      "style": {
+        "navigationBarTitleText": "导航-标签栏 Tabbar"
+      }
+    },
+    {
+      "path": "pages/components/form",
+      "style": {
+        "navigationBarTitleText": "数据录入-表单 Form"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "组件库",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "uniIdRouter": {}
 }

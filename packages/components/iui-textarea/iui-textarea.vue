@@ -1,5 +1,10 @@
 <template>
-  <view :class="cls">
+  <view
+    :class="cls"
+    :style="{
+      padding: inForm ? '0' : '18px',
+    }"
+  >
     <textarea
       :auto-height="!height"
       :class="`${prefixCls}-input`"
@@ -19,7 +24,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, inject, ref } from "vue";
 const props = defineProps({
   /**
    * 值
@@ -92,6 +97,9 @@ const handleInput = (event) => {
   emit("update:modelValue", innerValue.value);
   emit("change", event);
 };
+
+// 表单中
+const inForm = inject("inForm");
 </script>
 
 <style lang="scss" scoped>

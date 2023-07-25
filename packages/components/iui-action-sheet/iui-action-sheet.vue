@@ -22,8 +22,8 @@
               {{ action }}
             </view>
 
-            <view v-else-if="action.slot">
-              <slot :name="action.slot" />
+            <view v-else-if="action.slotName">
+              <slot :name="action.slotName" />
             </view>
 
             <view

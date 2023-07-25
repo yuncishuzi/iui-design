@@ -127,24 +127,28 @@ const handleChange = async () => {
   &-square {
     .iui-switch-container {
       border-radius: $border-radius-small;
-      height: $size-7;
+      height: $size-6;
+      min-width: $size-12;
 
       &.checked {
         .iui-switch-trigger {
-          left: calc(100% - 2px - #{$size-6});
+          left: calc(100% - 2px - #{$size-5});
+          height: $size-5;
+          width: $size-5;
         }
       }
     }
     .iui-switch-trigger {
       border-radius: $border-radius-small;
-      height: $size-6;
-      width: $size-6;
+      height: $size-5;
+      width: $size-5;
+      left: 2px;
     }
   }
 
   &-container {
-    min-width: $size-14;
-    height: $size-8;
+    min-width: $size-13;
+    height: $size-7;
     background: $color-bg-active;
     border-radius: $size-4;
     position: relative;
@@ -157,19 +161,20 @@ const handleChange = async () => {
       background: v-bind(color);
 
       .iui-switch-trigger {
-        left: calc(100% - 2px - #{$size-7});
+        left: calc(100% - 2px - #{$size-6});
+        width: $size-6;
+        height: $size-6;
       }
     }
   }
   &-trigger {
-    width: $size-7;
-    height: $size-7;
+    width: $size-5;
+    height: $size-5;
     background: $color-white;
     border-radius: $border-radius-huge;
     position: absolute;
-    left: 2px;
-    top: 2px;
-    transition: inherit;
+    left: 4px;
+    transition: all 200ms cubic-bezier(0.2, 0.8, 0.32, 1.2);
   }
 
   &-text-checked {
