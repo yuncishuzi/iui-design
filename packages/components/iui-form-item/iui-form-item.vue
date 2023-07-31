@@ -123,6 +123,12 @@ const validate = (input) => {
 };
 
 onMounted(() => {
+  const inForm = inject("inForm");
+  if (!inForm) {
+    console.error("组件 iui-form-item 需要在组件 iui-form 中使用");
+    return;
+  }
+
   initValidator();
 });
 

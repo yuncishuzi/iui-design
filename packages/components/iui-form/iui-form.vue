@@ -39,4 +39,10 @@ provide("formProps", props);
 provide("inForm", true);
 </script>
 
+<script>
+export default {
+  name: "iui-form",
+};
+</script>
+
 <style lang="scss" scoped></style>

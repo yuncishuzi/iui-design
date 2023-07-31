@@ -2,15 +2,22 @@
   <Demo title="基本用法" padding="0">
     <iui-form ref="form" :model="formData" :rules="rules">
       <iui-form-item label="Nickname" required field="nickname">
-        <iui-input placeholder="Please enter nickanme" />
+        <iui-input
+          v-model="formData.nickname"
+          placeholder="Please enter nickanme"
+        />
       </iui-form-item>
 
       <iui-form-item label="Age" field="age" required>
-        <iui-input placeholder="Please enter age" type="number" />
+        <iui-input
+          v-model="formData.age"
+          placeholder="Please enter age"
+          type="number"
+        />
       </iui-form-item>
 
       <iui-form-item label="Gender" field="gender">
-        <iui-radio-group style="display: flex">
+        <iui-radio-group v-model="formData.gender" style="display: flex">
           <iui-space>
             <view>
               <iui-radio label="male"></iui-radio>
@@ -26,7 +33,7 @@
       </iui-form-item>
 
       <iui-form-item label="Favorite" field="favorite">
-        <iui-checkbox-group>
+        <iui-checkbox-group v-model="formData.favorite">
           <iui-space direction="vertical">
             <view>
               <iui-checkbox label="Football"></iui-checkbox>
@@ -42,19 +49,20 @@
       </iui-form-item>
 
       <iui-form-item label="Score" field="score">
-        <iui-rate></iui-rate>
+        <iui-rate v-model="formData.score"></iui-rate>
       </iui-form-item>
 
       <iui-form-item label="Progress" field="progress">
-        <iui-slider></iui-slider>
+        <iui-slider v-model="formData.progress"></iui-slider>
       </iui-form-item>
 
       <iui-form-item label="Subscribe" align="center" field="subscribe">
-        <iui-switch></iui-switch>
+        <iui-switch v-model="formData.subscribe"></iui-switch>
       </iui-form-item>
 
       <iui-form-item label="Remark" field="remark">
         <iui-textarea
+          v-model="formData.remark"
           placeholder="Please enter remark"
           showLimit
         ></iui-textarea>

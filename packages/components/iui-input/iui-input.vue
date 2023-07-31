@@ -310,12 +310,12 @@ const handleInput = async (e) => {
   inputValue.value = e.detail.value;
   emit("update:modelValue", formatValue.value);
   await nextTick();
-  if (trigger.value.includes("change")) validate();
+  if (trigger.value?.includes("change")) validate();
 };
 
 const handleBlur = (e) => {
   emit("blur", e);
-  if (trigger.value.includes("blur")) validate();
+  if (trigger.value?.includes("blur")) validate();
 };
 
 // 表单中使用
