@@ -10,7 +10,7 @@
       </view>
     </iui-list>
   </Demo>
-  <iui-mask v-model:visible="visible"></iui-mask>
+  <iui-mask v-model="visible"></iui-mask>
 
   <iui-mask ref="mask">
     <view :style="{ width: '200px', height: '160px' }">

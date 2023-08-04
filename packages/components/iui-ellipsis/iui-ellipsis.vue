@@ -22,7 +22,6 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { getRect } from "../helper/rect";
 const props = defineProps({
   /**
    * 最大显示行数
@@ -58,8 +57,11 @@ const prefixCls = "iui-ellipsis";
 
 const expand = ref(false);
 
+const emit = defineEmits(["change"]);
+
 const handleChange = () => {
   expand.value = !expand.value;
+  emit("change", expand.value);
 };
 
 const maxLines = computed(() => {

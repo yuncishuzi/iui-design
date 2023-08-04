@@ -1,5 +1,10 @@
 <template>
-  <view :class="cls">
+  <view
+    :class="cls"
+    @mousedown="onTouchStart"
+    @mousemove="onTouchMove"
+    @mouseup="onTouchEnd"
+  >
     <view :class="`${prefixCls}-prefix`" v-if="$slots.prefix">
       <slot name="prefix" />
     </view>
@@ -131,7 +136,7 @@ const lineWidth = ref(0);
 const lineLeft = ref(0);
 
 const innerValue = computed(() => {
-  return ((left.value / lineWidth.value) * props.max).toFixed(0);
+  return Number(((left.value / lineWidth.value) * props.max).toFixed(0));
 });
 
 // 滑块距离左边的距离
@@ -141,20 +146,26 @@ const emit = defineEmits(["update:modelValue", "changing", "change"]);
 
 const showPopover = ref(false);
 
+// 是否开始滑动
+const start = ref(false);
+
 const onTouchStart = () => {
   if (props.disabled) return;
+  start.value = true;
   showPopover.value = true;
 };
 
 const onTouchEnd = () => {
+  console.log(start.value);
   if (props.disabled) return;
+  start.value = false;
   showPopover.value = false;
   emit("update:modelValue", innerValue.value);
   emit("change", innerValue.value);
 };
 
 const onTouchMove = (e) => {
-  if (props.disabled) return;
+  if (props.disabled || !start.value) return;
 
   const x = e.touches[0].pageX.toFixed(0) - lineLeft.value;
 
@@ -245,6 +256,7 @@ onMounted(() => {
     font-size: 13px;
     transition: opacity 0.2s ease-in-out;
     white-space: nowrap;
+    pointer-events: none;
 
     &:after {
       content: " ";

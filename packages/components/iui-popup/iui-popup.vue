@@ -148,7 +148,7 @@ const innerVisible = ref(props.modelValue);
 const prefixCls = "iui-popup";
 const cls = computed(() => [prefixCls]);
 
-const emit = defineEmits(["update:modelValue", "close"]);
+const emit = defineEmits(["update:modelValue", "close", "open"]);
 
 // 滑动关闭
 const startPoint = ref();
@@ -253,6 +253,7 @@ const open = (params) => {
   containerTranslation.value.enter().then(() => {
     innerVisible.value = true;
     emit("update:modelValue", true);
+    emit("open");
   });
 };
 

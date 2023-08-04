@@ -21,7 +21,7 @@
   </Demo>
 
   <Demo title="列表" :padding="0">
-    <iui-radio-group>
+    <iui-radio-group justify>
       <iui-list>
         <iui-cell>
           <iui-radio label="Option 1"></iui-radio>

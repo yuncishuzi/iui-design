@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance, onMounted } from "vue";
+import { ref, getCurrentInstance, onMounted, computed } from "vue";
 import { getRect } from "../helper/rect";
 
 const props = defineProps({
@@ -52,14 +52,15 @@ const props = defineProps({
 const prefixCls = "iui-progress";
 const instance = getCurrentInstance();
 
-const left = ref(0);
-
 const lineWidth = ref(0);
+
+const left = computed(() => {
+  return props.modelValue * (lineWidth.value / 100);
+});
 
 onMounted(() => {
   getRect(instance, "#line").then((rect) => {
     lineWidth.value = rect.width;
-    left.value = props.modelValue * (lineWidth.value / 100);
   });
 });
 </script>
@@ -92,6 +93,7 @@ onMounted(() => {
     font-size: $font-size-medium;
     margin-left: $size-2;
     color: v-bind(color);
+    min-width: $size-9;
   }
 }
 </style>

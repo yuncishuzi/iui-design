@@ -40,7 +40,14 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref, getCurrentInstance, watch } from "vue";
+import {
+  computed,
+  onMounted,
+  ref,
+  getCurrentInstance,
+  watch,
+  nextTick,
+} from "vue";
 import { getRect } from "../helper/rect";
 
 const props = defineProps({
@@ -143,6 +150,7 @@ onMounted(() => {
   getRect(instance, `.${prefixCls}-content-container`).then((res) => {
     contentHeight.value = res.height;
   });
+
   setDefaultActiveKey();
 });
 </script>

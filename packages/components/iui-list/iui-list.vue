@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { computed, provide, ref } from "vue";
+import { computed, provide } from "vue";
 import { isEmpty } from "../helper/is";
 /**
  * 列表 需要配合 cell组件 使用

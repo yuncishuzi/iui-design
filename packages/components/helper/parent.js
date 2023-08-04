@@ -8,6 +8,8 @@ export function getParent(name, k1, k2) {
     let parent = proxy.$parent;
 
     while (parent) {
+      // console.log(parent);
+
       if (parent.$options.name !== name) {
         parent = parent.$parent;
       } else {
@@ -31,7 +33,6 @@ export function getParent(name, k1, k2) {
           });
         }
 
-        console.log(parent);
         return (k1 || []).reduce((res, key) => {
           res[key] = parent[key];
           return res;

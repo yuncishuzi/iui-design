@@ -22,7 +22,7 @@ const props = defineProps({
    * 值
    */
   modelValue: {
-    type: String,
+    type: Boolean,
     default: false,
   },
   /**
@@ -117,7 +117,6 @@ if (group) {
   watch(
     () => isCheckedAll.value,
     (val) => {
-      console.log("全选", val);
       if ((val && !checked.value) || (!val && checked.value))
         group.handleCheckboxChange(value);
     }

@@ -9,7 +9,14 @@ import { computed, provide, ref } from "vue";
 
 const props = defineProps({
   /**
-   * 撑开
+   * 值
+   */
+  modelValue: {
+    type: Array,
+    default: () => [],
+  },
+  /**
+   * 通栏
    * justify
    */
   justify: {
@@ -25,7 +32,7 @@ const prefixCls = "iui-checkbox-group";
 
 const cls = computed(() => [prefixCls]);
 
-const emit = defineEmits(["change"]);
+const emit = defineEmits(["update:modelValue", "change"]);
 
 // 供子组件监听状态
 // 全选
@@ -40,6 +47,7 @@ const handleCheckboxChange = (value) => {
   } else {
     checkedValues.value.push(value);
   }
+  emit("update:modelValue", checkedValues.value);
   emit("change", checkedValues.value);
 };
 

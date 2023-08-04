@@ -32,10 +32,7 @@
   </view>
 </template>
 
-<script setup>
-import { onPageScroll } from "@dcloudio/uni-app";
-onPageScroll(() => {});
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .layout {

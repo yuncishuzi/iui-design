@@ -80,7 +80,7 @@ const props = defineProps({
   /**
    * 当前索引
    */
-  current: {
+  modelValue: {
     type: Number,
     default: 0,
   },
@@ -159,7 +159,7 @@ const duration = props.duration + "ms";
 const instance = getCurrentInstance();
 
 // 组件内部current
-const current = ref(props.current);
+const current = ref(props.modelValue);
 
 // 容器宽度
 const containerWidth = ref(0);
@@ -242,7 +242,7 @@ const getTabsWidth = () => {
 
       tabsOffsetList.value = temp;
 
-      setSliderPosition(props.current);
+      setSliderPosition(props.modelValue);
     });
   });
 };
@@ -252,11 +252,12 @@ onMounted(() => {
 });
 
 // 事件
-const emit = defineEmits(["change"]);
+const emit = defineEmits(["update:modelValue", "change"]);
 
 // 点击tab
 const handleTabClick = (idx, tab) => {
   if (idx === current.value) return;
+  emit("update:modelValue", idx);
   emit("change", idx, tab);
   current.value = idx;
   setSliderPosition(idx);

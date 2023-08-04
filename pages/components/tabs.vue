@@ -1,6 +1,6 @@
 <template>
   <Demo title="基本用法" :padding="0">
-    <iui-tabs :list="list.slice(0, 3)" :style="{ color: 'red' }"></iui-tabs>
+    <iui-tabs :list="list.slice(0, 3)"></iui-tabs>
     <view class="content"> Content area </view>
   </Demo>
 

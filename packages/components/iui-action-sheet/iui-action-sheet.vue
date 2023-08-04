@@ -76,7 +76,7 @@ const props = defineProps({
    * 动作列表
    * type : [String,Object]
    * 如果是字符串，则直接显示文字
-   * 如果是对象，则显示对象的name和desc和自定义颜色
+   * 如果是对象，则显示对象的name和自定义颜色
    * 也可以通过slot来自定义内容，slot的名称为对象的slot属性
    */
   actions: {
@@ -100,7 +100,7 @@ const props = defineProps({
 });
 
 const prefixCls = "iui-action-sheet";
-const emit = defineEmits(["update:modelValue", "close", "click"]);
+const emit = defineEmits(["update:modelValue", "open", "close", "click"]);
 
 const innerVisible = ref(props.modelValue);
 
@@ -117,6 +117,7 @@ const open = (params) => {
 
   innerVisible.value = true;
   emit("update:modelValue", true);
+  emit("open");
 };
 
 const close = () => {

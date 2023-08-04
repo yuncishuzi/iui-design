@@ -1,10 +1,10 @@
 <template>
   <Demo title="基本用法">
-    <iui-progress :modelValue="50" />
+    <iui-progress v-model="progress" />
   </Demo>
 
   <Demo title="显示百分比">
-    <iui-progress :modelValue="50" percent />
+    <iui-progress v-model="progress" percent />
   </Demo>
 
   <Demo title="自定义大小">
@@ -26,7 +26,25 @@
   </Demo>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import { onShow } from "@dcloudio/uni-app";
+
+const progress = ref(0);
+
+let inter;
+
+onShow(() => {
+  clearInterval(inter);
+  progress.value = 0;
+  inter = setInterval(() => {
+    progress.value += 1;
+    if (progress.value >= 100) {
+      clearInterval(inter);
+    }
+  }, 10);
+});
+</script>
 
 <style lang="scss" scoped>
 view {

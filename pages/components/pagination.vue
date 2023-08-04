@@ -23,7 +23,7 @@
         </view>
       </template>
 
-      <template #value="{ current, page }">
+      <template #value="{ current }">
         <view class="value"> 第 {{ current }} 页 </view>
       </template>
 

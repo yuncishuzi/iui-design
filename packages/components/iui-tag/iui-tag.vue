@@ -83,11 +83,12 @@ const cls = computed(() => [
   },
 ]);
 
-const emit = defineEmits(["click", "close"]);
+const emit = defineEmits(["change", "close", "click"]);
 
 const handleTagClick = () => {
   if (props.checkable) {
     checked.value = !checked.value;
+    emit("change", checked.value);
   }
   emit("click");
 };

@@ -108,8 +108,6 @@ const cls = computed(() => [
 const anim = ref();
 const innerVisible = ref(false);
 
-const emit = defineEmits(["complete"]);
-
 // 位置
 const toastPosition = computed(() => {
   if (toast.value.position === "center") return "center";
@@ -158,6 +156,8 @@ const show = async (params) => {
 };
 
 const showLoading = (params) => {
+  isString(params) && (params = { message: params });
+
   show({
     ...params,
     loading: true,

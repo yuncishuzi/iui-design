@@ -102,7 +102,6 @@ const onBlur = () => {
 };
 
 const handleSearch = () => {
-  console.log("handleSearch");
   emit("search", innerValue.value);
 };
 
@@ -131,7 +130,7 @@ const handleInput = (e) => {
     height: 22px;
     display: flex;
     align-items: center;
-    width: 100%;
+    flex: 1;
   }
 
   &-icon {

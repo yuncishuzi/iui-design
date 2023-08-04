@@ -1,14 +1,8 @@
 <script>
 export default {
-  onLaunch: function () {
-    console.log("App Launch");
-  },
-  onShow: function () {
-    console.log("App Show");
-  },
-  onHide: function () {
-    console.log("App Hide");
-  },
+  onLaunch: function () {},
+  onShow: function () {},
+  onHide: function () {},
 };
 </script>
 
@@ -21,6 +15,10 @@ page {
   font-family: -apple-system, PingFang SC, Helvetica Neue;
   height: 100%;
   overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
 }
 
 // 演示demo

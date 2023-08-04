@@ -4,6 +4,8 @@
       class="form-cell iui-cell"
       :style="{
         alignItems: align === 'center' ? 'center' : `flex-${align}`,
+        flexDirection: vertical ? 'column' : 'row',
+        borderBottom: split ? 'inhert' : 'none',
       }"
     >
       <view
@@ -11,6 +13,7 @@
           `${prefixCls}-label`,
           {
             [`${prefixCls}-label-required`]: required,
+            [`${prefixCls}-label-vertical`]: vertical,
           },
         ]"
       >
@@ -21,6 +24,8 @@
         <view :class="`${prefixCls}-control`">
           <slot />
         </view>
+
+        <view :class="`${prefixCls}-extra`">{{ extra }}</view>
 
         <view :class="`${prefixCls}-error-hint`" v-if="errorHint">
           <slot name="error" :message="errorHint">
@@ -33,9 +38,8 @@
 </template>
 
 <script setup>
-import { computed, inject, onMounted, provide, ref } from "vue";
-import Schema from "../helper/validator";
-import { isEmpty, isNull } from "../helper/is";
+import { computed, inject, onMounted, provide, ref, watch } from "vue";
+import { isArray, isString, isObject } from "../helper/is";
 
 const props = defineProps({
   /**
@@ -60,6 +64,7 @@ const props = defineProps({
   },
   /**
    * 校验规则
+   * 优先级高于form的rules
    */
   rules: {
     type: Array,
@@ -83,58 +88,85 @@ const prefixCls = "iui-form-item";
 
 // 表单属性
 const formProps = inject("formProps");
-
-// 表单校验
-let validator = null;
+const inForm = inject("inForm");
+const setRule = inject("setRule");
+const errorHints = inject("errorHints");
+const validateField = inject("validateField");
 
 const rules = computed(() => props.rules || formProps.rules?.[props.field]);
-const filed = computed(() => props.field || "inputValue");
+const field = computed(() => props.field || "inputValue");
+const vertical = computed(() => formProps.layout === "vertical");
+const split = computed(() => formProps.split);
 
-// console.log("字段", filed.value, "校验规则", rules.value);
+const modelValue = computed(() => formProps.model?.[field.value]);
 
-// 初始化校验器
-const initValidator = () => {
-  if (!isEmpty(rules.value)) {
-    const descriptor = {
-      [filed.value]: rules.value,
-    };
-    validator = new Schema(descriptor);
+// 监听 modelValue 变化
+watch(
+  () => modelValue.value,
+  () => {
+    triggerEvent("change");
+  },
+  {
+    deep: true,
   }
-};
+);
 
-// 校验
+// 校验错误提示
 const errorHint = ref();
-const validate = (input) => {
-  console.log(`校验 ${filed.value}:`, input, typeof input);
-  if (!isNull(validator)) {
-    validator.validate(
-      {
-        [filed.value]: input,
-      },
-      (errors) => {
-        if (errors) {
-          errorHint.value = errors[0].message;
-          return;
-        }
-        errorHint.value = null;
-      }
-    );
+
+// 监听form组件校验
+watch(
+  () => errorHints.value,
+  (errors) => {
+    errorHint.value = errors[field.value];
+  },
+  {
+    deep: true,
+  }
+);
+
+// 校验触发器
+const trigger = computed(() => {
+  let temp = [];
+
+  if (rules.value) {
+    if (isArray(rules.value)) {
+      rules.value.forEach((rule) => {
+        if (isArray(rule.trigger)) temp = temp.concat(rule.trigger);
+        if (isString(rule.trigger)) temp = temp.concat([rule.trigger]);
+        // 默认触发事件为 change
+        if (!rule.trigger) temp = temp.concat(["change"]);
+      });
+    }
+    if (isObject(rules.value)) {
+      return rules.value.trigger ? [rules.value.trigger] : ["change"];
+    }
+  }
+  return Array.from(new Set(temp));
+});
+
+// 触发事件 blur | change
+const triggerEvent = (event) => {
+  if (trigger.value.includes(event)) {
+    validateField(field.value);
   }
 };
 
 onMounted(() => {
-  const inForm = inject("inForm");
   if (!inForm) {
     console.error("组件 iui-form-item 需要在组件 iui-form 中使用");
     return;
   }
 
-  initValidator();
+  // 如果存在校验规则，需要在 form 中注册
+  if (props.rules) {
+    setRule(field.value, props.rules);
+  }
 });
 
 provide("formItem", {
-  validate,
   rules,
+  triggerEvent,
 });
 </script>
 
@@ -163,6 +195,14 @@ provide("formItem", {
     height: 54px;
     line-height: 54px;
 
+    &-vertical {
+      width: 100%;
+      height: auto;
+      line-height: inherit;
+      margin-top: $size-4;
+      padding-right: 0;
+    }
+
     &-required {
       &::before {
         content: "*";
@@ -189,10 +229,16 @@ provide("formItem", {
   &-error-hint {
     background-color: $color-bg-white;
     font-size: $font-size-small;
-    padding-bottom: $size-2;
+    padding-bottom: $size-3;
     margin-top: -$size-2;
     color: $danger-6;
     animation: fadeIn 240ms ease-in-out;
+  }
+
+  &-extra {
+    font-size: 12px;
+    color: $color-text-light;
+    padding-bottom: $size-2;
   }
 }
 </style>

@@ -59,7 +59,7 @@ const props = defineProps({
   /**
    * 当前页码
    */
-  current: {
+  modelValue: {
     type: Number,
     default: 1,
   },
@@ -113,16 +113,17 @@ const prefixCls = "iui-pagination";
 
 const cls = computed(() => [prefixCls]);
 
-const innerValue = ref(props.current);
+const innerValue = ref(props.modelValue);
 
 const isMax = computed(() => innerValue.value === props.total / props.pageSize);
 const isMin = computed(() => innerValue.value === 1);
 
-const emit = defineEmits(["change"]);
+const emit = defineEmits(["update:modelValue", "change"]);
 
 const handleClickNext = () => {
   if (!isMax.value) {
     innerValue.value++;
+    emit("update:modelValue", innerValue.value);
     emit("change", innerValue.value);
   }
 };
@@ -130,6 +131,7 @@ const handleClickNext = () => {
 const handleClickPrev = () => {
   if (!isMin.value) {
     innerValue.value--;
+    emit("update:modelValue", innerValue.value);
     emit("change", innerValue.value);
   }
 };

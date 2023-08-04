@@ -12,14 +12,14 @@ import { onMounted, ref, watch } from "vue";
 const prefixCls = "iui-mask";
 
 const props = defineProps({
-  visible: {
+  modelValue: {
     type: Boolean,
     default: false,
   },
   /**
    * 点击遮罩关闭
    */
-  maskCloseable: {
+  maskClosable: {
     type: Boolean,
     default: true,
   },
@@ -32,29 +32,29 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:visible"]);
+const emit = defineEmits(["update:modelValue"]);
 
 const anim = ref(null);
 
 const show = () => {
   anim.value?.enter();
-  emit("update:visible", true);
+  emit("update:modelValue", true);
 };
 
 const hide = () => {
   anim.value?.leave();
-  emit("update:visible", false);
+  emit("update:modelValue", false);
 };
 
 const handleClick = () => {
-  if (props.maskCloseable) {
+  if (props.maskClosable) {
     hide();
   }
 };
 
 onMounted(() => {
   watch(
-    () => props.visible,
+    () => props.modelValue,
     (value) => {
       if (value) {
         show();

@@ -113,6 +113,9 @@ if (group) {
     () => checkedValue.value,
     () => {
       checked.value = checkedValue.value[0] === value;
+    },
+    {
+      immediate: true,
     }
   );
 }

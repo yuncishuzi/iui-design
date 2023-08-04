@@ -91,7 +91,7 @@ const props = defineProps({
    * 输入框的值
    */
   modelValue: {
-    type: String,
+    type: [String, Number],
     default: "",
   },
   /**
@@ -243,6 +243,8 @@ const initValidator = () => {
 };
 
 // 校验
+const formItem = ref(null); // 表单项
+
 const errorHint = ref();
 const validate = () => {
   // 如果校验器存在
@@ -260,19 +262,13 @@ const validate = () => {
       }
     );
   }
-  // 如果formItem存在
-  else if (formItem.value) {
-    // 通知formItem校验
-    formItem.value.validate(formatValue.value);
-  }
 };
 
 // 校验触发规则
-const formItem = ref(null); // 表单中的校验规则
 
 const trigger = computed(() => {
   let temp = [];
-  const rules = props.rules || formItem.value.rules;
+  const rules = props.rules;
 
   if (rules) {
     if (isArray(rules)) {
@@ -309,13 +305,21 @@ const handleClearInput = () => {
 const handleInput = async (e) => {
   inputValue.value = e.detail.value;
   emit("update:modelValue", formatValue.value);
+  emit("input", e);
   await nextTick();
   if (trigger.value?.includes("change")) validate();
+
+  if (formItem.value) {
+    formItem.value.triggerEvent("change");
+  }
 };
 
 const handleBlur = (e) => {
   emit("blur", e);
   if (trigger.value?.includes("blur")) validate();
+  if (formItem.value) {
+    formItem.value.triggerEvent("blur");
+  }
 };
 
 // 表单中使用
@@ -324,6 +328,11 @@ const inForm = inject("inForm");
 if (inForm) {
   // 表单中的校验规则
   formItem.value = inject("formItem");
+  if (props.rules) {
+    console.error(
+      "在表单中使用iui-input，不需要在iui-input上设置rules，应该在iui-form上设置rules"
+    );
+  }
 }
 </script>
 
@@ -418,7 +427,7 @@ if (inForm) {
     &-vertical {
       flex-direction: column;
       align-items: flex-start;
-      height: $size-22;
+      height: $size-22 !important;
 
       .input {
         width: 100%;

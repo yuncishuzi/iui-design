@@ -6,6 +6,7 @@
         <iui-grid-item
           v-for="(item, index) in rowData(rowIdx)"
           :key="`row-${rowIdx}-${index}`"
+          @click="$emit('click', item, rowIdx, index)"
         >
           <view
             :class="`${prefixCls}-row-item ${
@@ -135,6 +136,8 @@ const prefixCls = "iui-grid";
 const cls = computed(() => [prefixCls, `cols-${props.cols}`], {
   [`${prefixCls}-border`]: props.border,
 });
+
+const emit = defineEmits(["click"]);
 
 provide("iui-grid-props", props);
 

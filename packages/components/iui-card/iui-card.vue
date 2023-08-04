@@ -79,7 +79,7 @@ const props = defineProps({
     default: "",
   },
   /**
-   * 而外操作
+   * 额外操作
    * 一般用于右上角的操作
    */
   extra: {

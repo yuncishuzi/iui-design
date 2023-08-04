@@ -115,7 +115,7 @@ const calcValue = computed(() => {
   return value.toFixed(decimal);
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "change"]);
 
 const handleClickPlus = () => {
   if (props.disabled) return;
@@ -123,6 +123,7 @@ const handleClickPlus = () => {
   if (isNumber(props.max) && value > props.max) return;
   innerValue.value = value;
   emit("update:modelValue", value);
+  emit("change", value);
 };
 
 const handleClickReduce = () => {
@@ -131,6 +132,7 @@ const handleClickReduce = () => {
   if (isNumber(props.min) && value < props.min) return;
   innerValue.value = value;
   emit("update:modelValue", value);
+  emit("change", value);
 };
 </script>
 

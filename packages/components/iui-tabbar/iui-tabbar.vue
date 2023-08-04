@@ -73,7 +73,7 @@ const cls = computed(() => [
 
 const innerValue = ref(props.current);
 
-const emit = defineEmits(["update:current", "change"]);
+const emit = defineEmits(["update:modelValue", "change"]);
 
 const handleChange = (idx) => {
   innerValue.value = idx;

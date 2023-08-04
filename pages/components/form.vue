@@ -1,6 +1,22 @@
 <template>
   <Demo title="基本用法" padding="0">
-    <iui-form ref="form" :model="formData" :rules="rules">
+    <iui-tabs
+      v-model="tab"
+      :list="[
+        {
+          title: 'horizontal',
+        },
+        {
+          title: 'vertical',
+        },
+      ]"
+    ></iui-tabs>
+    <iui-form
+      ref="formRef"
+      :model="formData"
+      :rules="rules"
+      :layout="tab == 1 ? 'vertical' : 'horizontal'"
+    >
       <iui-form-item label="Nickname" required field="nickname">
         <iui-input
           v-model="formData.nickname"
@@ -53,14 +69,15 @@
       </iui-form-item>
 
       <iui-form-item label="Progress" field="progress">
-        <iui-slider v-model="formData.progress"></iui-slider>
+        <iui-slider v-model="formData.progress" v-if="tab == 0"></iui-slider>
+        <iui-slider v-model="formData.progress" v-if="tab == 1"></iui-slider>
       </iui-form-item>
 
       <iui-form-item label="Subscribe" align="center" field="subscribe">
         <iui-switch v-model="formData.subscribe"></iui-switch>
       </iui-form-item>
 
-      <iui-form-item label="Remark" field="remark">
+      <iui-form-item label="Remark" field="remark" required>
         <iui-textarea
           v-model="formData.remark"
           placeholder="Please enter remark"
@@ -69,15 +86,16 @@
       </iui-form-item>
     </iui-form>
     <view style="padding: 16px">
-      <iui-button type="primary">Submit</iui-button>
+      <iui-button type="primary" @click="handleSubmit">Submit</iui-button>
     </view>
   </Demo>
 </template>
 
 <script setup>
 import { reactive, ref } from "vue";
+const tab = ref(0);
 
-const form = ref(null);
+const formRef = ref(null);
 
 const formData = reactive({
   nickname: "",
@@ -86,7 +104,7 @@ const formData = reactive({
   favorite: [],
   score: "",
   progress: 0,
-  subscribe: "",
+  subscribe: false,
   remark: "",
 });
 
@@ -110,6 +128,50 @@ const rules = {
       trigger: "blur",
     },
   ],
+  favorite: [
+    {
+      type: "array",
+      required: true,
+      len: 2,
+      message: "Please select 2 favorite",
+    },
+  ],
+  score: {
+    type: "number",
+    required: true,
+    min: 2,
+    message: "Score should be 2-5",
+  },
+  progress: {
+    type: "number",
+    required: true,
+    min: 20,
+    message: "Progress should be 20-100",
+  },
+  subscribe: {
+    type: "boolean",
+    required: true,
+    message: "Please agree to subscribe",
+    validator: (_, v) => {
+      if (!v) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+  },
+  remark: {
+    required: true,
+    min: 10,
+    max: 100,
+    message: "Remark length should be 10-100",
+    trigger: "blur",
+  },
+};
+
+const handleSubmit = async () => {
+  const res = await formRef.value.validate();
+  console.log(res, formData);
 };
 </script>
 

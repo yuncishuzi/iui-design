@@ -41,17 +41,7 @@
   </Demo>
 
   <Demo title="悬浮胶囊标签栏" padding="10" bgColor="transparent">
-    <iui-tabbar
-      activeColor="#00B42A"
-      capsule
-      :list="
-        list.map((item) => {
-          return {
-            icon: item.icon,
-          };
-        })
-      "
-    ></iui-tabbar>
+    <iui-tabbar activeColor="#00B42A" capsule :list="list"></iui-tabbar>
   </Demo>
 </template>
 

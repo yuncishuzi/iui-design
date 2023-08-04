@@ -18,10 +18,10 @@
     <Demo title="基本用法" :padding="0" bgColor="transparent">
       <iui-space direction="vertical" size="medium">
         <view>
-          <iui-navbar title="Title" hideStatusBar></iui-navbar>
+          <iui-navbar title="Title"></iui-navbar>
         </view>
         <view>
-          <iui-navbar title="Title" hideStatusBar back></iui-navbar>
+          <iui-navbar title="Title" back></iui-navbar>
         </view>
 
         <view>
@@ -45,13 +45,13 @@
             <template #left>
               <view class="search">
                 <iui-icon style="display: contents" name="search"></iui-icon>
-                <text style="font-size: small; margin-left: 4px"> 搜索</text>
+                <input
+                  style="font-size: small; margin-left: 4px"
+                  placeholder="搜索"
+                />
               </view>
             </template>
           </iui-navbar>
-        </view>
-        <view>
-          <iui-navbar title="Title" hideStatusBar back></iui-navbar>
         </view>
 
         <view>
@@ -74,12 +74,7 @@
 
     <Demo title="异步返回" :padding="0" bgColor="transparent">
       <view>
-        <iui-navbar
-          title="Title"
-          :beforeBack="beforeBack"
-          back
-          hideStatusBar
-        ></iui-navbar>
+        <iui-navbar title="Title" :beforeBack="beforeBack" back></iui-navbar>
       </view>
     </Demo>
   </iui-page>

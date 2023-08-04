@@ -47,24 +47,24 @@
         <view v-for="item in 4" :key="item">
           <iui-checkbox :label="`Option ${item}`"></iui-checkbox>
         </view>
-
-        <view>
-          <iui-space size="medium">
-            <view>
-              <iui-button @click="group?.checkAll">{{
-                isCheckedAll ? "Uncheck all" : "Check all"
-              }}</iui-button>
-            </view>
-
-            <view>
-              <iui-button @click="group?.reverseChecked"
-                >Reversely select</iui-button
-              >
-            </view>
-          </iui-space>
-        </view>
       </iui-space>
     </iui-checkbox-group>
+
+    <view style="margin-top: 20px">
+      <iui-space size="medium">
+        <view>
+          <iui-button @click="group?.checkAll">{{
+            isCheckedAll ? "Uncheck all" : "Check all"
+          }}</iui-button>
+        </view>
+
+        <view>
+          <iui-button @click="group?.reverseChecked"
+            >Reversely select</iui-button
+          >
+        </view>
+      </iui-space>
+    </view>
   </Demo>
 
   <Demo title="在列表中使用" :padding="0">

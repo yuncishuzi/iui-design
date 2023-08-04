@@ -1,6 +1,7 @@
 <template>
   <Demo title="基本用法" padding="0">
     <iui-swipe-action
+      :defaultOpen="open"
       :actions="[
         {
           icon: 'delete',
@@ -16,6 +17,7 @@
 
   <Demo title="多行内容" padding="0">
     <iui-swipe-action
+      :defaultOpen="open"
       :actions="[
         {
           text: '置顶',
@@ -30,7 +32,7 @@
   </Demo>
 
   <Demo title="插槽" padding="0">
-    <iui-swipe-action :actions="[{ slotName: 'del' }]">
+    <iui-swipe-action :actions="[{ slotName: 'del' }]" :defaultOpen="open">
       <iui-cell label="Custom slot"></iui-cell>
 
       <template #del>
@@ -59,9 +61,19 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
+
+const open = ref(false);
+
 const onClick = (e, i) => {
   console.log("click", e, i);
 };
+
+onMounted(() => {
+  setTimeout(() => {
+    open.value = true;
+  }, 1000);
+});
 </script>
 
 <style lang="scss" scoped></style>

@@ -4,7 +4,7 @@
       <image
         src="https://sf1-cdn-tos.toutiaostatic.com/obj/arco-mobile/_static_/small_image_6.jpeg"
         mode="aspectFit"
-        style="width: 80px; height: 80px; margin: 30px 0"
+        style="width: 80px; height: 80px; margin: 30px 0 20px"
       /><text class="text-bold">iui Design</text></view
     >
 
@@ -32,7 +32,8 @@
 import { computed } from "vue";
 import { pages } from "../../pages.json";
 
-console.log(`你真棒！已经完成了 ${pages.slice(1).length} 个组件！`);
+
+// console.log(`你真棒！已经完成了 ${pages.slice(1).length} 个组件！`);
 
 const list = computed(() => {
   const result = {};
@@ -74,7 +75,7 @@ function change() {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 page {
   background-color: white;
 }

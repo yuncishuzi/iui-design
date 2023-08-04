@@ -3,7 +3,7 @@
     <cell
       :class="cls"
       :style="{
-        height: getCellHeight(),
+        minHeight: getCellHeight(),
       }"
     >
       <view :class="`${prefixCls}-title`" v-if="label || icon || $slots.icon">

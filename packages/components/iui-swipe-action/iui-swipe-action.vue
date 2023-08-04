@@ -51,10 +51,17 @@
 </template>
 
 <script setup>
-import { computed, getCurrentInstance, onMounted, ref } from "vue";
+import { computed, getCurrentInstance, onMounted, ref, watch } from "vue";
 import { getRect } from "../helper/rect";
 
 const props = defineProps({
+  /**
+   * 默认状态
+   */
+  defaultOpen: {
+    type: Boolean,
+    default: false,
+  },
   /**
    * 右侧菜单
    *
@@ -86,6 +93,7 @@ const onTouchStart = (e) => {
 };
 
 const onTouchMove = (e) => {
+  if (startX === 0 && startY === 0) return;
   const { pageX, pageY } = e.touches[0];
   const offsetX = pageX - startX;
   const offsetY = pageY - startY;
@@ -143,6 +151,18 @@ const getMenuWidth = () => {
 onMounted(() => {
   getMenuWidth();
 });
+
+watch(
+  () => props.defaultOpen,
+  (value) => {
+    if (value) {
+      offset.value = -menuWidth.value;
+      innerValue.value = true;
+      lastOffset.value = offset.value;
+      emit("open");
+    }
+  }
+);
 
 const close = () => {
   offset.value = 0;

@@ -11,11 +11,14 @@
       :placeholder="placeholder"
       :placeholder-style="placeholderStyle"
       :disabled="disabled"
-      placeholder-class="iui-textarea-placeholder"
       :style="{
         height: `${height}px`,
       }"
+      :maxlength="maxlength"
+      placeholder-class="iui-textarea-placeholder"
       @input="handleInput"
+      @blur="handleBlur"
+      @focus="$emit('focus', $event)"
     />
     <view :class="`${prefixCls}-statistic`" v-if="showLimit">
       {{ innerValue.length || 0 }}/{{ maxlength }}
@@ -30,7 +33,7 @@ const props = defineProps({
    * 值
    */
   modelValue: {
-    type: Boolean,
+    type: String,
     default: "",
   },
   /**
@@ -88,14 +91,23 @@ const cls = computed(() => [
   },
 ]);
 
-const emit = defineEmits(["update:modelValue", "change"]);
+const emit = defineEmits(["update:modelValue", "input", "blur", "focus"]);
 
 const innerValue = ref(props.modelValue);
+
+const formItem = inject("formItem");
 
 const handleInput = (event) => {
   innerValue.value = event.detail.value;
   emit("update:modelValue", innerValue.value);
-  emit("change", event);
+  emit("input", event);
+};
+
+const handleBlur = (event) => {
+  emit("blur", event);
+  if (formItem) {
+    formItem.triggerEvent("blur");
+  }
 };
 
 // 表单中

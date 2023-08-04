@@ -10,7 +10,7 @@
         v-if="animation"
       ></view>
       <view :class="`${prefixCls}-content-inner`">
-        <view :class="`${prefixCls}-content-text`" :style="animationStyle">
+        <view :class="`${prefixCls}-content-text`" :style="[animationStyle]">
           <slot />
         </view>
       </view>
@@ -28,6 +28,8 @@
 </template>
 
 <script setup>
+// TODO:ios 浏览器 inline-block 会使文字放大，暂时未找到原因
+
 import { computed, getCurrentInstance, onMounted, ref } from "vue";
 import { getRect } from "../helper/rect";
 import { isObject } from "../helper/is";
@@ -118,12 +120,12 @@ const handleClose = () => {
 
 const instance = getCurrentInstance();
 
-const { windowWidth } = uni.getSystemInfoSync();
-
 const getAnimationStyle = () => {
   return new Promise((resolve) => {
     getRect(instance, `.${prefixCls}-content-text`).then((res) => {
       const { width } = res;
+      const { windowWidth } = uni.getSystemInfoSync();
+
       const duration = parseInt(width / props.speed);
 
       resolve({
@@ -284,12 +286,12 @@ onMounted(async () => {
 
 @keyframes marquee {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 </style>

@@ -96,7 +96,7 @@ const props = defineProps({
   },
   /**
    * 指示器样式
-   * type : dot 、 line 、 nav 、 index
+   * type : dot 、 line
    */
   indicatorType: {
     type: String,

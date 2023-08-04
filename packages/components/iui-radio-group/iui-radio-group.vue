@@ -11,9 +11,7 @@ const props = defineProps({
   /**
    * 值
    */
-  modelValue: {
-    type: [String, Number, Boolean],
-  },
+  modelValue: [String, Number, Boolean],
   /**
    * 通栏
    * justify
@@ -25,7 +23,7 @@ const props = defineProps({
 });
 
 // 选中值
-const checkedValue = ref([]);
+const checkedValue = ref([props.modelValue]);
 
 const prefixCls = "iui-radio-group";
 

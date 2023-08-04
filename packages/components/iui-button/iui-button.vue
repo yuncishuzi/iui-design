@@ -28,7 +28,6 @@
 // 小程序属性
 import { computed, useSlots } from "vue";
 import IuiIcon from "../iui-icon/iui-icon.vue";
-import IuiSpin from "../iui-spin/iui-spin.vue";
 
 const props = defineProps({
   // 通用属性

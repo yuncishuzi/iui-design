@@ -53,7 +53,7 @@ import { isEmpty, isString } from "../helper/is";
 
 const props = defineProps({
   /**
-   * 显示
+   * 选中项
    */
   modelValue: {
     type: Array,
