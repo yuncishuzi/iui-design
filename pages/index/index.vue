@@ -2,11 +2,12 @@
   <view class="menu">
     <view class="flex-col">
       <image
-        src="https://sf1-cdn-tos.toutiaostatic.com/obj/arco-mobile/_static_/small_image_6.jpeg"
+        src="/static/hi.jpeg"
         mode="aspectFit"
         style="width: 80px; height: 80px; margin: 30px 0 20px"
-      /><text class="text-bold">iui Design</text></view
-    >
+      />
+      <text class="text-bold">iui Design</text>
+    </view>
 
     <block v-for="(group, gidx) in Object.keys(list)" :key="gidx">
       <view class="menu-title">{{ group }}</view>
@@ -31,7 +32,6 @@
 <script setup>
 import { computed } from "vue";
 import { pages } from "../../pages.json";
-
 
 // console.log(`你真棒！已经完成了 ${pages.slice(1).length} 个组件！`);
 
