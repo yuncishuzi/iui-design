@@ -1,5 +1,5 @@
 {
-    "name" : "uni",
+    "name" : "iuiDesign",
     "appid" : "__UNI__EAF007D",
     "description" : "",
     "versionName" : "1.0.0",
@@ -50,7 +50,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx32cff060b393bb6d",
+        "appid" : "wxdc2addffe3573e93",
         "setting" : {
             "urlCheck" : false
         },

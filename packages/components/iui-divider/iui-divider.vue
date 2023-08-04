@@ -1,6 +1,8 @@
 <template>
   <view :class="cls">
-    <slot />
+    <view :class="`${prefixCls}-text`" v-if="direction === 'horizontal'">
+      <slot />
+    </view>
   </view>
 </template>
 
@@ -26,7 +28,7 @@ const props = defineProps({
   },
   /**
    * 分割线样式类型
-   * type: solid | dashed | dotted | double
+   * type: solid | dashed | dotted
    */
   type: {
     type: String,
@@ -39,6 +41,7 @@ const props = defineProps({
    */
   size: {
     type: Number,
+    default: 1,
   },
   /**
    * 分割线宽度/高度
@@ -47,6 +50,14 @@ const props = defineProps({
    */
   margin: {
     type: [Number, String],
+    default: 20,
+  },
+  /**
+   * 文字背景
+   */
+  textBg: {
+    type: String,
+    default: "var(--iui-bg)",
   },
 });
 
@@ -56,10 +67,20 @@ const cls = computed(() => [
   prefixCls,
   [
     `${prefixCls}-${props.direction}`,
-    `${prefixCls}-${props.align}`,
+    `${prefixCls}-align-${props.align}`,
     `${prefixCls}-${props.type}`,
   ],
 ]);
+
+const margin = computed(() => {
+  if (props.direction === "horizontal") {
+    return `${props.margin}px 0`;
+  } else {
+    return `0 ${props.margin}px`;
+  }
+});
+
+const size = computed(() => `${props.size}px`);
 </script>
 
 <style lang="scss" scoped>
@@ -71,8 +92,50 @@ const cls = computed(() => [
     width: 100%;
     min-width: 100%;
     max-width: 100%;
-    margin: 20px 0;
-    border-bottom: 1px solid $color-border;
+    margin: v-bind(margin);
+    border-bottom: v-bind(size) v-bind(type) $color-border;
+  }
+
+  &-vertical {
+    display: inline-block;
+    min-width: 1px;
+    max-width: 1px;
+    min-height: 1em;
+    margin: v-bind(margin);
+    vertical-align: middle;
+    border-left: v-bind(size) v-bind(type) $color-border;
+  }
+
+  &-text {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    padding: 0 16px;
+    line-height: 2;
+    font-size: 14px;
+    transform: translateY(-50%);
+    background-color: v-bind(textBg);
+  }
+
+  &-align {
+    &-start {
+      .iui-divider-text {
+        left: 24px;
+      }
+    }
+
+    &-center {
+      .iui-divider-text {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-end {
+      .iui-divider-text {
+        right: 24px;
+      }
+    }
   }
 }
 </style>

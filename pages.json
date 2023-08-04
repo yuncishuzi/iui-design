@@ -9,7 +9,7 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "组件库",
+        "navigationBarTitleText": "iuiDesign 组件库",
         "app-plus": {
           "titleNView": false
         }

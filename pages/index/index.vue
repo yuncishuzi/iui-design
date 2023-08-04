@@ -82,8 +82,8 @@ page {
 .flex-col {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .text-bold {
   font-weight: bold;
