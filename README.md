@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://iyunci.cn/design/uni/" target="_blank">
-    <img alt="uni Design" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
+    <img alt="iui Design" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
   </a>
 </div>
 
@@ -103,19 +103,25 @@ npm i sass-loader -D
 
 #### easycom 模式
 
+`iui-design` 支持 `easycom` 模式，您可以在 `pages.json` 中配置 `easycom`，然后无需引入即可使用组件。
+
+npm 模式安装：
+
 ```json
 {
   "easycom": {
-    // npm 模式安装
-    "^iui-(.*)": "iui-design/components/iui-$1/iui-$1.vue",
-    // HBuilderX 插件市场安装
-    "^iui-(.*)": "@/uni_modules/iui-design/components/iui-$1/iui-$1.vue"
-  },
+    "^iui-(.*)": "iui-design/components/iui-$1/iui-$1.vue"
+  }
+}
+```
 
-  // 此为本身已有的内容
-  "pages": [
-    // ......
-  ]
+HBuilderX 插件市场安装：
+
+```json
+{
+  "easycom": {
+    "^iui-(.*)": "@/uni_modules/iui-design/components/iui-$1/iui-$1.vue"
+  }
 }
 ```
 
