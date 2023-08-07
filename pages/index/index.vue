@@ -1,49 +1,12 @@
 <template>
   <view class="menu">
     <view class="flex-col">
-      <!-- <view style="width: 80px; height: 80px; margin: 30px 0 20px">
-        <iui-image src="/static/hi.jpeg" mode="aspectFit" radius="50%" />
-      </view> -->
-      <view
-        style="
-          width: 60px;
-          height: 60px;
-          background-color: #165dff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 8px;
-          margin: 30px 10px 0;
-          transform: rotate(45deg);
-        "
-      >
-        <image
-          src="/static/comet.svg"
-          style="width: 70%; transform: rotate(180deg)"
-          mode="widthFix"
-        >
-        </image>
+      <view class="logo" style="">
+        <iui-image src="/static/logo.jpg" mode="aspectFit" />
       </view>
 
-      <view style="display: flex; align-items: center; margin-top: 20px">
-        <!-- <view
-          style="
-            background: #165dff;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            margin-right: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: rotate(180deg);
-          "
-        >
-          <image src="/static/comet.svg" style="width: 70%" mode="widthFix">
-          </image>
-        </view> -->
-
-        <text class="text-bold">iui Design</text>
+      <view>
+        <text class="text-bold">IUI DESIGN</text>
       </view>
     </view>
 
@@ -108,6 +71,13 @@ function go(path) {
 page {
   background-color: $color-bg;
 }
+.logo {
+  width: 60px;
+  height: 60px;
+  margin: 30px 0 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -115,8 +85,8 @@ page {
   justify-content: flex-start;
 }
 .text-bold {
-  font-weight: bold;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 21px;
   color: #165dff;
 }
 

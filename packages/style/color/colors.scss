@@ -1,7 +1,6 @@
 @use './global';
 
 // 颜色
-
 $primary-color-1: mix(white, global.$primary-color, 90%);
 $primary-color-2: mix(white, global.$primary-color, 70%);
 $primary-color-3: mix(white, global.$primary-color, 50%);

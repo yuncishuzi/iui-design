@@ -1,9 +1,50 @@
+// 主题色
 $primary-color: #165DFF !default;
 $success-color: #00B42A !default;
 $warning-color: #FF7D00 !default;
 $error-color: #F53F3F !default;
 
-$dark-primary-color: #3C7EFF !default;
-$dark-success-color: #27C346 !default;
-$dark-warning-color: #FF9626 !default;
-$dark-error-color: #F76965 !default;
+// 深色主题色，默认根据主题色生成，也可以自定义
+$dark-primary-color: desaturate($primary-color, 30%) !default;
+$dark-success-color: desaturate($success-color, 30%) !default;
+$dark-warning-color: desaturate($warning-color, 30%) !default;
+$dark-error-color: desaturate($error-color, 30%) !default;
+
+// 背景色
+$color-bg: var(--iui-bg) !default;
+$color-bg-secondary: var(--iui-bg-secondary) !default;
+$color-bg-active: var(--iui-bg-active) !default;
+$color-bg-light: var(--iui-bg-light) !default;
+$color-bg-opacity: var(--iui-bg-opacity) !default;
+$color-bg-white: var(--iui-white) !default;
+
+
+// 文字色
+$color-text: var(--iui-gray-8) !default;
+$color-text-dark: var(--iui-gray-9) !default;
+$color-text-light: var(--iui-gray-7) !default;
+$color-text-lighten: var(--iui-gray-5) !default;
+
+// 边框颜色
+$color-border: var(--iui-gray-3) !default;
+$color-border-dark: var(--iui-gray-4) !default;
+$color-border-light: var(--iui-gray-2) !default;
+$color-border-lighten: var(--iui-gray-1) !default;
+
+// 字体大小
+$font-size-body: 14px !default;
+$font-size-title: 24px !default;
+$font-size-display: 54px !default;
+$font-size-huge: 16px !default;
+$font-size-large: 15px !default;
+$font-size-medium: 14px !default;
+$font-size-small: 13px !default;
+$font-size-mini: 12px !default;
+
+//边框圆角
+$border-radius-none: 0 !default;
+$border-radius-small: 2px !default;
+$border-radius-medium: 4px !default;
+$border-radius-large: 8px !default;
+$border-radius-huge: 36px !default;
+$border-radius-round: 50% !default;

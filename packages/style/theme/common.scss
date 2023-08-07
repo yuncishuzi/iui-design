@@ -1,3 +1,5 @@
+@use '../color/global.scss';
+
 // 通用
 $prefix: '--iui';
 
@@ -67,47 +69,48 @@ $info-9: var(#{$prefix}-gray-9);
 
 
 // 边框颜色
-$color-border: var(#{$prefix}-gray-3);
-$color-border-dark: var(#{$prefix}-gray-4);
-$color-border-light: var(#{$prefix}-gray-2);
-$color-border-lighten: var(#{$prefix}-gray-1);
+$color-border: global.$color-border;
+$color-border-dark: global.$color-border-dark;
+$color-border-light: global.$color-border-light;
+$color-border-lighten: global.$color-border-lighten;
 
 // 背景颜色
-$color-bg: var(#{$prefix}-bg); // 整体背景色
-$color-bg-white: var(#{$prefix}-white); // 白色背景色
-$color-bg-secondary: var(#{$prefix}-bg-secondary); // 次要背景色
-$color-bg-active: var(#{$prefix}-bg-active); // 活跃背景色
-$color-bg-light: var(#{$prefix}-bg-light); // 浅背景色
+$color-bg: global.$color-bg; // 整体背景色
+$color-bg-white: global.$color-bg-white; // 白色背景色
+$color-bg-secondary: global.$color-bg-secondary; // 次要背景色
+$color-bg-active: global.$color-bg-active; // 活跃背景色
+$color-bg-light: global.$color-bg-light; // 浅背景色
+$color-bg-opacity: global.$color-bg-opacity; // 透明背景色
 
 
 // 文字颜色
-$color-text-dark: var(#{$prefix}-gray-9); // 强调/标题
-$color-text: var(#{$prefix}-gray-8); // 正文
-$color-text-light: var(#{$prefix}-gray-7); // 次要信息
-$color-text-lighten: var(#{$prefix}-gray-5); // 置灰信息
-$color-text-input: var(#{$prefix}-gray-9); // 输入框文字
-$color-text-input-placeholder: var(#{$prefix}-gray-5); // 输入框文字
+$color-text-dark: global.$color-text-dark; // 强调/标题
+$color-text: global.$color-text; // 正文
+$color-text-light: global.$color-text-light; // 次要信息
+$color-text-lighten: global.$color-text-lighten; // 置灰信息
+$color-text-input: global.$color-text; // 输入框文字
+$color-text-input-placeholder: global.$color-text-lighten; // 输入框文字
 $color-text-disabled: var(#{$prefix}-text-disabled); // 禁用文字
 
 // 圆角
-$border-radius-none: 0;
-$border-radius-small: 2px;
-$border-radius-medium: 4px;
-$border-radius-large: 8px;
-$border-radius-huge: 36px;
-$border-radius-circle: 50%;
+$border-radius-none: global.$border-radius-none;
+$border-radius-small: global.$border-radius-small;
+$border-radius-medium: global.$border-radius-medium;
+$border-radius-large: global.$border-radius-large;
+$border-radius-huge: global.$border-radius-huge;
+$border-radius-round: global.$border-radius-round;
 
 
 // 字体大小
-$font-size-display: 56px;
-$font-size-title: 24px;
-$font-size-body: 14px;
+$font-size-display: global.$font-size-display;
+$font-size-title: global.$font-size-title;
+$font-size-body: global.$font-size-body;
 
-$font-size-huge: 16px;
-$font-size-large: 15px;
-$font-size-medium: 14px;
-$font-size-small: 13px;
-$font-size-mini: 12px;
+$font-size-huge: global.$font-size-huge;
+$font-size-large: global.$font-size-large;
+$font-size-medium: global.$font-size-medium;
+$font-size-small: global.$font-size-small;
+$font-size-mini: global.$font-size-mini;
 
 
 // 尺寸
