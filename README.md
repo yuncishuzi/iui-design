@@ -1,10 +1,10 @@
 <div align="center">
   <a href="https://iyunci.cn/design/uni/" target="_blank">
-    <img alt="iui Design" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
+    <img alt="iui Design" style="border-radius:10px" width="100" src="./static/logo.png"/>
   </a>
 </div>
 
-<div align="center">
+<div align="center" style="margin-top:10px">
   <h1>iui Design</h1>
 </div>
 
