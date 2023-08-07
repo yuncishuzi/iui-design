@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://iyunci.cn/design/uni/" target="_blank">
-    <img alt="uni Design" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
+    <img alt="iui Design" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
   </a>
 </div>
 
