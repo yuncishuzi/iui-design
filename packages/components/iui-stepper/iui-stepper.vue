@@ -217,7 +217,7 @@ const handleClickReduce = () => {
 
   &-round {
     .iui-stepper-btn {
-      border-radius: $border-radius-circle;
+      border-radius: $border-radius-round;
       background-color: $color-bg-secondary;
     }
 
