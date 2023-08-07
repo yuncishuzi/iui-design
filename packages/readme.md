@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://arco.design" target="_blank">
-    <img alt="Arco Design Logo" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
+  <a href="https://iyunci.cn/design/uni/" target="_blank">
+    <img alt="uni Design" style="border-radius:10px" width="150" src="https://iui.iyunci.cn/static/logo.png"/>
   </a>
 </div>
 
@@ -104,7 +104,6 @@ npm i sass-loader -D
 #### easycom 模式
 
 ```json
-// pages.json
 {
   "easycom": {
     // npm 模式安装
