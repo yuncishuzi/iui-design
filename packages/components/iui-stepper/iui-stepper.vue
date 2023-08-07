@@ -35,7 +35,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { isNumber } from "../helper/is";
+import { isNumber } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -137,7 +137,7 @@ const handleClickReduce = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-stepper {
   display: flex;
   justify-content: center;
@@ -166,6 +166,7 @@ const handleClickReduce = () => {
   }
 
   &-value {
+    color: $color-text;
     .input {
       width: $size-9;
       height: $size-7 - 2;
@@ -190,7 +191,7 @@ const handleClickReduce = () => {
   &-outline {
     .iui-stepper-btn {
       border: 1px solid $color-border;
-      background-color: $color-white;
+      background-color: $color-bg;
 
       &.reduce {
         border-top-left-radius: $border-radius-small;
@@ -209,7 +210,7 @@ const handleClickReduce = () => {
         border-left: none;
         border-right: none;
         margin: 0;
-        background-color: $color-white;
+        background-color: $color-bg;
       }
     }
   }

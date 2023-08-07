@@ -40,18 +40,18 @@
 
 <style lang="scss" scoped>
 .circle {
-  background-color: rgb(229, 229, 229);
+  background-color: $color-bg-secondary;
   border-radius: 50%;
   width: 24px;
   height: 24px;
   text-align: center;
-  color: gray;
+  color: $color-text-light;
 }
 .value {
   background-color: #165dff;
   border-radius: 4px;
   font-size: 13px;
   padding: 2px 8px;
-  color: white;
+  color: $color-white;
 }
 </style>

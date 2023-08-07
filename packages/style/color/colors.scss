@@ -1,0 +1,122 @@
+@use './global';
+
+// 颜色
+
+$primary-color-1: mix(white, global.$primary-color, 90%);
+$primary-color-2: mix(white, global.$primary-color, 70%);
+$primary-color-3: mix(white, global.$primary-color, 50%);
+$primary-color-4: mix(white, global.$primary-color, 30%);
+$primary-color-5: mix(white, global.$primary-color, 10%);
+$primary-color-6: global.$primary-color;
+$primary-color-7: mix(black, global.$primary-color, 10%);
+$primary-color-8: mix(black, global.$primary-color, 30%);
+$primary-color-9: mix(black, global.$primary-color, 50%);
+
+
+$error-color-1: mix(white, global.$error-color, 90%);
+$error-color-2: mix(white, global.$error-color, 70%);
+$error-color-3: mix(white, global.$error-color, 50%);
+$error-color-4: mix(white, global.$error-color, 30%);
+$error-color-5: mix(white, global.$error-color, 10%);
+$error-color-6: global.$error-color;
+$error-color-7: mix(black, global.$error-color, 10%);
+$error-color-8: mix(black, global.$error-color, 30%);
+$error-color-9: mix(black, global.$error-color, 50%);
+
+
+$success-color-1: mix(white, global.$success-color, 90%);
+$success-color-2: mix(white, global.$success-color, 70%);
+$success-color-3: mix(white, global.$success-color, 50%);
+$success-color-4: mix(white, global.$success-color, 30%);
+$success-color-5: mix(white, global.$success-color, 10%);
+$success-color-6: global.$success-color;
+$success-color-7: mix(black, global.$success-color, 10%);
+$success-color-8: mix(black, global.$success-color, 30%);
+$success-color-9: mix(black, global.$success-color, 50%);
+
+
+$warning-color-1: mix(white, global.$warning-color, 90%);
+$warning-color-2: mix(white, global.$warning-color, 70%);
+$warning-color-3: mix(white, global.$warning-color, 50%);
+$warning-color-4: mix(white, global.$warning-color, 30%);
+$warning-color-5: mix(white, global.$warning-color, 10%);
+$warning-color-6: global.$warning-color;
+$warning-color-7: mix(black, global.$warning-color, 10%);
+$warning-color-8: mix(black, global.$warning-color, 30%);
+$warning-color-9: mix(black, global.$warning-color, 50%);
+
+$bg: #ffffff;
+$white : #ffffff;
+$gray-1: #f2f3f5;
+$gray-2: #dfdfdf;
+$gray-3: #e5e6eb;
+$gray-4: #c9cdd4;
+$gray-5: #a9aeb8;
+$gray-6: #86909c;
+$gray-7: #4e5969;
+$gray-8: #272e3b;
+$gray-9: #1d2129;
+$black: #000000;
+
+
+
+$dark-primary-color-1: mix(black, global.$dark-primary-color, 75%);
+$dark-primary-color-2: mix(black, global.$dark-primary-color, 60%);
+$dark-primary-color-3: mix(black, global.$dark-primary-color, 45%);
+$dark-primary-color-4: mix(black, global.$dark-primary-color, 30%);
+$dark-primary-color-5: mix(black, global.$dark-primary-color, 10%);
+$dark-primary-color-6: global.$dark-primary-color;
+$dark-primary-color-7: mix(white, global.$dark-primary-color, 20%);
+$dark-primary-color-8: mix(white, global.$dark-primary-color, 50%);
+$dark-primary-color-9: mix(white, global.$dark-primary-color, 70%);
+
+
+$dark-error-color-1: mix(black, global.$dark-error-color, 75%);
+$dark-error-color-2: mix(black, global.$dark-error-color, 60%);
+$dark-error-color-3: mix(black, global.$dark-error-color, 45%);
+$dark-error-color-4: mix(black, global.$dark-error-color, 30%);
+$dark-error-color-5: mix(black, global.$dark-error-color, 10%);
+$dark-error-color-6: global.$dark-error-color;
+$dark-error-color-7: mix(white, global.$dark-error-color, 20%);
+$dark-error-color-8: mix(white, global.$dark-error-color, 50%);
+$dark-error-color-9: mix(white, global.$dark-error-color, 70%);
+
+
+$dark-success-color-1: mix(black, global.$dark-success-color, 75%);
+$dark-success-color-2: mix(black, global.$dark-success-color, 60%);
+$dark-success-color-3: mix(black, global.$dark-success-color, 45%);
+$dark-success-color-4: mix(black, global.$dark-success-color, 30%);
+$dark-success-color-5: mix(black, global.$dark-success-color, 10%);
+$dark-success-color-6: global.$dark-success-color;
+$dark-success-color-7: mix(white, global.$dark-success-color, 20%);
+$dark-success-color-8: mix(white, global.$dark-success-color, 50%);
+$dark-success-color-9: mix(white, global.$dark-success-color, 70%);
+
+
+$dark-warning-color-1: mix(black, global.$dark-warning-color, 75%);
+$dark-warning-color-2: mix(black, global.$dark-warning-color, 60%);
+$dark-warning-color-3: mix(black, global.$dark-warning-color, 45%);
+$dark-warning-color-4: mix(black, global.$dark-warning-color, 30%);
+$dark-warning-color-5: mix(black, global.$dark-warning-color, 10%);
+$dark-warning-color-6: global.$dark-warning-color;
+$dark-warning-color-7: mix(white, global.$dark-warning-color, 20%);
+$dark-warning-color-8: mix(white, global.$dark-warning-color, 50%);
+$dark-warning-color-9: mix(white, global.$dark-warning-color, 70%);
+
+
+$dark-bg: #17171a;
+$dark-white: #f6f6f6;
+$dark-gray-1: #1b1b1b;
+$dark-gray-2: #232324;
+$dark-gray-3: #2e2e30;
+$dark-gray-4: #484849;
+$dark-gray-5: #5f5f60;
+$dark-gray-6: #929293;
+$dark-gray-7: #ababac;
+$dark-gray-8: #c5c5c5;
+$dark-gray-9: #dfdfdf;
+$dark-black : #232324;
+
+// 透明背景
+$bg-opacity-1: rgba(255, 255, 255, 0.8);
+$dark-bg-opacity-1: rgba(23, 23, 26, 0.8);

@@ -74,7 +74,7 @@
 
 <script setup>
 import { computed, getCurrentInstance, ref, onMounted } from "vue";
-import { getRect } from "../helper/rect";
+import { getRect } from "../../helper/rect";
 
 const props = defineProps({
   /**
@@ -137,7 +137,7 @@ const props = defineProps({
    */
   activeColor: {
     type: String,
-    default: "var(--iui-blue-6)",
+    default: "var(--iui-primary-6)",
   },
   /**
    * tab宽度
@@ -265,7 +265,7 @@ const handleTabClick = (idx, tab) => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 :deep(.uni-scroll-view) {
   scrollbar-width: none !important;
@@ -376,7 +376,7 @@ const handleTabClick = (idx, tab) => {
           width: 100%;
           height: 100% !important;
           border-radius: 2px;
-          background-color: $color-white;
+          background-color: $color-bg;
         }
       }
     }

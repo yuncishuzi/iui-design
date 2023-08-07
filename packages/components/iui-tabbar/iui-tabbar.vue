@@ -98,7 +98,7 @@ const capsuleBackground = computed(() => {
   color: #86909c;
 
   &-capsule {
-    background-color: white;
+    background-color: $color-bg;
     border-radius: 36px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;

@@ -68,7 +68,7 @@ const props = defineProps({
    */
   bgColor: {
     type: String,
-    default: "white",
+    default: "var(--iui-bg)",
   },
   /**
    * 取消文字颜色
@@ -112,7 +112,7 @@ const handleInput = (e) => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-search {
   &-container {
     height: $size-10;
@@ -124,7 +124,7 @@ const handleInput = (e) => {
   }
 
   &-input-wrap {
-    background: #f2f3f5;
+    background: $color-bg-secondary;
     border-radius: $border-radius-small;
     padding: $size-2 $size-3;
     height: 22px;
@@ -141,6 +141,7 @@ const handleInput = (e) => {
   &-input {
     width: 100%;
     font-size: $font-size-large;
+    color: $color-text;
   }
 
   &-placeholder {

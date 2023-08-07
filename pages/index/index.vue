@@ -1,12 +1,50 @@
 <template>
   <view class="menu">
     <view class="flex-col">
-      <image
-        src="/static/hi.jpeg"
-        mode="aspectFit"
-        style="width: 80px; height: 80px; margin: 30px 0 20px"
-      />
-      <text class="text-bold">iui Design</text>
+      <!-- <view style="width: 80px; height: 80px; margin: 30px 0 20px">
+        <iui-image src="/static/hi.jpeg" mode="aspectFit" radius="50%" />
+      </view> -->
+      <view
+        style="
+          width: 60px;
+          height: 60px;
+          background-color: #165dff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 8px;
+          margin: 30px 10px 0;
+          transform: rotate(45deg);
+        "
+      >
+        <image
+          src="/static/comet.svg"
+          style="width: 70%; transform: rotate(180deg)"
+          mode="widthFix"
+        >
+        </image>
+      </view>
+
+      <view style="display: flex; align-items: center; margin-top: 20px">
+        <!-- <view
+          style="
+            background: #165dff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(180deg);
+          "
+        >
+          <image src="/static/comet.svg" style="width: 70%" mode="widthFix">
+          </image>
+        </view> -->
+
+        <text class="text-bold">iui Design</text>
+      </view>
     </view>
 
     <block v-for="(group, gidx) in Object.keys(list)" :key="gidx">
@@ -64,20 +102,11 @@ function go(path) {
     url: "/" + path,
   });
 }
-
-function change() {
-  const className = document.documentElement.className;
-  if (className == "dark") {
-    document.documentElement.setAttribute("class", "");
-  } else {
-    document.documentElement.setAttribute("class", "dark");
-  }
-}
 </script>
 
 <style lang="scss">
 page {
-  background-color: white;
+  background-color: $color-bg;
 }
 .flex-col {
   display: flex;
@@ -95,12 +124,15 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f7f8fa;
+  background-color: $color-bg-light;
   padding: 12px;
   border-radius: 6px;
+  text {
+    color: $color-text;
+  }
 
   .icon {
-    color: #c9cdd4;
+    color: $color-text-lighten;
   }
 }
 </style>

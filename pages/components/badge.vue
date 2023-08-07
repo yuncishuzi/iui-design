@@ -106,7 +106,7 @@
 <style lang="scss" scoped>
 .demo-block {
   padding: 10px;
-  background-color: var(--iui-blue-2);
+  background-color: var(--iui-primary-2);
   border-radius: 4px;
   width: 20px;
   height: 20px;

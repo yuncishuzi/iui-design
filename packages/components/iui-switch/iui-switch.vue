@@ -119,7 +119,7 @@ const handleChange = async () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-switch {
   display: inline-block;
   transition: all 200ms ease-in-out;

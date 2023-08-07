@@ -210,7 +210,7 @@ const handleChange = (e) => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-swiper {
   position: relative;
 

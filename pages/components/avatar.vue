@@ -113,6 +113,6 @@
 
 <style scoped>
 .primary {
-  color: var(--iui-blue-6);
+  color: var(--iui-primary-6);
 }
 </style>

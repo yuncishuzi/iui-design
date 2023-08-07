@@ -28,7 +28,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { isNumber } from "../helper/is";
+import { isNumber } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -109,7 +109,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-image {
   height: 100%;
   position: relative;

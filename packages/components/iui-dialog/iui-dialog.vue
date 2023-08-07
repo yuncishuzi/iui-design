@@ -211,7 +211,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-dialog {
   position: fixed;
   top: 0;
@@ -220,6 +220,7 @@ defineExpose({
   height: 100%;
   width: 100%;
   transition: all 0.3s ease-in-out;
+  color: $color-text;
 
   &-container {
     height: 100%;
@@ -231,7 +232,7 @@ defineExpose({
   }
 
   &-modal {
-    background-color: #fff;
+    background-color: $color-bg;
     border-radius: 10rpx;
     overflow: hidden;
     width: 300px;

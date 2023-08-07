@@ -12,7 +12,7 @@
 
 <script setup>
 import { computed, provide } from "vue";
-import { isEmpty } from "../helper/is";
+import { isEmpty } from "../../helper/is";
 /**
  * 列表 需要配合 cell组件 使用
  *

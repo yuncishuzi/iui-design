@@ -52,7 +52,7 @@
 
 <script setup>
 import { computed, getCurrentInstance, onMounted, ref, watch } from "vue";
-import { getRect } from "../helper/rect";
+import { getRect } from "../../helper/rect";
 
 const props = defineProps({
   /**

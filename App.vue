@@ -1,13 +1,17 @@
 <script>
 export default {
-  onLaunch: function () {},
+  onLaunch: function () {
+    window.addEventListener("message", (event) => {
+      document.documentElement.setAttribute("class", event.data);
+    });
+  },
   onShow: function () {},
   onHide: function () {},
 };
 </script>
 
 <style lang="scss">
-@import "./packages/components/style/index.scss";
+@import "./packages/style/index.scss";
 /*每个页面公共css */
 
 page {

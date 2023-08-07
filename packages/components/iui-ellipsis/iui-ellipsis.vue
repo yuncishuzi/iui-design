@@ -79,7 +79,7 @@ const acitonStyle = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-ellipsis {
   display: -webkit-box;
@@ -88,6 +88,7 @@ const acitonStyle = computed(() => {
   text-overflow: ellipsis;
   -webkit-line-clamp: v-bind(maxLines);
   position: relative;
+  color: $color-text;
 
   :nth-child(n) {
     display: inline;
@@ -100,8 +101,8 @@ const acitonStyle = computed(() => {
     background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 0),
-      #ffffff 20px,
-      #ffffff
+      $color-bg 20px,
+      $color-bg
     );
     color: $primary-6;
     padding-left: $size-6;

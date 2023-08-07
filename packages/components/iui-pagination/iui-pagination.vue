@@ -138,7 +138,7 @@ const handleClickPrev = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-pagination {
   width: 100%;
@@ -146,6 +146,7 @@ const handleClickPrev = () => {
   align-items: center;
   padding: 10px 16px;
   box-sizing: border-box;
+  color: $color-text;
 
   &-statistic {
     font-size: 17px;

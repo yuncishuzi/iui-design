@@ -54,7 +54,9 @@
         "setting" : {
             "urlCheck" : false
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "darkmode" : true,
+        "themeLocation" : "theme.json"
     },
     "mp-alipay" : {
         "usingComponents" : true
@@ -67,6 +69,10 @@
     },
     "uniStatistics" : {
         "enable" : false
+    },
+    "h5" : {
+        "darkmode" : true,
+        "themeLocation" : "theme.json"
     },
     "vueVersion" : "3"
 }

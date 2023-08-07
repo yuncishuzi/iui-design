@@ -1,0 +1,173 @@
+@mixin lightMode {
+    #{$prefix}-primary-1: #{$primary-color-1};
+    #{$prefix}-primary-2: #{$primary-color-2};
+    #{$prefix}-primary-3: #{$primary-color-3};
+    #{$prefix}-primary-4: #{$primary-color-4};
+    #{$prefix}-primary-5: #{$primary-color-5};
+    #{$prefix}-primary-6: #{$primary-color-6};
+    #{$prefix}-primary-7: #{$primary-color-7};
+    #{$prefix}-primary-8: #{$primary-color-8};
+    #{$prefix}-primary-9: #{$primary-color-9};
+
+    #{$prefix}-success-1: #{$success-color-1};
+    #{$prefix}-success-2: #{$success-color-2};
+    #{$prefix}-success-3: #{$success-color-3};
+    #{$prefix}-success-4: #{$success-color-4};
+    #{$prefix}-success-5: #{$success-color-5};
+    #{$prefix}-success-6: #{$success-color-6};
+    #{$prefix}-success-7: #{$success-color-7};
+    #{$prefix}-success-8: #{$success-color-8};
+    #{$prefix}-success-9: #{$success-color-9};
+
+    #{$prefix}-error-1: #{$error-color-1};
+    #{$prefix}-error-2: #{$error-color-2};
+    #{$prefix}-error-3: #{$error-color-3};
+    #{$prefix}-error-4: #{$error-color-4};
+    #{$prefix}-error-5: #{$error-color-5};
+    #{$prefix}-error-6: #{$error-color-6};
+    #{$prefix}-error-7: #{$error-color-7};
+    #{$prefix}-error-8: #{$error-color-8};
+    #{$prefix}-error-9: #{$error-color-9};
+
+    #{$prefix}-gray-1: #{$gray-1};
+    #{$prefix}-gray-2: #{$gray-2};
+    #{$prefix}-gray-3: #{$gray-3};
+    #{$prefix}-gray-4: #{$gray-4};
+    #{$prefix}-gray-5: #{$gray-5};
+    #{$prefix}-gray-6: #{$gray-6};
+    #{$prefix}-gray-7: #{$gray-7};
+    #{$prefix}-gray-8: #{$gray-8};
+    #{$prefix}-gray-9: #{$gray-9};
+
+    #{$prefix}-warning-1: #{$warning-color-1};
+    #{$prefix}-warning-2: #{$warning-color-2};
+    #{$prefix}-warning-3: #{$warning-color-3};
+    #{$prefix}-warning-4: #{$warning-color-4};
+    #{$prefix}-warning-5: #{$warning-color-5};
+    #{$prefix}-warning-6: #{$warning-color-6};
+    #{$prefix}-warning-7: #{$warning-color-7};
+    #{$prefix}-warning-8: #{$warning-color-8};
+    #{$prefix}-warning-9: #{$warning-color-9};
+
+    #{$prefix}-bg: #{$bg};
+    #{$prefix}-bg-secondary: #{$gray-1};
+    #{$prefix}-bg-active: #{$gray-2};
+    #{$prefix}-bg-light: #{$gray-1};
+    #{$prefix}-bg-opacity: #{$bg-opacity-1};
+    #{$prefix}-white: #{$white};
+    #{$prefix}-black: #{$black};
+
+    // picker
+    #{$prefix}-picker-title-bg: hsla(0, 0%, 100%, 0.95);
+    #{$prefix}-mp-picker-title-bg: hsla(0, 0%, 100%, 0.95);
+
+    // text
+    #{$prefix}-text-disabled: #{$gray-1};
+
+}
+
+page {
+    @include lightMode;
+}
+
+
+
+@mixin darkModel {
+    #{$prefix}-primary-1: #{$dark-primary-color-1};
+    #{$prefix}-primary-2: #{$dark-primary-color-2};
+    #{$prefix}-primary-3: #{$dark-primary-color-3};
+    #{$prefix}-primary-4: #{$dark-primary-color-4};
+    #{$prefix}-primary-5: #{$dark-primary-color-5};
+    #{$prefix}-primary-6: #{$dark-primary-color-6};
+    #{$prefix}-primary-7: #{$dark-primary-color-7};
+    #{$prefix}-primary-8: #{$dark-primary-color-8};
+    #{$prefix}-primary-9: #{$dark-primary-color-9};
+
+    #{$prefix}-success-1: #{$dark-success-color-1};
+    #{$prefix}-success-2: #{$dark-success-color-2};
+    #{$prefix}-success-3: #{$dark-success-color-3};
+    #{$prefix}-success-4: #{$dark-success-color-4};
+    #{$prefix}-success-5: #{$dark-success-color-5};
+    #{$prefix}-success-6: #{$dark-success-color-6};
+    #{$prefix}-success-7: #{$dark-success-color-7};
+    #{$prefix}-success-8: #{$dark-success-color-8};
+    #{$prefix}-success-9: #{$dark-success-color-9};
+
+    #{$prefix}-error-1: #{$dark-error-color-1};
+    #{$prefix}-error-2: #{$dark-error-color-2};
+    #{$prefix}-error-3: #{$dark-error-color-3};
+    #{$prefix}-error-4: #{$dark-error-color-4};
+    #{$prefix}-error-5: #{$dark-error-color-5};
+    #{$prefix}-error-6: #{$dark-error-color-6};
+    #{$prefix}-error-7: #{$dark-error-color-7};
+    #{$prefix}-error-8: #{$dark-error-color-8};
+    #{$prefix}-error-9: #{$dark-error-color-9};
+
+    #{$prefix}-gray-1: #{$dark-gray-1};
+    #{$prefix}-gray-2: #{$dark-gray-2};
+    #{$prefix}-gray-3: #{$dark-gray-3};
+    #{$prefix}-gray-4: #{$dark-gray-4};
+    #{$prefix}-gray-5: #{$dark-gray-5};
+    #{$prefix}-gray-6: #{$dark-gray-6};
+    #{$prefix}-gray-7: #{$dark-gray-7};
+    #{$prefix}-gray-8: #{$dark-gray-8};
+    #{$prefix}-gray-9: #{$dark-gray-9};
+
+    #{$prefix}-warning-1: #{$dark-warning-color-1};
+    #{$prefix}-warning-2: #{$dark-warning-color-2};
+    #{$prefix}-warning-3: #{$dark-warning-color-3};
+    #{$prefix}-warning-4: #{$dark-warning-color-4};
+    #{$prefix}-warning-5: #{$dark-warning-color-5};
+    #{$prefix}-warning-6: #{$dark-warning-color-6};
+    #{$prefix}-warning-7: #{$dark-warning-color-7};
+    #{$prefix}-warning-8: #{$dark-warning-color-8};
+    #{$prefix}-warning-9: #{$dark-warning-color-9};
+
+    #{$prefix}-bg: #{$dark-bg};
+    #{$prefix}-bg-secondary: #{$dark-gray-1};
+    #{$prefix}-bg-active: #{$dark-gray-2};
+    #{$prefix}-bg-light: rgba(255, 255, 255, 0.08);
+    #{$prefix}-bg-opacity: #{$dark-bg-opacity-1};
+    #{$prefix}-white: #{$dark-white};
+    #{$prefix}-black: #{$dark-black};
+
+    #{$prefix}-picker-title-bg: rgba(35, 35, 35, 0.95);
+    #{$prefix}-mp-picker-title-bg: #2b2b2b;
+
+    // text
+    #{$prefix}-text-disabled: rgba(255, 255, 255, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    page {
+        @include darkModel;
+    }
+
+    /* #ifdef H5 */
+
+    .dark {
+        page {
+            @include darkModel;
+        }
+    }
+
+    .light {
+        page {
+            @include lightMode;
+        }
+    }
+
+    /* #endif */
+
+}
+
+/* #ifdef H5 */
+
+.dark {
+    page {
+        @include darkModel;
+    }
+}
+
+
+/* #endif */

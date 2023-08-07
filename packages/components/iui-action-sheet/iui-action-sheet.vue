@@ -49,7 +49,7 @@
 
 <script setup>
 import { onMounted, ref, watch } from "vue";
-import { isObject } from "../helper/is";
+import { isObject } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -150,7 +150,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-action-sheet {
   &-list {

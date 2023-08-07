@@ -41,7 +41,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { isString } from "../helper/is";
+import { isString } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -178,7 +178,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-toast {
   position: fixed;
   z-index: 1000;

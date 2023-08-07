@@ -51,8 +51,8 @@
 
 <script setup>
 import { computed, getCurrentInstance, onMounted, ref } from "vue";
-import { getRect } from "../helper/rect";
-import { isNumber } from "../helper/is";
+import { getRect } from "../../helper/rect";
+import { isNumber } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -249,7 +249,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-popover {
   position: relative;

@@ -27,7 +27,7 @@
 
 <script setup>
 import { computed, useSlots } from "vue";
-import { isArray, isEmpty } from "../helper/is";
+import { isArray, isEmpty } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -116,7 +116,7 @@ const getPadding = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-badge-wrapper {
   position: relative;

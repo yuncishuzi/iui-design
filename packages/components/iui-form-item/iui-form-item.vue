@@ -39,7 +39,7 @@
 
 <script setup>
 import { computed, inject, onMounted, provide, ref, watch } from "vue";
-import { isArray, isString, isObject } from "../helper/is";
+import { isArray, isString, isObject } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -171,7 +171,7 @@ provide("formItem", {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-form-item {
   display: flex;
   align-items: center;
@@ -194,6 +194,7 @@ provide("formItem", {
     position: relative;
     height: 54px;
     line-height: 54px;
+    color: $color-text;
 
     &-vertical {
       width: 100%;
@@ -227,7 +228,7 @@ provide("formItem", {
   }
 
   &-error-hint {
-    background-color: $color-bg-white;
+    background-color: $color-bg;
     font-size: $font-size-small;
     padding-bottom: $size-3;
     margin-top: -$size-2;

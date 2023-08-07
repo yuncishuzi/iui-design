@@ -8,8 +8,8 @@
 
 <script setup>
 import { provide, onMounted, ref } from "vue";
-import Schema from "../helper/validator";
-import { isEmpty, isNull, isObject } from "../helper/is";
+import Schema from "../../helper/validator";
+import { isEmpty, isNull, isObject } from "../../helper/is";
 
 const props = defineProps({
   /**

@@ -18,3 +18,10 @@ iui-swiper,
 iui-image {
     display: contents;
 }
+
+
+iui-picker {
+    :deep(.iui-popup-title) {
+        background-color: $mp-picker-title-bg;
+    }
+}

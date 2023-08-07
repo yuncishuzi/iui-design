@@ -15,7 +15,9 @@
   </Demo>
 
   <Demo title="竖直分割线">
-    <view style="display: flex; justify-content: space-around">
+    <view
+      style="display: flex; justify-content: space-around; align-items: center"
+    >
       <text>Item 1</text>
       <iui-divider direction="vertical"> </iui-divider>
       <text>Item 2</text>
@@ -27,8 +29,9 @@
 
 <script setup></script>
 
-<style scoped>
+<style lang="scss" scoped>
 text {
   font-size: 13px;
+  color: $color-text;
 }
 </style>

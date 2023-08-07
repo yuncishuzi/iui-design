@@ -368,11 +368,12 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-popup {
   position: fixed;
   z-index: 1000;
   height: 100%;
+  color: $color-text;
 
   &-mask {
     position: fixed;

@@ -82,9 +82,9 @@ import {
   nextTick,
   inject,
 } from "vue";
-import { getRect } from "../helper/rect";
-import Schema from "../helper/validator";
-import { isEmpty, isNull, isArray, isString, isObject } from "../helper/is";
+import { getRect } from "../../helper/rect";
+import Schema from "../../helper/validator";
+import { isEmpty, isNull, isArray, isString, isObject } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -337,10 +337,10 @@ if (inForm) {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-input-wrapper {
   position: relative;
-  background-color: $color-bg-white;
+  background-color: $color-bg;
 
   .iui-input {
     height: $size-13;
@@ -354,6 +354,8 @@ if (inForm) {
       display: flex;
       align-items: center;
       white-space: nowrap;
+      color: $color-text;
+
       &-required {
         &::before {
           content: "*";
@@ -393,6 +395,13 @@ if (inForm) {
       &:active {
         opacity: 0.7;
       }
+    }
+
+    &-disabled {
+      .iui-input-label {
+        color: $color-text-lighten;
+      }
+      cursor: not-allowed;
     }
 
     &-suffix {
@@ -439,7 +448,7 @@ if (inForm) {
     }
   }
   .iui-input-error-hint {
-    background-color: $color-bg-white;
+    background-color: $color-bg;
     font-size: $font-size-small;
     padding-bottom: $size-2;
     margin-top: -$size-2;
@@ -449,9 +458,9 @@ if (inForm) {
 }
 </style>
 <!--scoped会导致小程序placeholder样式失效 -->
-<style>
+<style lang="scss">
 .iui-input-placeholder {
-  color: #c9cdd4;
+  color: $color-text-input-placeholder;
   font-size: 15px;
 }
 </style>

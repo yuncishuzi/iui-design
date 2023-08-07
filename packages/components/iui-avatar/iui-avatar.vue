@@ -60,7 +60,7 @@
 // 图标头像
 import { computed } from "vue";
 import DefaultImage from "./assets/default.js";
-import { isNumber, isString } from "../helper/is";
+import { isNumber, isString } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -177,7 +177,7 @@ const avatarSize = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-avatar-wrapper {
   display: flex;
@@ -207,6 +207,7 @@ const avatarSize = computed(() => {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        fill: $color-bg-light;
       }
       &-text {
         display: flex;
@@ -237,6 +238,7 @@ const avatarSize = computed(() => {
     .iui-avatar-text {
       &-name {
         font-size: $font-size-medium;
+        color: $color-text;
       }
 
       &-desc {

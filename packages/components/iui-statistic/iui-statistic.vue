@@ -28,7 +28,7 @@
 
 <script setup>
 import { computed } from "vue";
-import { isNumber } from "../helper/is";
+import { isNumber } from "../../helper/is";
 
 /**
  * 统计数值
@@ -109,7 +109,7 @@ const formatValue = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-statistic {
   &-title {
     font-size: $font-size-small;
@@ -120,6 +120,7 @@ const formatValue = computed(() => {
     font-size: $font-size-title;
     display: inline-flex;
     align-items: baseline;
+    color: $color-text;
 
     &-prefix {
       font-size: $font-size-small;

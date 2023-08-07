@@ -180,7 +180,7 @@ const asyncShutdown = () => {
     height: 48px;
     line-height: 48px;
     text-align: center;
-    border-bottom: 1rpx solid #dfdfdf;
+    border-bottom: 1rpx solid $color-border-light;
     &:active {
       opacity: 0.5;
     }

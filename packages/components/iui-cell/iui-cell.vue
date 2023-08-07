@@ -37,7 +37,7 @@
 
 <script setup>
 import { computed, getCurrentInstance } from "vue";
-import { isUndefined } from "../helper/is";
+import { isUndefined } from "../../helper/is";
 
 /**
  * 单元格
@@ -119,10 +119,10 @@ const showArrow = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-cell-wrapper {
   width: 100%;
-  background-color: $color-white;
+  background-color: $color-bg;
 
   .iui-cell {
     display: flex;
@@ -146,6 +146,7 @@ const showArrow = computed(() => {
     &-label {
       font-size: $font-size-huge;
       white-space: nowrap;
+      color: $color-text;
     }
 
     &-desc {

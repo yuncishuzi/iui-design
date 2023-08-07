@@ -14,7 +14,7 @@
 
 <script setup>
 import { computed, inject } from "vue";
-import { isBoolean } from "../helper/is";
+import { isBoolean } from "../../helper/is";
 
 const grid = inject("iui-grid-props");
 
@@ -30,12 +30,13 @@ const cls = computed(() => [
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-grid-item {
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  color: $color-text;
 
   &-border {
     border: 1px solid $color-border;

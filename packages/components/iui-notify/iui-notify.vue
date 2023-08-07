@@ -189,7 +189,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-notify {
   width: 100%;
   z-index: 990;

@@ -156,7 +156,7 @@ const handleBackClick = async () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-navbar-wrapper {
   width: 100%;
@@ -167,7 +167,8 @@ const handleBackClick = async () => {
 .iui-navbar {
   display: flex;
   width: 100%;
-  background-color: $color-bg-white;
+  background-color: $color-bg;
+  color: $color-text;
 
   &-split {
     border-bottom: 1rpx solid $color-border;

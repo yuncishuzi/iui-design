@@ -84,7 +84,7 @@ const size = computed(() => `${props.size}px`);
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-divider {
   &-horizontal {
     position: relative;
@@ -115,6 +115,7 @@ const size = computed(() => `${props.size}px`);
     font-size: 14px;
     transform: translateY(-50%);
     background-color: v-bind(textBg);
+    color: $color-text;
   }
 
   &-align {

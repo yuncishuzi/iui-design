@@ -48,7 +48,7 @@ import {
   watch,
   nextTick,
 } from "vue";
-import { getRect } from "../helper/rect";
+import { getRect } from "../../helper/rect";
 
 const props = defineProps({
   /**
@@ -156,7 +156,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-collapse {
   &-action-icon {

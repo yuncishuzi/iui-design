@@ -13,7 +13,7 @@ defineProps({
   },
   bgColor: {
     type: String,
-    default: "#fff",
+    default: "var(--iui-bg)",
   },
   padding: {
     type: Number,

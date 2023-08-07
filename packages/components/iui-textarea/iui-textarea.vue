@@ -10,6 +10,7 @@
       :class="`${prefixCls}-input`"
       :placeholder="placeholder"
       :placeholder-style="placeholderStyle"
+      :placeholder-class="`${prefixCls}-placeholder`"
       :disabled="disabled"
       :style="{
         height: `${height}px`,
@@ -115,14 +116,20 @@ const inForm = inject("inForm");
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
 .iui-textarea {
   padding: 18px;
   display: flex;
   flex-direction: column;
+  color: $color-text;
+
   &-input {
     width: 100%;
     min-height: 50px;
+  }
+
+  &-placeholder {
+    color: $color-text-input-placeholder !important;
+    font-size: 15px !important;
   }
 
   &-disabled {
@@ -142,9 +149,9 @@ const inForm = inject("inForm");
 }
 </style>
 
-<style>
+<style lang="scss">
 .iui-textarea-placeholder {
-  color: #c9cdd4;
+  color: $color-text-input-placeholder;
   font-size: 15px;
 }
 </style>

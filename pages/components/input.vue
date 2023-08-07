@@ -57,7 +57,7 @@
             :maxlength="10"
           >
             <template #suffix>
-              <view style="color: #ccc; font-size: 15px">
+              <view style="color: var(--iui-gray-5); font-size: 15px">
                 {{ inputValue.length }}/10
               </view>
             </template>
@@ -151,7 +151,14 @@
         <view>
           <iui-input placeholder="0.00" clearable type="number">
             <template #prefix>
-              <text style="font-weight: 600; font-size: 22px">¥</text>
+              <text
+                style="
+                  font-weight: 600;
+                  font-size: 22px;
+                  color: var(--iui-gray-8);
+                "
+                >¥</text
+              >
             </template>
           </iui-input>
         </view>

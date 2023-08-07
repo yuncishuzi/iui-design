@@ -1,0 +1,10 @@
+@import './theme/common.scss';
+
+
+/* #ifdef H5 */
+@import "./theme/h5.scss";
+/* #endif */
+
+/* #ifdef MP */
+@import "./theme/mp.scss";
+/* #endif */

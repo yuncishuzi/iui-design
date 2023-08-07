@@ -10,7 +10,7 @@
     </iui-sticky>
 
     <Demo title="scroll-view中使用" :padding="0">
-      <scroll-view scroll-y style="height: 400px; background: white">
+      <scroll-view scroll-y style="height: 400px; background: var(--iui-bg)">
         <view style="height: 50px"></view>
         <iui-sticky>
           <view class="layout"> 基本用法 </view>

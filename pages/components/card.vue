@@ -15,7 +15,7 @@
     </iui-card>
   </Demo>
 
-  <Demo title="无边框" bgColor="#ececec">
+  <Demo title="无边框" bgColor="var(--bg-white)">
     <iui-card title="Title" extra="More" :border="false">
       <view>This is content</view>
       <view>This is content</view>

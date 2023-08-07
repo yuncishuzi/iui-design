@@ -31,8 +31,8 @@
 // TODO:ios 浏览器 inline-block 会使文字放大，暂时未找到原因
 
 import { computed, getCurrentInstance, onMounted, ref } from "vue";
-import { getRect } from "../helper/rect";
-import { isObject } from "../helper/is";
+import { getRect } from "../../helper/rect";
+import { isObject } from "../../helper/is";
 
 const props = defineProps({
   /**
@@ -146,7 +146,7 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 @mixin gradientColor($color) {
   .iui-noticebar-content-gradient {

@@ -62,7 +62,7 @@ const props = defineProps({
    */
   checkedColor: {
     type: String,
-    default: "var(--iui-blue-6)",
+    default: "var(--iui-primary-6)",
   },
 });
 
@@ -100,15 +100,16 @@ const handleTagClose = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-tag {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  background-color: $color-bg-secondary;
+  background-color: $color-bg-light;
   margin: 1px;
   padding: 0 8px;
   border-radius: $border-radius-small;
+  color: $color-text;
 
   &-custom-color {
     background-color: v-bind(color);

@@ -134,11 +134,11 @@ const handleExtraClick = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-card {
   border-radius: $border-radius-small;
   border: 1px solid $color-border;
-  background-color: $color-white;
+  background-color: $color-bg;
   font-size: $font-size-medium;
   box-sizing: border-box;
   width: 100%;

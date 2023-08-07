@@ -41,7 +41,7 @@
 
 <script setup>
 import { computed, provide } from "vue";
-import { isEmpty, isNumber, isBoolean } from "../helper/is";
+import { isEmpty, isNumber, isBoolean } from "../../helper/is";
 import iuiGridRow from "../iui-grid-row/iui-grid-row.vue";
 import iuiGridItem from "../iui-grid-item/iui-grid-item.vue";
 
@@ -189,7 +189,7 @@ const borderWidth = props.colGap ? "1px" : 0;
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 
 .iui-grid {
   display: flex;
@@ -222,7 +222,7 @@ const borderWidth = props.colGap ? "1px" : 0;
   box-sizing: border-box;
 
   .icon {
-    background-color: var(--iui-blue-2);
+    background-color: var(--iui-primary-2);
     border-radius: $border-radius-small;
     flex-shrink: 0;
   }

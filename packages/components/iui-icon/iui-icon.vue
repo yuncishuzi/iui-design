@@ -73,11 +73,14 @@ const cls = computed(() => [
 </script>
 
 <style lang="scss" scoped>
-@import "../style/theme/icon.scss";
+@import "../../style/theme/icon.scss";
 
 .iui-icon-wrapper {
   display: inline-flex;
   width: auto;
+}
+.iui-icon {
+  color: inherit;
 }
 
 // 自动旋转

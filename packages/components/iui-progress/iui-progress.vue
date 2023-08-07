@@ -16,7 +16,7 @@
 
 <script setup>
 import { ref, getCurrentInstance, onMounted, computed } from "vue";
-import { getRect } from "../helper/rect";
+import { getRect } from "../../helper/rect";
 
 const props = defineProps({
   /**
@@ -66,7 +66,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-progress {
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ onMounted(() => {
   &-line {
     width: 100%;
     height: calc(v-bind(size) * 1px);
-    background-color: #e5e6eb;
+    background-color: $color-bg-light;
     border-radius: calc(v-bind(size/2) * 1px);
     position: relative;
     transition: all 0.3s ease-in-out;

@@ -127,5 +127,5 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../style/anim.scss";
+@import "../../style/anim.scss";
 </style>

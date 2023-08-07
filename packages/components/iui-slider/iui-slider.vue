@@ -48,7 +48,7 @@
 
 <script setup>
 import { computed, getCurrentInstance, onMounted, ref } from "vue";
-import { getRect } from "../helper/rect";
+import { getRect } from "../../helper/rect";
 
 const props = defineProps({
   /**
@@ -102,7 +102,7 @@ const props = defineProps({
    */
   lineColor: {
     type: String,
-    default: "#e5e6eb",
+    default: "var(--iui-bg-light)",
   },
   /**
    * 激活条颜色
@@ -198,7 +198,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-slider {
   padding: $size-3 $size-4;
   touch-action: none;

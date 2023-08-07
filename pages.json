@@ -270,10 +270,13 @@
     }
   ],
   "globalStyle": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "@navTxtStyle",
     "navigationBarTitleText": "组件库",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "@navBgColor",
+    "backgroundColor": "@navBgColor",
+    "app-plus": {
+      "titleNView": false
+    }
   },
   "uniIdRouter": {}
 }

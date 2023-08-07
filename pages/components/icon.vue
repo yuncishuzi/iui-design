@@ -358,6 +358,10 @@ const copyIcon = (name) => {
 </script>
 
 <style lang="scss" scoped>
+view {
+  color: $color-text;
+}
+
 .icon {
   padding: 10px 0;
   display: flex;

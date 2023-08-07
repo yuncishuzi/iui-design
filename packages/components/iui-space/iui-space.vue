@@ -6,7 +6,7 @@
 
 <script setup>
 import { computed } from "vue";
-import { isArray, isNumber } from "../helper/is";
+import { isArray, isNumber } from "../../helper/is";
 
 const props = defineProps({
   /**

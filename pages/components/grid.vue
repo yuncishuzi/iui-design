@@ -147,11 +147,12 @@ const data = [
   flex-direction: column;
   width: 100%;
   padding: 10px 5px;
+  color: $color-text;
 }
 
 .demo-block {
   padding: 10px;
-  background-color: var(--iui-blue-2);
+  background-color: var(--iui-primary-2);
   border-radius: 4px;
   width: 20px;
   height: 20px;

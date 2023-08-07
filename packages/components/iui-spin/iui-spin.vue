@@ -55,7 +55,7 @@ const props = defineProps({
    */
   maskColor: {
     type: String,
-    default: "rgba(255, 255, 255, 0.8)",
+    default: "var(--iui-bg-opacity)",
   },
   /**
    * 全屏
@@ -89,7 +89,7 @@ const showLoading = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-spin {
   &-tip {
     .container {

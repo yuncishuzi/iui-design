@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import Base64 from "../helper/base64";
+import Base64 from "../../helper/base64";
 import { computed, ref } from "vue";
 
 const props = defineProps({

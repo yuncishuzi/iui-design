@@ -15,7 +15,7 @@
 
 <script setup>
 import { computed, ref, inject, watch } from "vue";
-import Base64 from "../helper/base64";
+import Base64 from "../../helper/base64";
 
 const props = defineProps({
   /**
@@ -122,7 +122,7 @@ if (group) {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/index.scss";
+@import "../../style/index.scss";
 .iui-radio {
   display: flex;
   align-items: center;
@@ -146,6 +146,7 @@ if (group) {
 
   &-label {
     margin-left: $size-2;
+    color: $color-text;
   }
 
   &-disabled {
@@ -153,7 +154,7 @@ if (group) {
     color: $color-text-lighten;
 
     .iui-radio-icon {
-      border-color: $dark-color-bg-2;
+      border-color: $color-border-lighten;
       background-color: $color-bg-secondary;
     }
 
