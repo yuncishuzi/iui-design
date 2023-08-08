@@ -12,7 +12,7 @@
 
 基于 Uni-app 的 Vue3 UI 组件库。
 
-[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/yuncishuzi/iui-design/blob/main/LICENSE)
+[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/yuncishuzi/iui-design/blob/master/LICENSE)
 
 </div>
 
@@ -34,7 +34,7 @@ iui Design 是一款基于 `uni-app` 的前端组件库，它提供了一套可�
 
 ### 版权信息
 
-iui Design 遵循 [Apache-2.0](https://github.com/yuncishuzi/iui-design/blob/main/LICENSE) 开源协议，意味着您无需支付任何费用，也无需授权，即可将 iui Design 应用到您的产品中。
+iui Design 遵循 [Apache-2.0](https://github.com/yuncishuzi/iui-design/blob/master/LICENSE) 开源协议，意味着您无需支付任何费用，也无需授权，即可将 iui Design 应用到您的产品中。
 
 <a-alert title="注意" type="warning">这并不意味着您可以将 iui Design 应用到非法的领域，比如涉及赌博，暴力等方面。如因此产生纠纷或法律问题，iui Design 相关方及云磁数字不承担任何责任。</a-alert>
 

@@ -1,9 +1,11 @@
 <script>
 export default {
   onLaunch: function () {
+    // #ifdef H5
     window.addEventListener("message", (event) => {
       document.documentElement.setAttribute("class", event.data);
     });
+    // #endif
   },
   onShow: function () {},
   onHide: function () {},

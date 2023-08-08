@@ -5,8 +5,10 @@
         <iui-image src="/static/logo.jpg" mode="aspectFit" />
       </view>
 
-      <view>
+      <view class="index-title">
         <text class="text-bold">IUI DESIGN</text>
+
+        <text class="doc" @click="copy">查看文档</text>
       </view>
     </view>
 
@@ -33,8 +35,6 @@
 <script setup>
 import { computed } from "vue";
 import { pages } from "../../pages.json";
-
-// console.log(`你真棒！已经完成了 ${pages.slice(1).length} 个组件！`);
 
 const list = computed(() => {
   const result = {};
@@ -65,11 +65,34 @@ function go(path) {
     url: "/" + path,
   });
 }
+
+function copy() {
+  uni.setClipboardData({
+    data: "https://iyunci.cn/design/uni",
+    success: function () {
+      uni.showToast({
+        title: "文档连接复制成功",
+        icon: "none",
+      });
+    },
+  });
+}
 </script>
 
 <style lang="scss">
 page {
   background-color: $color-bg;
+}
+.index-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .doc {
+    font-size: 14px;
+    color: $color-text-lighten;
+  }
 }
 .logo {
   width: 60px;
