@@ -56,7 +56,7 @@ yarn add iui-design
 
 如果您是使用 HbuilderX 开发的用户，您可以在 `uni-app` 插件市场通过 `uni_modules` 的形式进行安装。
 
-[下载地址]()
+[下载地址](https://ext.dcloud.net.cn/plugin?id=13987)
 
 #### Scss 插件
 
@@ -85,7 +85,7 @@ npm i sass-loader -D
 @import "iui-design/style/index.scss";
 
 // HBuilderX 插件市场安装
-@import "@/uni_modules/iui-design/style/index.scss";
+@import "@/components/iui-design/style/index.scss";
 </style>
 ```
 
@@ -97,7 +97,7 @@ npm i sass-loader -D
 @import "iui-design/style/theme.scss";
 
 // HBuilderX 插件市场安装
-@import "@/uni_modules/iui-design/style/theme.scss";
+@import "@/components/iui-design/style/theme.scss";
 </style>
 ```
 

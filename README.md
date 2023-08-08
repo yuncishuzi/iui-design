@@ -56,7 +56,7 @@ yarn add iui-design
 
 如果您是使用 HbuilderX 开发的用户，您可以在 `uni-app` 插件市场通过 `uni_modules` 的形式进行安装。
 
-[下载地址]()
+[下载地址](https://ext.dcloud.net.cn/plugin?id=13987)
 
 #### Scss 插件
 
