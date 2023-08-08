@@ -71,7 +71,7 @@ function copy() {
     data: "https://iyunci.cn/design/uni",
     success: function () {
       uni.showToast({
-        title: "文档连接复制成功",
+        title: "文档链接复制成功",
         icon: "none",
       });
     },

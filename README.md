@@ -85,7 +85,7 @@ npm i sass-loader -D
 @import "iui-design/style/index.scss";
 
 // HBuilderX 插件市场安装
-@import "@/uni_modules/iui-design/style/index.scss";
+@import "@/components/iui-design/style/index.scss";
 </style>
 ```
 
@@ -97,7 +97,7 @@ npm i sass-loader -D
 @import "iui-design/style/theme.scss";
 
 // HBuilderX 插件市场安装
-@import "@/uni_modules/iui-design/style/theme.scss";
+@import "@/components/iui-design/style/theme.scss";
 </style>
 ```
 
@@ -110,7 +110,9 @@ npm 模式安装：
 ```json
 {
   "easycom": {
-    "^iui-(.*)": "iui-design/components/iui-$1/iui-$1.vue"
+    "custom": {
+      "^iui-(.*)": "iui-design/components/iui-$1/iui-$1.vue"
+    }
   }
 }
 ```
@@ -120,7 +122,9 @@ HBuilderX 插件市场安装：
 ```json
 {
   "easycom": {
-    "^iui-(.*)": "@/uni_modules/iui-design/components/iui-$1/iui-$1.vue"
+    "custom": {
+      "^iui-(.*)": "@/components/iui-design/components/iui-$1/iui-$1.vue"
+    }
   }
 }
 ```

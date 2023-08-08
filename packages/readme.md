@@ -110,7 +110,9 @@ npm 模式安装：
 ```json
 {
   "easycom": {
-    "^iui-(.*)": "iui-design/components/iui-$1/iui-$1.vue"
+    "custom": {
+      "^iui-(.*)": "iui-design/components/iui-$1/iui-$1.vue"
+    }
   }
 }
 ```
@@ -120,7 +122,9 @@ HBuilderX 插件市场安装：
 ```json
 {
   "easycom": {
-    "^iui-(.*)": "@/uni_modules/iui-design/components/iui-$1/iui-$1.vue"
+    "custom": {
+      "^iui-(.*)": "@/components/iui-design/components/iui-$1/iui-$1.vue"
+    }
   }
 }
 ```
