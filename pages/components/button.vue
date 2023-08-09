@@ -42,12 +42,18 @@
           <iui-button type="primary" size="huge">Huge</iui-button>
         </view>
 
-        <iui-space fill>
-          <iui-button type="primary" inline>Regular</iui-button>
-          <iui-button type="primary" size="medium" inline>Medium</iui-button>
-          <iui-button type="primary" size="small" inline>Small</iui-button>
-          <iui-button type="primary" size="mini" inline>Mini</iui-button>
-        </iui-space>
+        <view>
+          <iui-space fill>
+            <iui-button type="primary" inline>Regular</iui-button>
+            <iui-button type="primary" size="medium" inline>Medium</iui-button>
+            <iui-button type="primary" size="small" inline>Small</iui-button>
+            <iui-button type="primary" size="mini" inline>Mini</iui-button>
+          </iui-space>
+        </view>
+
+        <view>
+          <iui-button type="primary" :size="50">Custom size</iui-button>
+        </view>
       </iui-space>
     </Demo>
 
@@ -61,8 +67,31 @@
           <iui-button type="primary" shape="round">Round</iui-button>
         </view>
 
-        <view>
-          <iui-button type="primary" shape="circle">Circle</iui-button>
+        <view
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <iui-button type="primary" shape="circle" icon="check"> </iui-button>
+          <iui-button type="outline" shape="circle" icon="edit"> </iui-button>
+          <iui-button status="danger" shape="circle" icon="delete">
+          </iui-button>
+          <iui-button
+            status="warning"
+            type="primary"
+            shape="circle"
+            icon="star"
+          >
+          </iui-button>
+          <iui-button
+            status="success"
+            type="primary"
+            shape="circle"
+            icon="plus"
+          >
+          </iui-button>
         </view>
       </iui-space>
     </Demo>
@@ -76,13 +105,13 @@
     </Demo>
 
     <Demo title="图标按钮">
-      <iui-space size="small">
+      <iui-space size="small" fill>
         <view>
           <iui-button inline type="primary" icon="plus">Add</iui-button>
         </view>
 
         <view>
-          <iui-button inline type="primary" shape="circle" icon="export"
+          <iui-button inline type="primary" shape="round" icon="export"
             >Exit</iui-button
           >
         </view>

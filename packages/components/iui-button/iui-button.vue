@@ -2,15 +2,18 @@
   <button
     :class="[cls]"
     :disabled="disabled || loading"
+    :style="{
+      height: isNumber(size) ? `${size}px` : 'inherit',
+      fontSize: isNumber(size) ? `${size / 3}px` : 'inherit',
+    }"
     hover-class="none"
     @click="handleClick"
-    iui="true"
   >
     <view :class="`${prefixCls}-content`">
       <template v-if="props.icon || $slots.icon || props.loading">
         <view
           :style="{
-            marginRight: $slots.default ? '4px' : 0,
+            marginRight: shape !== 'circle' && $slots.default ? '4px' : 0,
           }"
         >
           <slot v-if="$slots.icon" name="icon" />
@@ -18,7 +21,7 @@
           <view v-else class="loading"></view>
         </view>
       </template>
-      <text class="text"><slot /> </text>
+      <text class="text" v-if="shape !== 'circle'"><slot /> </text>
     </view>
   </button>
 </template>
@@ -28,6 +31,7 @@
 // 小程序属性
 import { computed, useSlots } from "vue";
 import IuiIcon from "../iui-icon/iui-icon.vue";
+import { isNumber } from "../../helper/is";
 
 const props = defineProps({
   // 通用属性
@@ -64,10 +68,11 @@ const props = defineProps({
   },
   /**
    * 按钮大小
-   * size: huge | large | medium | small | mini
+   * size: huge | large | medium | small | mini | Number
+   * 为Number时，size为按钮高度
    */
   size: {
-    type: String,
+    type: [String, Number],
     default: "large",
   },
   /**
@@ -142,27 +147,32 @@ export default {
 // 按钮大小
 @mixin btn-size {
   &-huge {
-    height: $size-huge;
+    min-height: $size-huge;
+    min-width: $size-huge;
     line-height: $size-huge - 2px;
     font-size: $font-size-huge;
   }
   &-large {
-    height: $size-large;
+    min-height: $size-large;
+    min-width: $size-large;
     line-height: $size-large - 2px;
     font-size: $font-size-large;
   }
   &-medium {
-    height: $size-medium;
+    min-height: $size-medium;
+    min-width: $size-medium;
     line-height: $size-medium - 2px;
     font-size: $font-size-medium;
   }
   &-small {
-    height: $size-small;
+    min-height: $size-small;
+    min-width: $size-small;
     line-height: $size-small - 2px;
     font-size: $font-size-small;
   }
   &-mini {
-    height: $size-mini;
+    min-height: $size-mini;
+    min-width: $size-mini;
     line-height: $size-mini - 2px;
     font-size: $font-size-mini;
   }
@@ -173,10 +183,19 @@ export default {
     border-radius: $border-radius-small;
   }
   &-round {
-    border-radius: $border-radius-medium;
+    border-radius: $border-radius-huge;
   }
   &-circle {
-    border-radius: $border-radius-huge;
+    border-radius: $border-radius-round;
+
+    text-align: center;
+    padding: 0;
+    display: inline-block;
+    width: auto;
+
+    /* #ifdef MP */
+    width: inherit;
+    /* #endif */
   }
 }
 // 按钮样式
@@ -216,7 +235,6 @@ export default {
           map-get($tokens, btn-#{$type}-#{$status}-disabled-text-color);
         border-top-color: transparent;
         border-radius: 100%;
-
         animation: spin infinite 0.75s linear;
       }
     }
@@ -227,6 +245,7 @@ export default {
   margin: 0;
   padding: 0 $size-2;
   width: 100%;
+  height: 100%;
 
   &-inline {
     display: inline-block;
@@ -250,6 +269,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 
     .text {
       white-space: nowrap;
