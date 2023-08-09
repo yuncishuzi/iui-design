@@ -19,7 +19,7 @@
       :list="
         list.map((item) => {
           return {
-            title: item.title,
+            name: item.name,
           };
         })
       "
@@ -41,60 +41,69 @@
   </Demo>
 
   <Demo title="悬浮胶囊标签栏" padding="10" bgColor="transparent">
-    <iui-tabbar activeColor="#00B42A" capsule :list="list"></iui-tabbar>
+    <iui-tabbar
+      capsule
+      activeColor="#00B42A"
+      :list="list"
+      @change="onChange"
+    ></iui-tabbar>
   </Demo>
 </template>
 
 <script setup>
+const onChange = (e) => {
+  console.log(e);
+};
+
 const list = [
   {
     icon: "home",
-    title: "Home",
+    name: "Home",
   },
   {
     icon: "search",
-    title: "Search",
+    name: "Search",
   },
   {
     icon: "user",
-    title: "User",
+    name: "User",
   },
   {
     icon: "setting",
-    title: "Setting",
+    name: "Setting",
   },
 ];
 
 const slot = [
   {
     icon: "home",
-    title: "Home",
+    name: "Home",
   },
   {
     icon: "search",
-    title: "Search",
+    name: "Search",
   },
   {
-    title: "Send",
+    name: "Send",
   },
   {
     icon: "user",
-    title: "User",
+    name: "User",
   },
   {
     icon: "setting",
-    title: "Setting",
+    name: "Setting",
   },
 ];
 
 const badge = [
   {
     icon: "home",
-    title: "Home",
+    name: "Home",
   },
   {
     icon: "search",
-    title: "Search",
+    name: "Search",
 
     badge: {
       text: 100,
@@ -103,14 +112,14 @@ const badge = [
   },
   {
     icon: "user",
-    title: "User",
+    name: "User",
     badge: {
       text: 2,
     },
   },
   {
     icon: "setting",
-    title: "Setting",
+    name: "Setting",
     badge: {
       dot: true,
     },

@@ -2,25 +2,28 @@
   <view :class="cls">
     <block v-for="(tab, idx) in list" :key="idx">
       <view
-        :class="[`${prefixCls}-item`, { active: idx === innerValue }]"
-        @click="handleChange(idx)"
+        :class="[
+          `${prefixCls}-item`,
+          { active: tab.name === innerValue || idx === innerValue },
+        ]"
+        @click="handleChange(tab, idx)"
       >
         <iui-badge v-bind="tab.badge" :position="[30, 0]">
-          <view class="tab" v-if="!$slots[tab.title]">
+          <view class="tab" v-if="!$slots[tab.name]">
             <view
-              :class="[`${prefixCls}-icon`, { 'icon-only': !tab.title }]"
+              :class="[`${prefixCls}-icon`, { 'icon-only': !tab.name }]"
               v-if="tab.icon"
             >
               <iui-icon :name="tab.icon"></iui-icon>
             </view>
             <view
-              :class="[`${prefixCls}-title`, { 'title-only': !tab.icon }]"
-              v-if="!capsule && tab.title"
-              >{{ tab.title }}</view
+              :class="[`${prefixCls}-name`, { 'name-only': !tab.icon }]"
+              v-if="!capsule && tab.name"
+              >{{ tab.name }}</view
             >
           </view>
           <view class="tab" v-else>
-            <slot :name="tab.title"></slot>
+            <slot :name="tab.name"></slot>
           </view>
         </iui-badge>
       </view>
@@ -36,13 +39,13 @@ const props = defineProps({
    * 当前选中
    */
   current: {
-    type: Number,
+    type: [Number, String],
     default: 0,
   },
   /**
    * 列表
-   * list: [{icon: 'home', title: 'Home', badge: BadgeProps}]
-   * title可以为slot
+   * list: [{icon: 'home', name: 'Home', badge: BadgeProps}]
+   * name可以为slot
    */
   list: {
     type: Array,
@@ -73,12 +76,11 @@ const cls = computed(() => [
 
 const innerValue = ref(props.current);
 
-const emit = defineEmits(["update:modelValue", "change"]);
+const emit = defineEmits(["change"]);
 
-const handleChange = (idx) => {
-  innerValue.value = idx;
-  emit("update:modelValue", idx);
-  emit("change", idx);
+const handleChange = (tab, idx) => {
+  innerValue.value = tab.name || idx;
+  emit("change", tab.name || idx);
 };
 
 const capsuleBackground = computed(() => {
@@ -144,11 +146,11 @@ const capsuleBackground = computed(() => {
     }
   }
 
-  &-title {
+  &-name {
     font-size: 12px;
     margin-bottom: 5px;
 
-    &.title-only {
+    &.name-only {
       margin-bottom: 0;
       font-size: 14px;
     }
