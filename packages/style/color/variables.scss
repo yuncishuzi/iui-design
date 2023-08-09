@@ -59,7 +59,7 @@
 
     // picker
     #{$prefix}-picker-title-bg: hsla(0, 0%, 100%, 0.95);
-    #{$prefix}-mp-picker-title-bg: hsla(0, 0%, 100%, 0.95);
+    #{$prefix}-mp-picker-title-bg: white;
 
     // text
     #{$prefix}-text-disabled: #{$gray-1};
@@ -132,16 +132,20 @@ page {
     #{$prefix}-black: #{$dark-black};
 
     #{$prefix}-picker-title-bg: rgba(35, 35, 35, 0.95);
-    #{$prefix}-mp-picker-title-bg: #2b2b2b;
+    #{$prefix}-mp-picker-title-bg: #2C2C2C;
 
     // text
     #{$prefix}-text-disabled: rgba(255, 255, 255, 0.3);
 }
 
+
+
+
 @media (prefers-color-scheme: dark) {
     page {
         @include darkModel;
     }
+
 
     /* #ifdef H5 */
 

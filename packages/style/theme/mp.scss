@@ -21,7 +21,13 @@ iui-image {
 
 
 iui-picker {
-    :deep(.iui-popup-title) {
-        background-color: $mp-picker-title-bg;
+    :deep(.iui-popup-container-content) {
+        background-color: $mp-picker-title-bg !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    picker-view-column {
+        background-color: $color-bg-secondary !important;
     }
 }

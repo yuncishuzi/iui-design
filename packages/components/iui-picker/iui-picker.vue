@@ -211,9 +211,12 @@ defineExpose({
 <style lang="scss" scoped>
 @import "../../style/index.scss";
 
-:deep(.iui-popup-title) {
-  background-color: $picker-title-bg;
+/* #ifdef MP */
+.iui-popup-container-content {
+  padding-bottom: 0 !important;
 }
+
+/* #endif */
 
 .iui-picker {
   &-header {
@@ -262,10 +265,5 @@ defineExpose({
     justify-content: center;
     align-items: center;
   }
-
-  // :deep(.uni-picker-view-mask) {
-  //   background-image: linear-gradient(180deg, $color-bg),
-  //     linear-gradient(0deg, $color-bg, $color-bg);
-  // }
 }
 </style>

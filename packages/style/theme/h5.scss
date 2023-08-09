@@ -1,1 +1,14 @@
 // H5特有样式
+.dark {
+    :deep(.uni-picker-view-mask) {
+        background-image: linear-gradient(180deg, $color-bg-secondary),
+            linear-gradient(0deg, $color-bg, $color-bg);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :deep(.uni-picker-view-mask) {
+        background-image: linear-gradient(180deg, $color-bg-secondary),
+            linear-gradient(0deg, $color-bg, $color-bg);
+    }
+}
