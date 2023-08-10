@@ -72,7 +72,16 @@
     },
     "h5" : {
         "darkmode" : true,
-        "themeLocation" : "theme.json"
+        "themeLocation" : "theme.json",
+        "title" : "iui Design 组件库",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : false
+            }
+        },
+        "devServer" : {
+            "https" : false
+        }
     },
     "vueVersion" : "3"
 }
