@@ -2,13 +2,15 @@
   <view class="menu">
     <view class="flex-col">
       <view class="logo" style="">
-        <iui-image src="/static/logo.jpg" mode="aspectFit" />
+        <iui-image src="/static/logo.png" mode="aspectFit" />
       </view>
 
       <view class="index-title">
         <text class="text-bold">IUI DESIGN</text>
-
         <text class="doc" @click="copy">查看文档</text>
+      </view>
+      <view>
+        <iui-tag color="#165DFF"> v{{ pkg.version }} </iui-tag>
       </view>
     </view>
 
@@ -35,6 +37,7 @@
 <script setup>
 import { computed } from "vue";
 import { pages } from "../../pages.json";
+import pkg from "../../packages/package.json";
 
 const list = computed(() => {
   const result = {};
@@ -88,6 +91,7 @@ page {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 5px;
 
   .doc {
     font-size: 14px;
@@ -97,7 +101,7 @@ page {
 .logo {
   width: 60px;
   height: 60px;
-  margin: 30px 0 10px;
+  margin-top: 30px;
   border-radius: 6px;
   overflow: hidden;
 }
