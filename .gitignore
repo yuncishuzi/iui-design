@@ -2,3 +2,4 @@ node_modules
 .hbuilderx
 unpackage
 .github
+.DS_Store

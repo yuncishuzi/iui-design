@@ -209,15 +209,6 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../../style/index.scss";
-
-/* #ifdef MP */
-.iui-popup-container-content {
-  padding-bottom: 0 !important;
-}
-
-/* #endif */
-
 .iui-picker {
   &-header {
     height: $size-8;
