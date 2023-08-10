@@ -4,7 +4,7 @@
     :disabled="disabled || loading"
     :style="{
       height: isNumber(size) ? `${size}px` : 'inherit',
-      fontSize: isNumber(size) ? `${size / 3}px` : 'inherit',
+      fontSize: isNumber(size) ? `${size / 3}px` : '',
     }"
     hover-class="none"
     @click="handleClick"
