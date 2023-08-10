@@ -110,6 +110,10 @@ const handleTagClose = () => {
   padding: 0 8px;
   border-radius: $border-radius-small;
   color: $color-text;
+  font-size: $font-size-mini;
+  height: 24px;
+  line-height: 22px;
+  padding: 0 8px;
 
   &-custom-color {
     background-color: v-bind(color);
@@ -127,19 +131,13 @@ const handleTagClose = () => {
 
   &-size {
     &-large {
-      font-size: 14px;
+      font-size: $font-size-medium;
       height: 32px;
       line-height: 30px;
       padding: 0 16px;
     }
-    &-medium {
-      font-size: 12px;
-      height: 24px;
-      line-height: 22px;
-      padding: 0 8px;
-    }
     &-small {
-      font-size: 12px;
+      font-size: $font-size-mini;
       height: 20px;
       line-height: 18px;
       padding: 0 8px;
