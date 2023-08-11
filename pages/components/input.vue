@@ -128,7 +128,7 @@
           type="number"
         >
           <template #suffix>
-            <iui-button shape="circle" inline type="primary">Send</iui-button>
+            <iui-button shape="round" inline type="primary">Send</iui-button>
           </template>
         </iui-input>
       </view>
@@ -149,7 +149,7 @@
     <Demo title="特殊输入格式" :padding="0" bgColor="transparent">
       <iui-space direction="vertical">
         <view>
-          <iui-input placeholder="0.00" clearable type="number">
+          <iui-input placeholder="0.00" clearable type="digit">
             <template #prefix>
               <text
                 style="
