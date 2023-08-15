@@ -53,6 +53,7 @@ const cls = computed(() => [
 <style lang="scss" scoped>
 .iui-page {
   width: 100%;
+  height: -webkit-fill-available;
 
   &-safe-area-bottom {
     // 底部安全区域
