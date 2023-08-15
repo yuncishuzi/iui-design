@@ -2,7 +2,7 @@
   <view
     :class="cls"
     :style="{
-      borderWidth: props.border ? '1px' : '0',
+      borderWidth: border ? '1px' : '0',
     }"
   >
     <!-- cover -->
@@ -10,9 +10,9 @@
 
     <!-- header -->
     <view
-      v-if="$slots.header || props.title || props.extra"
+      v-if="$slots.header || $slots.title || $slots.extra || title || extra"
       :class="`${prefixCls}-header`"
-      :style="props.headerStyle"
+      :style="headerStyle"
     >
       <!-- slot -->
       <slot name="header" v-if="$slots.header" />
@@ -32,7 +32,7 @@
     </view>
 
     <!-- body -->
-    <view :class="`${prefixCls}-body`" :style="props.bodyStyle">
+    <view :class="`${prefixCls}-body`" :style="bodyStyle">
       <slot />
     </view>
 
@@ -40,7 +40,7 @@
     <view
       v-if="$slots.footer"
       :class="`${prefixCls}-footer`"
-      :style="props.footerStyle"
+      :style="footerStyle"
     >
       <slot name="footer" />
     </view>
