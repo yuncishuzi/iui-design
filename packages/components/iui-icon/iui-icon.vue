@@ -3,18 +3,19 @@
     :class="[
       `${prefixCls}-wrapper`,
       {
-        [`${prefixCls}-spin`]: props.spin || props.name === 'loading',
+        [`${prefixCls}-spin`]: spin || name === 'loading',
       },
     ]"
     :style="{
-      transform: `rotate(${props.rotate}deg)`,
+      transform: `rotate(${rotate}deg)`,
     }"
   >
     <text
       :class="cls"
       :style="{
-        color: props.color,
-        fontSize: props.size ? `${props.size}px` : 'inherit',
+        color: color,
+        fontSize: size ? `${size}px` : 'inherit',
+        lineHeight: size ? `${size}px` : 'inherit',
       }"
     ></text>
   </view>
@@ -37,6 +38,7 @@ const props = defineProps({
    */
   color: {
     type: String,
+    default: "inherit",
   },
   /**
    * 图标大小
@@ -78,9 +80,6 @@ const cls = computed(() => [
 .iui-icon-wrapper {
   display: inline-flex;
   width: auto;
-}
-.iui-icon {
-  color: inherit;
 }
 
 // 自动旋转

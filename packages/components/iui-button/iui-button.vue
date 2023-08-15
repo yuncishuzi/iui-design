@@ -2,18 +2,16 @@
   <button
     :class="[cls]"
     :disabled="disabled || loading"
-    :style="{
-      height: isNumber(size) ? `${size}px` : 'inherit',
-      fontSize: isNumber(size) ? `${size / 3}px` : '',
-    }"
+    :style="style"
     hover-class="none"
     @click="handleClick"
   >
     <view :class="`${prefixCls}-content`">
       <template v-if="props.icon || $slots.icon || props.loading">
         <view
+          :class="`${prefixCls}-icon`"
           :style="{
-            marginRight: shape !== 'circle' && $slots.default ? '4px' : 0,
+            marginRight: onlyIconBtn ? 0 : '4px',
           }"
         >
           <slot v-if="$slots.icon" name="icon" />
@@ -101,6 +99,13 @@ const props = defineProps({
 
 const prefixCls = "iui-button";
 
+const slots = useSlots();
+
+// 仅图标按钮
+const onlyIconBtn = computed(() => {
+  return (props.icon || slots.icon) && !slots.default;
+});
+
 const cls = computed(() => [
   prefixCls,
   `${prefixCls}-${props.type || "secondary"}-${props.status}`,
@@ -110,8 +115,19 @@ const cls = computed(() => [
     [`${prefixCls}-disabled`]: props.disabled,
     [`${prefixCls}-loading`]: props.loading,
     [`${prefixCls}-inline`]: props.inline,
+    [`${prefixCls}-icon-size-${props.size}`]: onlyIconBtn.value,
   },
 ]);
+
+const style = computed(() => {
+  if (isNumber(props.size)) {
+    return {
+      height: `${props.size}px`,
+      width: onlyIconBtn.value ? `${props.size}px` : "inherit",
+      fontSize: `${props.size / 3}px`,
+    };
+  }
+});
 
 const emits = defineEmits(["click"]);
 
@@ -122,8 +138,6 @@ const handleClick = (e) => {
   }
   emits("click", e);
 };
-
-const slots = useSlots();
 
 // 获取inline padding
 const inlinePadding = computed(() => {
@@ -147,36 +161,50 @@ export default {
 // 按钮大小
 @mixin btn-size {
   &-huge {
-    min-height: $size-huge;
-    min-width: $size-huge;
     line-height: $size-huge - 2px;
     font-size: $font-size-huge;
   }
   &-large {
-    min-height: $size-large;
-    min-width: $size-large;
     line-height: $size-large - 2px;
     font-size: $font-size-large;
   }
   &-medium {
-    min-height: $size-medium;
-    min-width: $size-medium;
     line-height: $size-medium - 2px;
     font-size: $font-size-medium;
   }
   &-small {
-    min-height: $size-small;
-    min-width: $size-small;
     line-height: $size-small - 2px;
     font-size: $font-size-small;
   }
   &-mini {
-    min-height: $size-mini;
-    min-width: $size-mini;
     line-height: $size-mini - 2px;
     font-size: $font-size-mini;
   }
 }
+
+@mixin btn-icon-size {
+  &-huge {
+    height: $size-huge;
+    width: $size-huge;
+  }
+  &-large {
+    height: $size-large;
+    width: $size-large;
+  }
+  &-medium {
+    height: $size-medium;
+    width: $size-medium;
+  }
+  &-small {
+    height: $size-small;
+    width: $size-small;
+  }
+  &-mini {
+    height: $size-mini;
+    width: $size-mini;
+  }
+}
+
 // 按钮形状
 @mixin btn-shape {
   &-square {
@@ -187,15 +215,9 @@ export default {
   }
   &-circle {
     border-radius: $border-radius-round;
-
     text-align: center;
     padding: 0;
     display: inline-block;
-    width: auto;
-
-    /* #ifdef MP */
-    width: inherit;
-    /* #endif */
   }
 }
 // 按钮样式
@@ -261,6 +283,10 @@ export default {
     @include btn-size;
   }
 
+  &-icon-size {
+    @include btn-icon-size;
+  }
+
   &-shape {
     @include btn-shape;
   }
@@ -274,6 +300,13 @@ export default {
     .text {
       white-space: nowrap;
     }
+  }
+
+  &-icon {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @include btn-style("primary", "normal");
