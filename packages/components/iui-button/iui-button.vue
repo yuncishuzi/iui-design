@@ -2,12 +2,17 @@
   <button
     :class="[cls]"
     :disabled="disabled || loading"
+    :open-type="openType"
     :style="{
       height: isNumber(size) ? `${size}px` : 'inherit',
       fontSize: isNumber(size) ? `${size / 3}px` : '',
     }"
     hover-class="none"
     @click="handleClick"
+    @getphonenumber="getPhoneNumber"
+    @opensetting="openSetting"
+    @launchapp="launchApp"
+    @error="openTypeError"
   >
     <view :class="`${prefixCls}-content`">
       <template v-if="props.icon || $slots.icon || props.loading">
@@ -97,6 +102,13 @@ const props = defineProps({
   icon: {
     type: String,
   },
+  /**
+   * 对标微信小程序开放能力
+   * openType
+   */
+  openType: {
+    type: String,
+  }
 });
 
 const prefixCls = "iui-button";
@@ -122,6 +134,23 @@ const handleClick = (e) => {
   }
   emits("click", e);
 };
+
+// 微信开放能力（获取手机号）
+const getPhoneNumber = (e) => {
+  emits('getphonenumber', e)
+}
+// 微信开放能力（打开设置面板）
+const openSetting = (e) => {
+  emits('opensetting', e)
+}
+// 微信开放能力（打开App成功回调）
+const launchApp = (e) => {
+  emits('launchapp', e)
+}
+// 微信开放能力（当使用开放能力时，发生错误的回调）
+const openTypeError = (e) => {
+  emits('error', e)
+}
 
 const slots = useSlots();
 
