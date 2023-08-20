@@ -27,8 +27,6 @@
 </template>
 
 <script setup>
-// TODO:
-// 小程序属性
 import { computed, useSlots } from "vue";
 import IuiIcon from "../iui-icon/iui-icon.vue";
 import { isNumber } from "../../helper/is";
