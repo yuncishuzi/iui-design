@@ -42,7 +42,10 @@
           <slot name="avatarName" v-if="$slots.avatarName" />
           <text v-else>{{ avatarName }}</text>
         </view>
-        <view v-if="avatarDesc" :class="`${prefixCls}-text-desc`">
+        <view
+          v-if="avatarDesc || $slots.avatarDesc"
+          :class="`${prefixCls}-text-desc`"
+        >
           <slot name="avatarDesc" v-if="$slots.avatarDesc" />
           <text v-else>{{ avatarDesc }}</text>
         </view>

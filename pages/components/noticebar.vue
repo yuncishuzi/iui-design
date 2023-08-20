@@ -50,7 +50,7 @@
         set as the background color changes.
 
         <template #suffix>
-          <iui-button size="mini" status="danger" type="primary" shape="circle"
+          <iui-button size="mini" status="danger" type="primary" shape="round"
             >Turn on</iui-button
           >
         </template>

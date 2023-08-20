@@ -96,7 +96,7 @@
         "
       >
         <view style="width: 100%" @click="customButton = false">
-          <iui-button type="primary" shape="circle"
+          <iui-button type="primary" shape="round"
             >Primary Operation</iui-button
           >
         </view>

@@ -91,14 +91,12 @@ npm i sass-loader -D
 
 在 `uni.scss` 中引入 `iui-design` 的主题样式和变量。
 
-```vue
-<style lang="scss">
+```scss
 // npm 模式安装
 @import "iui-design/style/theme.scss";
 
 // HBuilderX 插件市场安装
 @import "@/components/iui-design/style/theme.scss";
-</style>
 ```
 
 #### easycom 模式
