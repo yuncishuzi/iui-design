@@ -3,10 +3,6 @@
     :class="[cls]"
     :disabled="disabled || loading"
     :open-type="openType"
-    :style="{
-      height: isNumber(size) ? `${size}px` : 'inherit',
-      fontSize: isNumber(size) ? `${size / 3}px` : '',
-    }"
     :style="style"
     hover-class="none"
     @click="handleClick"
@@ -34,8 +30,6 @@
 </template>
 
 <script setup>
-// TODO:
-// 小程序属性
 import { computed, useSlots } from "vue";
 import IuiIcon from "../iui-icon/iui-icon.vue";
 import { isNumber } from "../../helper/is";
@@ -110,7 +104,7 @@ const props = defineProps({
    */
   openType: {
     type: String,
-  }
+  },
 });
 
 const prefixCls = "iui-button";
@@ -145,7 +139,13 @@ const style = computed(() => {
   }
 });
 
-const emits = defineEmits(["click"]);
+const emits = defineEmits([
+  "click",
+  "getphonenumber",
+  "opensetting",
+  "launchapp",
+  "error",
+]);
 
 // 点击事件
 const handleClick = (e) => {
@@ -155,26 +155,22 @@ const handleClick = (e) => {
   emits("click", e);
 };
 
-
 // 微信开放能力（获取手机号）
 const getPhoneNumber = (e) => {
-  emits('getphonenumber', e)
-}
+  emits("getphonenumber", e);
+};
 // 微信开放能力（打开设置面板）
 const openSetting = (e) => {
-  emits('opensetting', e)
-}
+  emits("opensetting", e);
+};
 // 微信开放能力（打开App成功回调）
 const launchApp = (e) => {
-  emits('launchapp', e)
-}
+  emits("launchapp", e);
+};
 // 微信开放能力（当使用开放能力时，发生错误的回调）
 const openTypeError = (e) => {
-  emits('error', e)
-}
-
-const slots = useSlots();
-
+  emits("error", e);
+};
 
 // 获取inline padding
 const inlinePadding = computed(() => {
