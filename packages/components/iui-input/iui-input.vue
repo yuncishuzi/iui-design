@@ -81,6 +81,7 @@ import {
   getCurrentInstance,
   nextTick,
   inject,
+  watch,
 } from "vue";
 import { getRect } from "../../helper/rect";
 import Schema from "../../helper/validator";
