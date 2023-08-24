@@ -200,6 +200,13 @@ const props = defineProps({
 
 const inputValue = ref(props.modelValue);
 
+watch(
+  () => props.modelValue,
+  (val) => {
+    inputValue.value = val;
+  }
+);
+
 const formatValue = computed(() =>
   props.type == "number" ? Number(inputValue.value) : inputValue.value
 );
