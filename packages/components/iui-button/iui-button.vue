@@ -24,7 +24,7 @@
           <view v-else class="loading"></view>
         </view>
       </template>
-      <text class="text" v-if="shape !== 'circle'"><slot /> </text>
+      <view class="text" v-if="shape !== 'circle'"><slot /> </view>
     </view>
   </button>
 </template>
