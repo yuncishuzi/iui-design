@@ -103,7 +103,7 @@ const handleClick = () => {
   emit("update:modelValue", checked.value);
   emit("change", checked.value);
   if (group) {
-    group.handleRadioChange(value);
+    group.handleRadioChange(checked.value ? value : null);
   }
 };
 
