@@ -179,7 +179,9 @@ const open = (options) => {
   // 首次打开需要触发一次 change 事件，如果级联选择需要更新 options
   handleChange({
     detail: {
-      value: isEmpty(innerValue.value) ? [0] : innerValue.value,
+      value: isEmpty(innerValue.value)
+        ? Array.from({ length: colunms.value }, () => 0)
+        : innerValue.value,
     },
   });
 };
