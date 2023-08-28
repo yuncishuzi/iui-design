@@ -19,7 +19,7 @@
             <text v-if="dialog.content">{{ dialog.content }}</text>
             <slot />
           </view>
-          <view class="footer">
+          <view class="footer" v-if="!$slots.action">
             <block v-if="!$slots.action">
               <view v-if="dialog.cancel" class="button" @click="handleCancel">
                 <iui-spin v-if="cancelLoading"></iui-spin>
@@ -34,8 +34,8 @@
                 </template>
               </view>
             </block>
-            <slot name="action" v-else />
           </view>
+          <slot name="action" />
         </view>
       </view>
     </iui-translation>

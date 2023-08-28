@@ -93,6 +93,7 @@
           align-items: center;
           padding: 16px;
           width: 100%;
+          box-sizing: border-box;
         "
       >
         <view style="width: 100%" @click="customButton = false">
